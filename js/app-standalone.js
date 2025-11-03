@@ -3,7 +3,8 @@
 // Domain Layer - TypingSession
 class TypingSession {
     constructor(codeSnippet, file) {
-        this.id = Date.now();
+        // Generate unique ID using timestamp + random number to avoid collisions
+        this.id = Date.now() + '_' + Math.random().toString(36).substr(2, 9);
         this.code = codeSnippet;
         this.file = file;
         this.language = file.language;
@@ -264,6 +265,16 @@ class Statistics {
         this.sessions = [];
         this.saveToStorage();
     }
+
+    deleteSession(sessionId) {
+        // Handle both old numeric IDs and new string IDs
+        // For old sessions, the ID might be a number in storage
+        this.sessions = this.sessions.filter(s => {
+            // Compare both as strings to handle mixed ID types
+            return String(s.id) !== String(sessionId);
+        });
+        this.saveToStorage();
+    }
 }
 
 // Domain Layer - CodeSnippetSelector
@@ -503,6 +514,11 @@ class UIController {
                     <td>${session.wpm} WPM</td>
                     <td>${session.accuracy.toFixed(1)}%</td>
                     <td>${Math.floor(session.duration)}s</td>
+                    <td>
+                        <button class="delete-btn" onclick="deleteSession('${session.id}')">
+                            🗑️ Delete
+                        </button>
+                    </td>
                 </tr>
             `;
         }).join('');
@@ -550,7 +566,17 @@ class UIController {
     }
 
     showResults(metrics) {
-        alert(`Session Complete!\n\nWPM: ${metrics.netWPM}\nAccuracy: ${metrics.accuracy.toFixed(1)}%\nErrors: ${metrics.errors}\nDuration: ${Math.floor(metrics.duration)}s`);
+        // Update modal content
+        document.getElementById('modalWPM').textContent = metrics.netWPM;
+        document.getElementById('modalAccuracy').textContent = `${metrics.accuracy.toFixed(1)}%`;
+        document.getElementById('modalErrors').textContent = metrics.errors;
+        document.getElementById('modalDuration').textContent = `${Math.floor(metrics.duration)}s`;
+
+        // Show modal
+        const modal = document.getElementById('resultsModal');
+        if (modal) {
+            modal.style.display = 'flex';
+        }
     }
 
     switchView(viewName) {
@@ -843,12 +869,64 @@ function showSplashIfNeeded() {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         showSplashIfNeeded();
-        new TypingApp();
+        appInstance = new TypingApp();
     });
 } else {
     showSplashIfNeeded();
-    new TypingApp();
+    appInstance = new TypingApp();
 }
 
 // Make closeSplash available globally
 window.closeSplash = closeSplash;
+
+// Modal control functions
+function closeResultsModal() {
+    const modal = document.getElementById('resultsModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+function newSnippetFromModal() {
+    closeResultsModal();
+    // Trigger new snippet
+    const newSnippetBtn = document.getElementById('newSnippetBtn');
+    if (newSnippetBtn) {
+        newSnippetBtn.click();
+    }
+}
+
+// Make modal functions available globally
+window.closeResultsModal = closeResultsModal;
+window.newSnippetFromModal = newSnippetFromModal;
+
+// Global functions for deleting sessions
+let appInstance = null;
+
+function deleteSession(sessionId) {
+    if (confirm('Are you sure you want to delete this session?')) {
+        if (appInstance && appInstance.statistics) {
+            console.log('Deleting session:', sessionId);
+            const beforeCount = appInstance.statistics.sessions.length;
+            appInstance.statistics.deleteSession(sessionId);
+            const afterCount = appInstance.statistics.sessions.length;
+            console.log(`Sessions before: ${beforeCount}, after: ${afterCount}`);
+            appInstance.ui.updateStatistics(appInstance.statistics);
+        } else {
+            console.error('App instance or statistics not available');
+        }
+    }
+}
+
+function clearAllSessions() {
+    if (confirm('Are you sure you want to clear all sessions? This action cannot be undone.')) {
+        if (appInstance) {
+            appInstance.statistics.clearAll();
+            appInstance.ui.updateStatistics(appInstance.statistics);
+        }
+    }
+}
+
+// Make delete functions available globally
+window.deleteSession = deleteSession;
+window.clearAllSessions = clearAllSessions;
