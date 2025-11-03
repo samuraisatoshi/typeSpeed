@@ -419,9 +419,9 @@
             <div class="file-input-section">
                 <div class="file-input-wrapper">
                     <label for="fileInput" class="file-label">
-                        📁 Select Code Files
+                        📁 Select Code Folder
                     </label>
-                    <input type="file" id="fileInput" multiple accept=".js,.ts,.py,.java,.cpp,.c,.rs,.go,.rb,.swift">
+                    <input type="file" id="fileInput" webkitdirectory multiple>
                     <span class="file-count" id="fileCount">No files loaded</span>
                 </div>
             </div>
@@ -448,8 +448,9 @@
 
             <!-- Typing Area -->
             <div class="typing-area" id="typingArea">
+                <div id="fileInfo" style="padding: 10px; color: #64748b; font-size: 14px; border-bottom: 1px solid #e2e8f0;"></div>
                 <div class="code-display" id="codeDisplay">
-                    <div class="placeholder">Select code files and click "Start Typing" to begin practicing</div>
+                    <div class="placeholder">Select a folder containing code files and click "Start Typing" to begin practicing</div>
                 </div>
             </div>
 
@@ -458,8 +459,8 @@
 
             <!-- Controls -->
             <div class="controls">
-                <button class="btn btn-primary" id="startBtn">Start Typing</button>
-                <button class="btn btn-secondary" id="resetBtn">Reset</button>
+                <button class="btn btn-primary" id="startBtn" disabled>Start Typing</button>
+                <button class="btn btn-secondary" id="resetBtn" style="display: none;">Reset</button>
             </div>
         </div>
 
@@ -622,21 +623,52 @@
                 const files = Array.from(event.target.files);
                 this.codeFiles = [];
 
-                for (const file of files) {
-                    const content = await this.readFile(file);
-                    const language = this.detectLanguage(file.name);
+                // Supported code file extensions
+                const codeExtensions = ['js', 'jsx', 'ts', 'tsx', 'py', 'java', 'cpp', 'c', 'h', 'hpp',
+                                      'rs', 'go', 'rb', 'swift', 'kt', 'scala', 'php', 'cs',
+                                      'sh', 'bash', 'sql', 'r', 'lua', 'dart', 'vue', 'svelte'];
 
-                    this.codeFiles.push({
-                        name: file.name,
-                        content: content,
-                        language: language
-                    });
+                for (const file of files) {
+                    // Filter for code files only
+                    const ext = file.name.split('.').pop()?.toLowerCase();
+                    if (!ext || !codeExtensions.includes(ext)) {
+                        continue;
+                    }
+
+                    // Skip very small files (likely empty) and very large files
+                    if (file.size < 50 || file.size > 500000) {
+                        continue;
+                    }
+
+                    try {
+                        const content = await this.readFile(file);
+                        const language = this.detectLanguage(file.name);
+
+                        // Skip files with very little content
+                        const lines = content.split('\n');
+                        if (lines.length < 10) {
+                            continue;
+                        }
+
+                        this.codeFiles.push({
+                            name: file.name,
+                            path: file.webkitRelativePath || file.name,
+                            content: content,
+                            language: language,
+                            lines: lines.length
+                        });
+                    } catch (error) {
+                        console.warn(`Failed to read file ${file.name}:`, error);
+                    }
                 }
 
-                this.fileCount.textContent = `${this.codeFiles.length} file(s) loaded`;
+                this.fileCount.textContent = `${this.codeFiles.length} code file(s) loaded`;
 
                 if (this.codeFiles.length > 0) {
                     this.startBtn.disabled = false;
+                    console.log(`Loaded ${this.codeFiles.length} code files from selected folder`);
+                } else {
+                    alert('No valid code files found in the selected folder. Please select a folder containing source code files.');
                 }
             }
 
@@ -650,7 +682,7 @@
             }
 
             detectLanguage(filename) {
-                const ext = filename.split('.').pop().toLowerCase();
+                const ext = filename.split('.').pop()?.toLowerCase();
                 const languages = {
                     'js': 'JavaScript',
                     'jsx': 'JavaScript',
@@ -660,31 +692,63 @@
                     'java': 'Java',
                     'cpp': 'C++',
                     'c': 'C',
+                    'h': 'C',
+                    'hpp': 'C++',
                     'rs': 'Rust',
                     'go': 'Go',
                     'rb': 'Ruby',
-                    'swift': 'Swift'
+                    'swift': 'Swift',
+                    'kt': 'Kotlin',
+                    'scala': 'Scala',
+                    'php': 'PHP',
+                    'cs': 'C#',
+                    'sh': 'Bash',
+                    'bash': 'Bash',
+                    'sql': 'SQL',
+                    'r': 'R',
+                    'lua': 'Lua',
+                    'dart': 'Dart',
+                    'vue': 'Vue',
+                    'svelte': 'Svelte'
                 };
                 return languages[ext] || 'Unknown';
             }
 
             startSession() {
                 if (this.codeFiles.length === 0) {
-                    alert('Please select code files first');
+                    alert('Please select a folder containing code files first');
                     return;
                 }
 
-                // Select random file and snippet
-                const file = this.codeFiles[Math.floor(Math.random() * this.codeFiles.length)];
+                // Always select a new random file and snippet
+                const randomFileIndex = Math.floor(Math.random() * this.codeFiles.length);
+                const file = this.codeFiles[randomFileIndex];
                 const maxLines = parseInt(document.getElementById('maxLines').value) || 50;
+
+                // Get a random snippet from the selected file
                 const snippet = this.getRandomSnippet(file.content, maxLines);
 
-                // Initialize session
+                // If we're restarting, make sure we get a different snippet
+                if (this.currentSession && this.currentSession.code === snippet && this.codeFiles.length > 1) {
+                    // Try another file if we got the same snippet
+                    const differentIndex = (randomFileIndex + 1) % this.codeFiles.length;
+                    const differentFile = this.codeFiles[differentIndex];
+                    const differentSnippet = this.getRandomSnippet(differentFile.content, maxLines);
+
+                    // Use the different file and snippet
+                    this.initializeSession(differentFile, differentSnippet);
+                } else {
+                    this.initializeSession(file, snippet);
+                }
+            }
+
+            initializeSession(file, snippet) {
+                // Initialize session with the selected file and snippet
                 this.currentSession = {
                     id: Date.now(),
                     code: snippet,
                     language: file.language,
-                    filename: file.name,
+                    filename: file.path || file.name,
                     startTime: null
                 };
 
@@ -694,15 +758,25 @@
                 this.correctChars = 0;
                 this.totalChars = 0;
 
-                // Display code
+                // Display code with file info
                 this.displayCode(snippet);
+                this.displayFileInfo(file);
 
                 // Focus input
                 this.hiddenInput.focus();
 
                 // Update UI
-                this.startBtn.textContent = 'Restart';
+                this.startBtn.textContent = 'New Snippet';
+                this.resetBtn.style.display = 'inline-block';
                 this.resetMetrics();
+            }
+
+            displayFileInfo(file) {
+                // Display which file the snippet is from
+                const infoElement = document.getElementById('fileInfo');
+                if (infoElement) {
+                    infoElement.textContent = `📄 ${file.path || file.name} (${file.language})`;
+                }
             }
 
             getRandomSnippet(content, maxLines) {
@@ -712,8 +786,50 @@
                     return content;
                 }
 
-                const startLine = Math.floor(Math.random() * Math.max(1, lines.length - maxLines));
-                return lines.slice(startLine, startLine + maxLines).join('\n');
+                // Try to find interesting sections (avoiding too many empty lines or comments)
+                let attempts = 0;
+                let bestSnippet = null;
+                let bestScore = -1;
+
+                while (attempts < 5) {
+                    const startLine = Math.floor(Math.random() * Math.max(1, lines.length - maxLines));
+                    const snippet = lines.slice(startLine, startLine + maxLines);
+
+                    // Score the snippet based on code density
+                    let score = 0;
+                    let nonEmptyLines = 0;
+                    let codeLines = 0;
+
+                    for (const line of snippet) {
+                        const trimmed = line.trim();
+                        if (trimmed.length > 0) {
+                            nonEmptyLines++;
+                            // Not just a comment or import
+                            if (!trimmed.startsWith('//') && !trimmed.startsWith('#') &&
+                                !trimmed.startsWith('import') && !trimmed.startsWith('from')) {
+                                codeLines++;
+                            }
+                        }
+                    }
+
+                    score = (nonEmptyLines / maxLines) * 0.5 + (codeLines / maxLines) * 0.5;
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestSnippet = snippet;
+                    }
+
+                    // If we found a good snippet (>60% code density), use it
+                    if (score > 0.6) {
+                        break;
+                    }
+
+                    attempts++;
+                }
+
+                return bestSnippet ? bestSnippet.join('\n') :
+                       lines.slice(Math.floor(Math.random() * Math.max(1, lines.length - maxLines)),
+                                   Math.floor(Math.random() * Math.max(1, lines.length - maxLines)) + maxLines).join('\n');
             }
 
             displayCode(code) {
@@ -947,8 +1063,15 @@
                 this.stopTimer();
                 this.resetMetrics();
 
-                this.codeDisplay.innerHTML = '<div class="placeholder">Select code files and click "Start Typing" to begin practicing</div>';
+                // Clear file info
+                const infoElement = document.getElementById('fileInfo');
+                if (infoElement) {
+                    infoElement.textContent = '';
+                }
+
+                this.codeDisplay.innerHTML = '<div class="placeholder">Select a folder containing code files and click "Start Typing" to begin practicing</div>';
                 this.startBtn.textContent = 'Start Typing';
+                this.resetBtn.style.display = 'none';
             }
 
             saveSession(session) {
