@@ -211,6 +211,17 @@
             background: rgba(239, 68, 68, 0.1);
         }
 
+        /* Style for auto-skipped indentation */
+        .char.indent-skip {
+            opacity: 0.3;
+            background: rgba(148, 163, 184, 0.1);
+            pointer-events: none;
+        }
+
+        .char.indent-skip.correct {
+            color: #94a3b8;
+        }
+
         /* Metrics Bar */
         .metrics-bar {
             display: flex;
@@ -762,6 +773,13 @@
                 this.displayCode(snippet);
                 this.displayFileInfo(file);
 
+                // Skip initial indentation to position cursor at first real character
+                const chars = document.querySelectorAll('.char');
+                while (this.currentPosition < chars.length &&
+                       chars[this.currentPosition].classList.contains('indent-skip')) {
+                    this.currentPosition++;
+                }
+
                 // Focus input
                 this.hiddenInput.focus();
 
@@ -833,10 +851,26 @@
             }
 
             displayCode(code) {
+                // Process code to identify indentation spaces
+                let isStartOfLine = true;
+                let charIndex = 0;
+
                 const chars = code.split('').map((char, index) => {
                     const span = document.createElement('span');
                     span.className = 'char';
-                    if (index === 0) span.classList.add('current');
+
+                    // Mark indentation spaces to be skipped
+                    if (isStartOfLine && (char === ' ' || char === '\t')) {
+                        span.classList.add('indent-skip');
+                        span.style.opacity = '0.3';
+                    } else if (char !== ' ' && char !== '\t' && char !== '\n') {
+                        isStartOfLine = false;
+                    }
+
+                    // Reset at new lines
+                    if (char === '\n') {
+                        isStartOfLine = true;
+                    }
 
                     // Handle special characters with better visibility
                     if (char === ' ') {
@@ -856,11 +890,28 @@
                     }
 
                     span.dataset.char = char;
+                    span.dataset.index = index;
                     return span;
                 });
 
                 this.codeDisplay.innerHTML = '';
                 chars.forEach(span => this.codeDisplay.appendChild(span));
+
+                // Find the first non-indent character and make it current
+                const firstNonIndent = chars.find(span => !span.classList.contains('indent-skip'));
+                if (firstNonIndent) {
+                    firstNonIndent.classList.add('current');
+                    // Auto-mark all leading indent spaces as correct
+                    for (let i = 0; i < chars.length; i++) {
+                        if (chars[i].classList.contains('indent-skip')) {
+                            chars[i].classList.add('correct');
+                        } else {
+                            break;
+                        }
+                    }
+                } else if (chars.length > 0) {
+                    chars[0].classList.add('current');
+                }
             }
 
             handleInput(event) {
@@ -899,6 +950,24 @@
                 const chars = document.querySelectorAll('.char');
                 if (this.currentPosition >= chars.length) return;
 
+                // Skip indentation spaces automatically at the start of lines
+                while (this.currentPosition < chars.length &&
+                       chars[this.currentPosition].classList.contains('indent-skip')) {
+                    chars[this.currentPosition].classList.remove('current');
+                    chars[this.currentPosition].classList.add('correct');
+                    this.currentPosition++;
+
+                    if (this.currentPosition < chars.length) {
+                        chars[this.currentPosition].classList.add('current');
+                    }
+                }
+
+                // Check if we've reached the end after skipping indents
+                if (this.currentPosition >= chars.length) {
+                    this.completeSession();
+                    return;
+                }
+
                 const currentChar = chars[this.currentPosition];
                 const expectedChar = currentChar.dataset.char;
                 const isCorrect = typedChar === expectedChar;
@@ -930,6 +999,13 @@
                 // Move to next character
                 this.currentPosition++;
 
+                // Skip any indentation at the start of the next line
+                while (this.currentPosition < chars.length &&
+                       chars[this.currentPosition].classList.contains('indent-skip')) {
+                    chars[this.currentPosition].classList.add('correct');
+                    this.currentPosition++;
+                }
+
                 if (this.currentPosition < chars.length) {
                     chars[this.currentPosition].classList.add('current');
                     this.scrollToCurrentChar();
@@ -945,18 +1021,24 @@
 
                 const chars = document.querySelectorAll('.char');
 
-                // Move back
+                // Move back, skipping over indent-skip characters
                 this.currentPosition--;
 
-                // Remove the current marker from the next character
-                if (this.currentPosition < chars.length - 1) {
-                    chars[this.currentPosition + 1].classList.remove('current');
+                // Skip back over any indentation spaces
+                while (this.currentPosition > 0 &&
+                       chars[this.currentPosition].classList.contains('indent-skip')) {
+                    this.currentPosition--;
                 }
 
-                // Reset the current character
-                const currentChar = chars[this.currentPosition];
-                currentChar.classList.remove('correct', 'incorrect');
-                currentChar.classList.add('current');
+                // Remove the current marker from any character that has it
+                chars.forEach(char => char.classList.remove('current'));
+
+                // Reset the current character (only if it's not an indent-skip)
+                if (!chars[this.currentPosition].classList.contains('indent-skip')) {
+                    const currentChar = chars[this.currentPosition];
+                    currentChar.classList.remove('correct', 'incorrect');
+                    currentChar.classList.add('current');
+                }
 
                 // Don't update metrics on backspace - they'll be recalculated when retyping
 
