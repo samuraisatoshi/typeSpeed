@@ -1,181 +1,43 @@
-# TypeSpeed - Code Typing Practice Application
+# TypeSpeed - Code Typing Practice
 
-A local web application for practicing typing with real source code from your projects, similar to MonkeyType but specifically designed for programmers.
+A simple, single-file web application for practicing typing with real source code from your projects.
 
 ## Features
 
-- **Multi-Language Support**: Practice typing with code in TypeScript, JavaScript, Python, Swift, C/C++, Java, Rust, Go, Ruby, and more
-- **Project Scanning**: Select any folder on your computer to use real source code for practice
-- **Syntax Highlighting**: Code is properly formatted and highlighted based on language
-- **Real-time Metrics**: Track WPM (Words Per Minute), accuracy, and other performance metrics
-- **Statistics Tracking**: Monitor your progress over time with detailed statistics
-- **Responsive Design**: Clean, modern interface that works on desktop and mobile
-
-## Architecture
-
-Built with **Domain-Driven Design (DDD)** and **SOLID principles**:
-
-- **Shared Domain**: Core value objects and entities
-- **Code Source Domain**: File scanning and management
-- **Code Formatter Domain**: Language-specific formatting and highlighting
-- **Typing Domain**: Session management and input processing
-- **Statistics Domain**: Performance tracking and analysis
-- **Application Layer**: Command handlers and use cases
-- **Infrastructure Layer**: Web server and API endpoints
-
-## Tech Stack
-
-- **Backend**: Node.js, TypeScript, Express.js
-- **Frontend**: Vanilla JavaScript, HTML5, CSS3
-- **Architecture**: Domain-Driven Design with SOLID principles
-- **Security**: Helmet, Rate Limiting, Input Validation, XSS Prevention
-- **Code Quality**: ESLint, Prettier, 550-line file limit enforced
-
-## Security Features
-
-TypeSpeed implements comprehensive security measures:
-
-- **Path Traversal Protection**: Validates all file paths against allowed directories
-- **CORS Whitelist**: Only accepts requests from trusted origins
-- **Rate Limiting**: Protects against DoS attacks with tiered rate limiting
-- **Input Validation**: Validates all user inputs to prevent injection attacks
-- **XSS Prevention**: Sanitizes all displayed data
-- **Security Headers**: Uses Helmet to set secure HTTP headers
-- **Request Size Limits**: Prevents memory exhaustion attacks
-
-For detailed security information, see [SECURITY.md](./SECURITY.md)
-
-## Installation
-
-1. Clone the repository:
-```bash
-git clone [repository-url]
-cd typespeed
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Configure environment (optional):
-```bash
-cp .env.example .env
-# Edit .env to customize security settings
-```
-
-4. Build the TypeScript code:
-```bash
-npm run build
-```
+- **Single HTML File** - No server, no dependencies, runs entirely in the browser
+- **Folder Selection** - Select any folder containing source code files
+- **Random Snippets** - Automatically selects random files and sections for variety
+- **Smart Indentation** - Auto-skips leading spaces/tabs so you only type actual code
+- **Syntax Highlighting** - Visual indicators for spaces, tabs, and line breaks
+- **Real-time Metrics** - Track WPM, accuracy, and progress
+- **Persistent Statistics** - Saves your practice history in browser localStorage
+- **Multi-language Support** - Works with 25+ programming languages
 
 ## Usage
 
-### Development Mode
+1. **Open the file** - Simply open `typespeed.html` in any modern web browser
+2. **Select a folder** - Click "Select Code Folder" and choose a folder with source code
+3. **Start typing** - Click "Start Typing" to begin with a random code snippet
+4. **Practice** - Type the highlighted code as accurately as possible
+5. **New snippets** - Click "New Snippet" for different code
+6. **View statistics** - Click the "Statistics" tab to see your progress
 
-Run the development server with hot-reloading:
-```bash
-npm run dev
-```
+## How It Works
 
-The application will be available at `http://localhost:3000`
+- **Indentation is automatic** - Leading spaces/tabs are skipped, focus on the actual code
+- **Visual feedback** - Green for correct, red for errors, yellow cursor shows position
+- **Smart selection** - Algorithm picks code-dense sections, avoiding empty lines and comments
+- **Progress tracking** - All sessions are saved locally for long-term progress tracking
 
-### Production Mode
+## Browser Compatibility
 
-Build and start the production server:
-```bash
-npm run build
-npm start
-```
+Works in all modern browsers that support:
+- File API for folder selection
+- localStorage for data persistence
+- ES6+ JavaScript features
 
-### Using the Application
-
-1. **Open the application** in your browser at `http://localhost:3000`
-
-2. **Scan a project folder**:
-   - Enter the path to a folder containing source code
-   - Click "Scan Folder" to discover code files
-   - The app will report how many files were found
-
-3. **Start typing practice**:
-   - Optionally select a specific programming language
-   - Click "Start Typing" to begin a session
-   - Type the displayed code as accurately and quickly as possible
-
-4. **View statistics**:
-   - Click on "Statistics" to see your performance metrics
-   - Track your progress over time
-   - View your personal best scores
-
-## API Endpoints
-
-- `GET /api/health` - Health check
-- `GET /api/languages` - Get supported languages
-- `POST /api/scan` - Scan a project folder
-- `POST /api/session/start` - Start a typing session
-- `POST /api/session/:id/input` - Process typing input
-- `POST /api/session/:id/complete` - Complete a session
-- `GET /api/statistics/:userId` - Get user statistics
-- `GET /api/leaderboard` - Get global leaderboard
-
-## Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build TypeScript to JavaScript
-- `npm start` - Start production server
-- `npm test` - Run tests
-- `npm run lint` - Lint TypeScript files
-- `npm run format` - Format code with Prettier
-- `npm run domain:validate` - Validate domain model
-- `npm run clean` - Clean build directory
-
-## Project Structure
-
-```
-typespeed/
-├── src/
-│   ├── domain/          # Core business logic
-│   │   ├── shared/      # Shared value objects
-│   │   ├── codeSource/  # File management
-│   │   ├── codeFormatter/ # Code formatting
-│   │   ├── typing/      # Typing mechanics
-│   │   └── statistics/ # Performance tracking
-│   ├── application/     # Use cases
-│   ├── infrastructure/  # Web server
-│   └── presentation/    # UI logic
-├── public/              # Static assets
-│   ├── css/            # Styles
-│   ├── js/             # Client JavaScript
-│   └── index.html      # Main HTML
-├── .claude/            # Claude Code configuration
-│   ├── agents/         # AI subagents
-│   ├── skills/         # AI skills
-│   └── settings.json   # Project settings
-└── scripts/
-    └── hooks/          # Quality enforcement hooks
-```
-
-## Quality Standards
-
-- **SOLID Principles**: Every class follows Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion
-- **DDD Patterns**: Clear domain boundaries, entities, value objects, and aggregates
-- **File Size Limit**: Maximum 550 lines per file (automatically enforced)
-- **Code Formatting**: Prettier for consistent style
-- **Type Safety**: Strict TypeScript configuration
-
-## Contributing
-
-1. Follow the established DDD architecture
-2. Ensure all code follows SOLID principles
-3. Keep files under 550 lines
-4. Update `map_domain.json` when adding new classes
-5. Write tests for new features
-6. Run linting and formatting before committing
+Tested on Chrome, Firefox, Safari, and Edge.
 
 ## License
 
 MIT
-
-## Support
-
-For issues or questions, please open an issue in the repository.
