@@ -138,6 +138,9 @@
         .char {
             position: relative;
             color: #64748b;
+            display: inline-block;
+            min-width: 0.5ch; /* Minimum width for all characters */
+            min-height: 1.6em; /* Ensure height even for empty chars */
         }
 
         .char.current {
@@ -147,6 +150,17 @@
             border-radius: 2px;
             box-shadow: 0 0 15px #fbbf24, 0 0 30px #fbbf24;
             position: relative;
+            font-weight: bold;
+            min-width: 8px; /* Ensure minimum width even for empty spaces */
+            display: inline-block; /* Make sure it takes up space */
+        }
+
+        /* Make special characters always visible when current */
+        .char.current .space-indicator,
+        .char.current .newline-indicator,
+        .char.current .tab-indicator {
+            opacity: 1 !important;
+            color: #000 !important;
             font-weight: bold;
         }
 
@@ -707,16 +721,16 @@
                     span.className = 'char';
                     if (index === 0) span.classList.add('current');
 
-                    // Handle special characters
+                    // Handle special characters with better visibility
                     if (char === ' ') {
-                        span.innerHTML = '·';
-                        span.style.opacity = '0.3';
+                        // Use a visible space indicator
+                        span.innerHTML = '<span class="space-indicator" style="opacity: 0.3;">·</span>';
                     } else if (char === '\n') {
-                        span.innerHTML = '↵\n';
-                        span.style.opacity = '0.3';
+                        // Use a visible newline indicator
+                        span.innerHTML = '<span class="newline-indicator" style="opacity: 0.3;">↵</span>\n';
                     } else if (char === '\t') {
-                        span.innerHTML = '→';
-                        span.style.opacity = '0.3';
+                        // Use a visible tab indicator
+                        span.innerHTML = '<span class="tab-indicator" style="opacity: 0.3;">→</span>';
                     } else {
                         span.textContent = char;
                     }
