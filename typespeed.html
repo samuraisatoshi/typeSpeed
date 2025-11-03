@@ -149,7 +149,11 @@
             position: relative;
             font-weight: bold;
             min-width: 8px; /* Ensure minimum width even for empty spaces */
-            display: inline-block; /* Make sure it takes up space */
+        }
+
+        /* Only apply inline-block to non-newline current characters */
+        .char.current:not(.newline) {
+            display: inline-block; /* Make sure non-newline chars take up space */
         }
 
         /* Make special characters always visible when current */
@@ -722,12 +726,15 @@
                     if (char === ' ') {
                         // Use a visible space indicator
                         span.innerHTML = '<span class="space-indicator" style="opacity: 0.3;">·</span>';
+                        span.classList.add('space');
                     } else if (char === '\n') {
                         // Use a visible newline indicator
                         span.innerHTML = '<span class="newline-indicator" style="opacity: 0.3;">↵</span>\n';
+                        span.classList.add('newline');
                     } else if (char === '\t') {
                         // Use a visible tab indicator
                         span.innerHTML = '<span class="tab-indicator" style="opacity: 0.3;">→</span>';
+                        span.classList.add('tab');
                     } else {
                         span.textContent = char;
                     }
