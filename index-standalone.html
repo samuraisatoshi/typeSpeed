@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeSpeed - Code Typing Practice</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 TypeSpeed</h1>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab active" data-view="practice">Practice</button>
+            <button class="tab" data-view="statistics">Statistics</button>
+        </div>
+
+        <!-- Practice View -->
+        <div id="practice" class="view active">
+            <!-- File Input -->
+            <div class="file-input-section">
+                <div class="file-input-wrapper">
+                    <label for="fileInput" class="file-label">
+                        📁 Select Code Folder
+                    </label>
+                    <input type="file" id="fileInput" webkitdirectory multiple>
+                    <span class="file-count" id="fileCount">No files loaded</span>
+                </div>
+            </div>
+
+            <!-- Metrics Bar -->
+            <div class="metrics-bar">
+                <div class="metric">
+                    <div class="metric-value" id="wpm">0</div>
+                    <div class="metric-label">WPM</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="accuracy">100%</div>
+                    <div class="metric-label">Accuracy</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="time">0:00</div>
+                    <div class="metric-label">Time</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="progress">0%</div>
+                    <div class="metric-label">Progress</div>
+                </div>
+            </div>
+
+            <!-- Typing Area -->
+            <div class="typing-area" id="typingArea">
+                <div id="fileInfo" style="padding: 10px; color: #64748b; font-size: 14px; border-bottom: 1px solid #e2e8f0;"></div>
+                <div class="code-display" id="codeDisplay">
+                    <div class="placeholder">Select a folder containing code files and click "Start Typing" to begin practicing</div>
+                </div>
+            </div>
+
+            <!-- Hidden Input -->
+            <input type="text" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="btn btn-primary" id="startBtn" disabled>Start Typing</button>
+                <button class="btn btn-secondary" id="resetBtn" style="display: none;">Reset</button>
+            </div>
+
+            <!-- Settings -->
+            <div class="settings-row">
+                <label for="maxLines">Max Lines per Snippet:</label>
+                <input type="number" id="maxLines" value="50" min="10" max="200">
+            </div>
+        </div>
+
+        <!-- Statistics View -->
+        <div id="statistics" class="view">
+            <!-- Summary Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalSessions">0</div>
+                    <div class="stat-label">Total Sessions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="avgWpm">0</div>
+                    <div class="stat-label">Average WPM</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="avgAccuracy">0%</div>
+                    <div class="stat-label">Average Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalTime">0m</div>
+                    <div class="stat-label">Total Practice Time</div>
+                </div>
+            </div>
+
+            <!-- Session History -->
+            <div class="history-section">
+                <h2>Recent Sessions</h2>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Language</th>
+                            <th>WPM</th>
+                            <th>Accuracy</th>
+                            <th>Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTable">
+                        <!-- Sessions will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load standalone JavaScript (no modules) -->
+    <script src="js/app-standalone.js"></script>
+</body>
+</html>
