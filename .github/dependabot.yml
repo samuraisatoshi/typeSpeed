@@ -1,0 +1,34 @@
+# Dependabot configuration for TypeSpeed
+# Note: TypeSpeed currently has NO external dependencies (pure JavaScript)
+# This configuration is for future use if dependencies are added
+
+version: 2
+updates:
+  # Monitor GitHub Actions for updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"
+
+  # Placeholder for npm dependencies (if added in future)
+  # Uncomment if you add package.json with dependencies
+  # - package-ecosystem: "npm"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #   commit-message:
+  #     prefix: "chore"
+  #     include: "scope"
+  #   labels:
+  #     - "dependencies"
+  #     - "npm"
+
+# TypeSpeed Philosophy:
+# We maintain ZERO external dependencies for maximum security and privacy.
+# This file exists mainly for GitHub Actions monitoring and future-proofing.
