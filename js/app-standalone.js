@@ -798,9 +798,40 @@ class TypingApp {
     }
 }
 
+// Splash Screen Management
+function closeSplash() {
+    const dontShowAgain = document.getElementById('dontShowAgain').checked;
+    if (dontShowAgain) {
+        localStorage.setItem('typespeed_hide_splash', 'true');
+    }
+
+    const splash = document.getElementById('splashScreen');
+    if (splash) {
+        splash.classList.add('hidden');
+    }
+}
+
+function showSplashIfNeeded() {
+    const hideSplash = localStorage.getItem('typespeed_hide_splash');
+    const splash = document.getElementById('splashScreen');
+
+    if (!hideSplash && splash) {
+        splash.classList.remove('hidden');
+    } else if (splash) {
+        splash.classList.add('hidden');
+    }
+}
+
 // Initialize app when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => new TypingApp());
+    document.addEventListener('DOMContentLoaded', () => {
+        showSplashIfNeeded();
+        new TypingApp();
+    });
 } else {
+    showSplashIfNeeded();
     new TypingApp();
 }
+
+// Make closeSplash available globally
+window.closeSplash = closeSplash;
