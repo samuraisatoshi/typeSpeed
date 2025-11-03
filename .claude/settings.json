@@ -1,0 +1,156 @@
+{
+  "project": "TypeSpeed - Code Typing Practice",
+  "version": "1.0.0",
+
+  "permissions": {
+    "ask": ["Bash"],
+    "allow": ["Read", "Write", "Edit", "Grep", "Glob", "WebFetch"],
+    "deny": []
+  },
+
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "scripts/hooks/enforce-file-size.sh"
+          },
+          {
+            "type": "command",
+            "command": "scripts/hooks/validate-solid.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "scripts/hooks/update-domain-map.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "scripts/hooks/format-on-save.sh"
+          }
+        ]
+      }
+    ]
+  },
+
+  "agents": {
+    "autoDelegate": true,
+    "preferred": {
+      "codeAnalysis": "code-parser",
+      "formatting": "formatter-specialist",
+      "ui": "ui-architect",
+      "metrics": "metrics-analyst"
+    }
+  },
+
+  "skills": {
+    "autoLoad": [
+      "language-formatting",
+      "ddd-architecture",
+      "typing-mechanics"
+    ]
+  },
+
+  "codeStyle": {
+    "indentation": "spaces",
+    "indentSize": 2,
+    "lineLength": 100,
+    "semicolons": true,
+    "quotes": "single",
+    "trailingComma": "es5"
+  },
+
+  "architecture": {
+    "pattern": "Domain-Driven Design",
+    "principles": ["SOLID", "DRY", "KISS", "YAGNI"],
+    "maxFileLines": 550,
+    "enforceStrict": true
+  },
+
+  "languages": {
+    "supported": [
+      {
+        "name": "TypeScript",
+        "extensions": [".ts", ".tsx"],
+        "formatter": "prettier",
+        "indentSize": 2
+      },
+      {
+        "name": "JavaScript",
+        "extensions": [".js", ".jsx", ".mjs"],
+        "formatter": "prettier",
+        "indentSize": 2
+      },
+      {
+        "name": "Python",
+        "extensions": [".py", ".pyw"],
+        "formatter": "black",
+        "indentSize": 4
+      },
+      {
+        "name": "Swift",
+        "extensions": [".swift"],
+        "formatter": "swiftformat",
+        "indentSize": 2
+      },
+      {
+        "name": "C",
+        "extensions": [".c", ".h"],
+        "formatter": "clang-format",
+        "indentSize": 4
+      },
+      {
+        "name": "C++",
+        "extensions": [".cpp", ".hpp", ".cc", ".cxx"],
+        "formatter": "clang-format",
+        "indentSize": 4
+      },
+      {
+        "name": "Java",
+        "extensions": [".java"],
+        "formatter": "google-java-format",
+        "indentSize": 2
+      },
+      {
+        "name": "Rust",
+        "extensions": [".rs"],
+        "formatter": "rustfmt",
+        "indentSize": 4
+      },
+      {
+        "name": "Go",
+        "extensions": [".go"],
+        "formatter": "gofmt",
+        "indentSize": 0
+      },
+      {
+        "name": "Ruby",
+        "extensions": [".rb"],
+        "formatter": "rubocop",
+        "indentSize": 2
+      }
+    ]
+  },
+
+  "development": {
+    "framework": "Node.js",
+    "runtime": "node",
+    "packageManager": "npm",
+    "testRunner": "jest",
+    "linter": "eslint",
+    "formatter": "prettier"
+  }
+}

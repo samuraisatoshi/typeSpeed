@@ -1,0 +1,25 @@
+{
+  "name": "typespeed-devtools",
+  "version": "1.0.0",
+  "description": "Complete development toolkit for TypeSpeed code typing practice application",
+  "author": "TypeSpeed Team",
+  "license": "MIT",
+  "components": {
+    "agents": "../.claude/agents/",
+    "skills": "../.claude/skills/",
+    "hooks": "../scripts/hooks/",
+    "commands": "commands/"
+  },
+  "requirements": {
+    "claudeCode": ">=1.0.0",
+    "node": ">=18.0.0"
+  },
+  "tags": [
+    "typing",
+    "code-practice",
+    "ddd",
+    "solid",
+    "nodejs",
+    "typescript"
+  ]
+}
