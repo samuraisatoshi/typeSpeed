@@ -784,12 +784,24 @@
                 currentChar.classList.remove('current');
                 currentChar.classList.add(isCorrect ? 'correct' : 'incorrect');
 
-                // Update metrics
-                this.totalChars++;
-                if (isCorrect) {
-                    this.correctChars++;
+                // Update metrics only if we haven't counted this position before
+                if (!currentChar.dataset.counted) {
+                    this.totalChars++;
+                    if (isCorrect) {
+                        this.correctChars++;
+                    } else {
+                        this.errors++;
+                    }
+                    currentChar.dataset.counted = 'true';
                 } else {
-                    this.errors++;
+                    // If re-typing after backspace, update the status
+                    if (currentChar.classList.contains('correct') && !isCorrect) {
+                        this.correctChars--;
+                        this.errors++;
+                    } else if (currentChar.classList.contains('incorrect') && isCorrect) {
+                        this.errors--;
+                        this.correctChars++;
+                    }
                 }
 
                 // Move to next character
@@ -813,23 +825,17 @@
                 // Move back
                 this.currentPosition--;
 
-                // Update display
-                chars[this.currentPosition].classList.remove('correct', 'incorrect');
-                chars[this.currentPosition].classList.add('current');
-
+                // Remove the current marker from the next character
                 if (this.currentPosition < chars.length - 1) {
                     chars[this.currentPosition + 1].classList.remove('current');
                 }
 
-                // Update metrics
-                if (this.totalChars > 0) {
-                    this.totalChars--;
-                    if (chars[this.currentPosition].classList.contains('correct')) {
-                        this.correctChars--;
-                    } else if (chars[this.currentPosition].classList.contains('incorrect')) {
-                        this.errors--;
-                    }
-                }
+                // Reset the current character
+                const currentChar = chars[this.currentPosition];
+                currentChar.classList.remove('correct', 'incorrect');
+                currentChar.classList.add('current');
+
+                // Don't update metrics on backspace - they'll be recalculated when retyping
 
                 this.updateMetrics();
             }
@@ -855,12 +861,15 @@
                     this.wpmDisplay.textContent = wpm;
                 }
 
-                // Calculate accuracy
-                const accuracy = this.totalChars > 0 ? Math.round((this.correctChars / this.totalChars) * 100) : 100;
+                // Calculate accuracy - ensure it doesn't exceed 100%
+                const accuracy = this.totalChars > 0
+                    ? Math.min(100, Math.round((this.correctChars / this.totalChars) * 100))
+                    : 100;
                 this.accuracyDisplay.textContent = accuracy + '%';
 
-                // Calculate progress
-                const progress = Math.round((this.currentPosition / this.currentSession.code.length) * 100);
+                // Calculate progress based on position, not typed chars
+                const codeLength = this.currentSession.code.length;
+                const progress = Math.min(100, Math.round((this.currentPosition / codeLength) * 100));
                 this.progressDisplay.textContent = progress + '%';
             }
 
@@ -893,7 +902,15 @@
 
                 const duration = Date.now() - this.currentSession.startTime;
                 const wpm = Math.round((this.correctChars / 5) / (duration / 60000));
-                const accuracy = Math.round((this.correctChars / this.totalChars) * 100);
+
+                // Ensure accuracy doesn't exceed 100% and handle edge cases
+                const accuracy = this.totalChars > 0
+                    ? Math.min(100, Math.round((this.correctChars / this.totalChars) * 100))
+                    : 0;
+
+                // Count only actual typed characters (not backspaced ones)
+                const codeLength = this.currentSession.code.length;
+                const actualTypedChars = Math.min(this.totalChars, codeLength);
 
                 // Save session
                 const session = {
@@ -903,8 +920,8 @@
                     wpm: wpm,
                     accuracy: accuracy,
                     duration: duration,
-                    totalChars: this.totalChars,
-                    correctChars: this.correctChars,
+                    totalChars: actualTypedChars,
+                    correctChars: Math.min(this.correctChars, actualTypedChars),
                     errors: this.errors
                 };
 
