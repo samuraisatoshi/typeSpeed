@@ -141,25 +141,27 @@
         }
 
         .char.current {
-            background: rgba(102, 126, 234, 0.8);
-            color: white !important;
+            background: #fbbf24; /* Bright yellow/amber background */
+            color: #000 !important; /* Black text for maximum contrast */
             animation: pulse 1s infinite;
             border-radius: 2px;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+            box-shadow: 0 0 15px #fbbf24, 0 0 30px #fbbf24;
             position: relative;
+            font-weight: bold;
         }
 
-        /* Alternative: Add a bright cursor line for better visibility */
+        /* Alternative: Add an even brighter cursor line for better visibility */
         .char.current::before {
             content: '';
             position: absolute;
-            left: -2px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: #fbbf24;
-            animation: blink 1s infinite;
+            left: -3px;
+            top: -2px;
+            bottom: -2px;
+            width: 4px;
+            background: #ff6b6b; /* Bright red cursor */
+            animation: blink 0.8s infinite;
             border-radius: 2px;
+            box-shadow: 0 0 10px #ff6b6b;
         }
 
         @keyframes blink {
@@ -169,16 +171,19 @@
 
         @keyframes pulse {
             0% {
-                background: rgba(102, 126, 234, 0.8);
-                box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+                background: #fbbf24;
+                box-shadow: 0 0 15px #fbbf24, 0 0 30px #fbbf24;
+                transform: scale(1);
             }
             50% {
-                background: rgba(102, 126, 234, 1);
-                box-shadow: 0 0 20px rgba(102, 126, 234, 1);
+                background: #f59e0b;
+                box-shadow: 0 0 20px #fbbf24, 0 0 40px #fbbf24;
+                transform: scale(1.05);
             }
             100% {
-                background: rgba(102, 126, 234, 0.8);
-                box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
+                background: #fbbf24;
+                box-shadow: 0 0 15px #fbbf24, 0 0 30px #fbbf24;
+                transform: scale(1);
             }
         }
 
