@@ -7,8 +7,89 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Welcome Splash Screen -->
+    <div id="splashScreen" class="splash-overlay">
+        <div class="splash-content">
+            <h1>🚀 Welcome to TypeSpeed</h1>
+
+            <div class="privacy-section">
+                <h2>🔒 Your Privacy is Protected</h2>
+                <ul class="privacy-list">
+                    <li>✅ <strong>100% Offline</strong> - No internet connection required or used</li>
+                    <li>✅ <strong>No Data Collection</strong> - We don't collect ANY personal data</li>
+                    <li>✅ <strong>No Tracking</strong> - No analytics, no cookies, no tracking</li>
+                    <li>✅ <strong>Local Storage Only</strong> - Statistics saved only in your browser</li>
+                    <li>✅ <strong>Files Stay Private</strong> - Your code files are read locally and never leave your computer</li>
+                </ul>
+            </div>
+
+            <div class="browser-info">
+                <h3>⚠️ About Browser File Selection</h3>
+                <p>When you click "Select Code Folder", your browser may show a dialog asking about file uploads. This is a standard browser security notice.</p>
+
+                <div class="important-note">
+                    <strong>Important:</strong> Despite what the dialog says, TypeSpeed does NOT upload your files anywhere. The files are only read locally in your browser for typing practice.
+                </div>
+
+                <h4>To avoid confusion:</h4>
+                <ol>
+                    <li>You can safely select your code folder - files remain on your computer</li>
+                    <li>For extra peace of mind, use a test folder with sample code</li>
+                    <li>Or run from a local server to avoid the dialog entirely:
+                        <div class="server-options">
+                            <code>python3 -m http.server 8000</code> (Python)
+                            <br>
+                            <code>npx http-server -p 8000</code> (Node.js)
+                            <br>
+                            <code>php -S localhost:8000</code> (PHP)
+                        </div>
+                    </li>
+                </ol>
+                <p class="instructions-link">
+                    <a href="instructions.html" target="_blank">📖 View detailed instructions and server setup guide →</a>
+                </p>
+            </div>
+
+            <div class="features-section">
+                <h3>✨ Features</h3>
+                <ul>
+                    <li>Practice typing with your own code</li>
+                    <li>Auto-skip indentation spaces</li>
+                    <li>Track WPM and accuracy</li>
+                    <li>View progress statistics</li>
+                    <li>Support for 25+ programming languages</li>
+                </ul>
+            </div>
+
+            <button class="splash-button" onclick="closeSplash()">Start Practicing</button>
+
+            <div class="splash-footer">
+                <label>
+                    <input type="checkbox" id="dontShowAgain"> Don't show this again
+                </label>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
-        <h1>🚀 TypeSpeed</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1 style="margin: 0;">🚀 TypeSpeed</h1>
+            <a href="donate.html" style="
+                background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: all 0.3s;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                box-shadow: 0 2px 8px rgba(79, 195, 247, 0.3);
+            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(79, 195, 247, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(79, 195, 247, 0.3)'">
+                💝 Support
+            </a>
+        </div>
 
         <!-- Tab Navigation -->
         <div class="tabs">
@@ -116,7 +197,7 @@
         </div>
     </div>
 
-    <!-- Load JavaScript modules -->
-    <script type="module" src="js/application/TypingApp.js"></script>
+    <!-- Load standalone JavaScript (no modules) -->
+    <script src="js/app-standalone.js"></script>
 </body>
 </html>

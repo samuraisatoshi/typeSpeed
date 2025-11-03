@@ -320,6 +320,10 @@
             line-height: 1.6;
             white-space: pre;
             overflow-x: auto;
+            overflow-y: auto;
+            max-height: 60vh;  /* Limit height to prevent full-page scrolling */
+            position: relative;  /* Establish positioning context */
+            scroll-behavior: auto;  /* Disable smooth scrolling for better control */
         }
 
         .char {
@@ -577,6 +581,44 @@
         .result-value {
             font-weight: bold;
             color: #333;
+        }
+
+        /* Server options styling */
+        .server-options {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+        }
+
+        .server-options code {
+            color: #4fc3f7;
+            background: none;
+            padding: 0;
+        }
+
+        .instructions-link {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .instructions-link a {
+            color: #4fc3f7;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border: 1px solid #4fc3f7;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .instructions-link a:hover {
+            background: #4fc3f7;
+            color: #1a1a1a;
         }
 
         /* Responsive */

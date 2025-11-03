@@ -531,9 +531,21 @@ class UIController {
     }
 
     scrollToCurrentChar() {
+        // Only scroll if the current character is not visible
         const current = document.querySelector('.char.current');
         if (current) {
-            current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const rect = current.getBoundingClientRect();
+            const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+            // Only scroll if the character is outside the viewport
+            if (!isVisible) {
+                // Use a gentler scroll that doesn't force center alignment
+                current.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest',  // Changed from 'center' to 'nearest' to minimize jumping
+                    inline: 'nearest'
+                });
+            }
         }
     }
 
@@ -719,7 +731,12 @@ class TypingApp {
 
         if (this.currentSession.currentPosition < chars.length) {
             this.ui.setCurrentPosition(this.currentSession.currentPosition);
-            this.ui.scrollToCurrentChar();
+            // Only scroll occasionally, not on every keystroke
+            // This prevents the annoying jumping while typing
+            if (this.currentSession.currentPosition % 50 === 0) {
+                // Check scrolling only every 50 characters
+                this.ui.scrollToCurrentChar();
+            }
         }
 
         const metrics = this.currentSession.getMetrics();

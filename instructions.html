@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeSpeed - Instructions & Setup Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f1117 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(26, 26, 36, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #4fc3f7;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        h2 {
+            color: #81c784;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+        }
+
+        h3 {
+            color: #ffb74d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        code {
+            background: #1e1e1e;
+            color: #4fc3f7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        pre {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            display: block;
+        }
+
+        .method {
+            background: rgba(79, 195, 247, 0.1);
+            border-left: 4px solid #4fc3f7;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning {
+            background: rgba(255, 152, 0, 0.1);
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .success {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #4fc3f7;
+            color: #1a1a1a;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        .toc {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #4fc3f7;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: #81c784;
+        }
+
+        .command-box {
+            background: #0d0d0d;
+            border: 1px solid #4fc3f7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .command-box::before {
+            content: '$';
+            color: #81c784;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to TypeSpeed</a>
+
+        <h1>📖 TypeSpeed Instructions & Setup Guide</h1>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#quick-start">🚀 Quick Start</a></li>
+                <li><a href="#browser-dialog">🔍 Understanding the Browser Dialog</a></li>
+                <li><a href="#server-setup">🖥️ Server Setup Options</a></li>
+                <li><a href="#features">✨ Features & Usage</a></li>
+                <li><a href="#privacy">🔒 Privacy & Security</a></li>
+                <li><a href="#troubleshooting">🔧 Troubleshooting</a></li>
+            </ul>
+        </div>
+
+        <h2 id="quick-start">🚀 Quick Start</h2>
+
+        <div class="success">
+            <strong>Easiest Method:</strong> Simply open <code>index.html</code> directly in your browser!
+        </div>
+
+        <ol>
+            <li>Open <code>index.html</code> in your web browser</li>
+            <li>Click "Select Code Folder" and choose a folder with source code</li>
+            <li>Click "Start Typing" to begin practicing</li>
+            <li>Type the displayed code as accurately as possible</li>
+        </ol>
+
+        <h2 id="browser-dialog">🔍 Understanding the Browser Dialog</h2>
+
+        <div class="warning">
+            <strong>Important:</strong> When selecting a folder, your browser may show a dialog saying "Upload files to this site?" - This is misleading! TypeSpeed does NOT upload your files anywhere.
+        </div>
+
+        <h3>Why does this happen?</h3>
+        <p>Modern browsers show this security dialog whenever a web page wants to access files on your computer, even if it's just reading them locally. The browser uses the same dialog for both uploading and local reading, which can be confusing.</p>
+
+        <h3>Is it safe?</h3>
+        <p><strong>Yes, absolutely!</strong> TypeSpeed:</p>
+        <ul>
+            <li>✅ Runs 100% offline in your browser</li>
+            <li>✅ Never sends your files anywhere</li>
+            <li>✅ Has no server connection capabilities</li>
+            <li>✅ Cannot access the internet</li>
+            <li>✅ Only reads files to display them for typing practice</li>
+        </ul>
+
+        <h2 id="server-setup">🖥️ Server Setup Options</h2>
+
+        <p>If you prefer to avoid the browser dialog entirely, you can run TypeSpeed from a local server. Here are several options:</p>
+
+        <div class="method">
+            <h3>Option 1: Node.js (Recommended)</h3>
+            <p>If you have Node.js installed:</p>
+            <div class="command-box">
+                <code>npx http-server -p 8000</code>
+            </div>
+            <p>Or install globally first:</p>
+            <div class="command-box">
+                <code>npm install -g http-server</code><br>
+                <code>http-server -p 8000</code>
+            </div>
+            <p>Then open: <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
+        </div>
+
+        <div class="method">
+            <h3>Option 2: Python (Built-in)</h3>
+            <p>Python is pre-installed on most systems:</p>
+
+            <p><strong>Python 3:</strong></p>
+            <div class="command-box">
+                <code>python3 -m http.server 8000</code>
+            </div>
+
+            <p><strong>Python 2:</strong></p>
+            <div class="command-box">
+                <code>python -m SimpleHTTPServer 8000</code>
+            </div>
+            <p>Then open: <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
+        </div>
+
+        <div class="method">
+            <h3>Option 3: PHP</h3>
+            <p>If you have PHP installed:</p>
+            <div class="command-box">
+                <code>php -S localhost:8000</code>
+            </div>
+            <p>Then open: <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
+        </div>
+
+        <div class="method">
+            <h3>Option 4: Ruby</h3>
+            <p>If you have Ruby installed:</p>
+            <div class="command-box">
+                <code>ruby -run -e httpd . -p 8000</code>
+            </div>
+            <p>Then open: <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
+        </div>
+
+        <div class="method">
+            <h3>Option 5: Visual Studio Code</h3>
+            <p>Using VS Code with Live Server extension:</p>
+            <ol>
+                <li>Install "Live Server" extension</li>
+                <li>Right-click on <code>index.html</code></li>
+                <li>Select "Open with Live Server"</li>
+            </ol>
+        </div>
+
+        <h2 id="features">✨ Features & Usage</h2>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li><strong>Smart Code Selection:</strong> Automatically selects meaningful code sections</li>
+            <li><strong>Auto-skip Indentation:</strong> Focus on actual code, not spaces</li>
+            <li><strong>Real-time Metrics:</strong> Track WPM, accuracy, and progress</li>
+            <li><strong>Statistics Tracking:</strong> View your improvement over time</li>
+            <li><strong>Multi-language Support:</strong> Works with 25+ programming languages</li>
+        </ul>
+
+        <h3>Typing Tips</h3>
+        <ul>
+            <li>Leading spaces/tabs are automatically skipped</li>
+            <li>Focus on accuracy first, speed will come naturally</li>
+            <li>Use "New Snippet" to get different code samples</li>
+            <li>Check the Statistics tab to track your progress</li>
+        </ul>
+
+        <h3>Supported Languages</h3>
+        <p>TypeSpeed automatically detects and supports:</p>
+        <ul>
+            <li>JavaScript, TypeScript, Python, Java, C/C++, C#</li>
+            <li>Go, Rust, Ruby, PHP, Swift, Kotlin</li>
+            <li>HTML, CSS, SQL, Shell scripts</li>
+            <li>And many more...</li>
+        </ul>
+
+        <h2 id="privacy">🔒 Privacy & Security</h2>
+
+        <div class="success">
+            <h3>Your Privacy is Protected</h3>
+            <ul>
+                <li>✅ <strong>100% Offline:</strong> No internet connection used</li>
+                <li>✅ <strong>No Data Collection:</strong> Zero analytics or tracking</li>
+                <li>✅ <strong>Files Stay Local:</strong> Your code never leaves your computer</li>
+                <li>✅ <strong>No External Dependencies:</strong> Pure JavaScript, no frameworks</li>
+                <li>✅ <strong>Open Source:</strong> Inspect the code yourself</li>
+            </ul>
+        </div>
+
+        <h2 id="troubleshooting">🔧 Troubleshooting</h2>
+
+        <h3>Common Issues</h3>
+
+        <div class="method">
+            <h4>Files not loading?</h4>
+            <ul>
+                <li>Ensure you selected a folder with source code files</li>
+                <li>Check that files have supported extensions (.js, .py, etc.)</li>
+                <li>Try refreshing the page and selecting again</li>
+            </ul>
+        </div>
+
+        <div class="method">
+            <h4>Statistics not saving?</h4>
+            <ul>
+                <li>Check that localStorage is enabled in your browser</li>
+                <li>Ensure you're not in Private/Incognito mode</li>
+                <li>Some browsers clear localStorage when closed</li>
+            </ul>
+        </div>
+
+        <div class="method">
+            <h4>Keyboard input issues?</h4>
+            <ul>
+                <li>Click on the code display area to focus</li>
+                <li>Ensure no browser extensions are intercepting keystrokes</li>
+                <li>Try a different browser if issues persist</li>
+            </ul>
+        </div>
+
+        <h3>Browser Compatibility</h3>
+        <p>TypeSpeed works best on:</p>
+        <ul>
+            <li>Chrome/Edge 90+</li>
+            <li>Firefox 88+</li>
+            <li>Safari 14+</li>
+        </ul>
+
+        <div class="warning">
+            <strong>Note:</strong> Older browsers may not support all features. Please update your browser for the best experience.
+        </div>
+
+        <hr style="margin: 40px 0; border: 1px solid #333;">
+
+        <p style="text-align: center; color: #888;">
+            TypeSpeed - Practice typing with your own code<br>
+            Built with Domain-Driven Design and SOLID principles<br>
+            <a href="index.html">Back to TypeSpeed →</a>
+        </p>
+    </div>
+</body>
+</html>
