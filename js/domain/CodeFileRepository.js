@@ -1,9 +1,5 @@
-/**
- * CodeFileRepository Domain Model
- * Manages the collection of code files for practice
- * Single Responsibility: Store and retrieve code files
- */
-export class CodeFileRepository {
+// Domain Layer - CodeFileRepository
+class CodeFileRepository {
     constructor() {
         this.files = [];
         this.supportedExtensions = [
@@ -20,7 +16,7 @@ export class CodeFileRepository {
         for (const file of files) {
             if (this.isValidCodeFile(file)) {
                 try {
-                    const content = await this.readFile(file);
+                    const content = TypableTextNormalizer.normalize(await this.readFile(file));
                     const lines = content.split('\n');
 
                     if (lines.length >= 10) {
@@ -39,6 +35,24 @@ export class CodeFileRepository {
             }
         }
 
+        return this.files.length;
+    }
+
+    loadFromDataset(datasetFiles) {
+        this.files = (datasetFiles || []).map(f => {
+            let content = TypableTextNormalizer.normalize(f.content);
+            if (f.language === 'Text') {
+                content = ParagraphReflow.reflow(content);
+            }
+            return {
+                name: f.name,
+                path: f.path,
+                content,
+                language: f.language,
+                lines: content.split('\n').length,
+                size: content.length
+            };
+        });
         return this.files.length;
     }
 
@@ -89,3 +103,4 @@ export class CodeFileRepository {
         return this.files.length > 0;
     }
 }
+

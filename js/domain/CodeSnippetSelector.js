@@ -1,9 +1,5 @@
-/**
- * CodeSnippetSelector Domain Service
- * Selects interesting code snippets from files
- * Single Responsibility: Smart selection of practice snippets
- */
-export class CodeSnippetSelector {
+// Domain Layer - CodeSnippetSelector
+class CodeSnippetSelector {
     selectSnippet(content, maxLines = 50) {
         const lines = content.split('\n');
 
@@ -11,7 +7,6 @@ export class CodeSnippetSelector {
             return content;
         }
 
-        // Try to find interesting code sections
         let bestSnippet = null;
         let bestScore = -1;
 
@@ -26,7 +21,6 @@ export class CodeSnippetSelector {
                 bestSnippet = snippet;
             }
 
-            // Good enough snippet found
             if (score > 0.6) {
                 break;
             }
@@ -45,14 +39,12 @@ export class CodeSnippetSelector {
             const trimmed = line.trim();
             if (trimmed.length > 0) {
                 nonEmptyLines++;
-                // Not just a comment or import
                 if (!this.isCommentOrImport(trimmed)) {
                     codeLines++;
                 }
             }
         }
 
-        // Score based on code density
         return (nonEmptyLines / totalLines) * 0.5 + (codeLines / totalLines) * 0.5;
     }
 
@@ -67,3 +59,4 @@ export class CodeSnippetSelector {
                line.startsWith('include');
     }
 }
+

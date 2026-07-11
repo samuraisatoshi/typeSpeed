@@ -102,7 +102,7 @@
           "PracticeCategoryProvider",
           "BiblePassageService"
         ],
-        "description": "Orquestrador principal da aplicação (application layer).",
+        "description": "Orquestrador principal da aplicação (application layer). Vive em js/application/TypingApp.js, script global simples (sem ES modules, compatível com abrir index.html via file:// sem servidor). Fonte única de verdade — a versão ES-module duplicada e defasada que existia antes (e o bundle monolítico js/app-standalone.js) foram removidas no CD-010.",
         "goal": "Coordenar repositório de arquivos, seletor de categoria, sessão de digitação e UI.",
         "methods": [
           "initialize",

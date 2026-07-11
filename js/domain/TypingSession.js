@@ -1,11 +1,8 @@
-/**
- * TypingSession Domain Model
- * Represents a code typing practice session
- * Single Responsibility: Manage typing session state and rules
- */
-export class TypingSession {
+// Domain Layer - TypingSession
+class TypingSession {
     constructor(codeSnippet, file) {
-        this.id = Date.now();
+        // Generate unique ID using timestamp + random number to avoid collisions
+        this.id = Date.now() + '_' + Math.random().toString(36).substr(2, 9);
         this.code = codeSnippet;
         this.file = file;
         this.language = file.language;
@@ -36,19 +33,17 @@ export class TypingSession {
     getDuration() {
         if (!this.startTime) return 0;
         const endTime = this.endTime || Date.now();
-        return (endTime - this.startTime) / 1000; // in seconds
+        return (endTime - this.startTime) / 1000;
     }
 
     processInput(typedChar, expectedChar) {
         const isCorrect = typedChar === expectedChar;
-
         if (isCorrect) {
             this.correctChars++;
         } else {
             this.errors++;
         }
         this.totalChars++;
-
         return isCorrect;
     }
 
@@ -69,7 +64,7 @@ export class TypingSession {
     getMetrics() {
         const duration = this.getDuration();
         const minutes = duration / 60;
-        const words = this.totalChars / 5; // Standard WPM calculation
+        const words = this.totalChars / 5;
         const grossWPM = minutes > 0 ? words / minutes : 0;
         const netWPM = minutes > 0 ? (words - this.errors) / minutes : 0;
         const accuracy = this.totalChars > 0 ? (this.correctChars / this.totalChars) * 100 : 0;
@@ -83,3 +78,4 @@ export class TypingSession {
         };
     }
 }
+

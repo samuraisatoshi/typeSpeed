@@ -1,35 +1,25 @@
-/**
- * UIController Application Service
- * Manages UI state and interactions
- * Single Responsibility: Coordinate UI updates and user inputs
- */
-export class UIController {
+// Application Layer - UIController
+class UIController {
     constructor() {
         this.initializeElements();
         this.activeView = 'practice';
     }
 
     initializeElements() {
-        // File input
+        this.categorySelect = document.getElementById('categorySelect');
+        this.fileInputSection = document.querySelector('.file-input-section');
         this.fileInput = document.getElementById('fileInput');
         this.fileCount = document.getElementById('fileCount');
-
-        // Code display
         this.codeDisplay = document.getElementById('codeDisplay');
         this.fileInfo = document.getElementById('fileInfo');
         this.hiddenInput = document.getElementById('hiddenInput');
-
-        // Controls
         this.startBtn = document.getElementById('startBtn');
         this.resetBtn = document.getElementById('resetBtn');
-
-        // Metrics
+        this.metricsBar = document.querySelector('.metrics-bar');
         this.wpmDisplay = document.getElementById('wpm');
         this.accuracyDisplay = document.getElementById('accuracy');
         this.timeDisplay = document.getElementById('time');
         this.progressDisplay = document.getElementById('progress');
-
-        // Statistics
         this.totalSessionsDisplay = document.getElementById('totalSessions');
         this.avgWpmDisplay = document.getElementById('avgWpm');
         this.avgAccuracyDisplay = document.getElementById('avgAccuracy');
@@ -37,14 +27,15 @@ export class UIController {
         this.historyTable = document.getElementById('historyTable');
     }
 
-    displayCode(code) {
-        // Process code to identify indentation
+    displayCode(code, isTextMode = false) {
+        this.codeDisplay.classList.toggle('wrap-text', isTextMode);
         let isStartOfLine = true;
+        let lineIndex = 0;
+        const lineSpans = [[]];
         const chars = code.split('').map((char, index) => {
             const span = document.createElement('span');
             span.className = 'char';
 
-            // Mark indentation spaces to be skipped
             if (isStartOfLine && (char === ' ' || char === '\t')) {
                 span.classList.add('indent-skip');
                 span.style.opacity = '0.3';
@@ -52,14 +43,12 @@ export class UIController {
                 isStartOfLine = false;
             }
 
-            // Reset at new lines
             if (char === '\n') {
                 isStartOfLine = true;
             }
 
-            // Handle special characters
             if (char === ' ') {
-                span.innerHTML = '<span class="space-indicator" style="opacity: 0.3;">·</span>';
+                span.innerHTML = '<span class="space-indicator" style="opacity: 0.3;">·</span>​';
                 span.classList.add('space');
             } else if (char === '\n') {
                 span.innerHTML = '<span class="newline-indicator" style="opacity: 0.3;">↵</span>\n';
@@ -73,17 +62,23 @@ export class UIController {
 
             span.dataset.char = char;
             span.dataset.index = index;
+            span.dataset.line = lineIndex;
+            lineSpans[lineIndex].push(span);
+            if (char === '\n') {
+                lineIndex++;
+                lineSpans.push([]);
+            }
             return span;
         });
 
         this.codeDisplay.innerHTML = '';
         chars.forEach(span => this.codeDisplay.appendChild(span));
+        this.lineSpans = lineSpans;
+        this.activeLineIndex = null;
 
-        // Find first non-indent character
         const firstNonIndent = chars.find(span => !span.classList.contains('indent-skip'));
         if (firstNonIndent) {
             firstNonIndent.classList.add('current');
-            // Auto-mark leading indents as correct
             for (const char of chars) {
                 if (char.classList.contains('indent-skip')) {
                     char.classList.add('correct');
@@ -91,16 +86,43 @@ export class UIController {
                     break;
                 }
             }
+            this.highlightLine(parseInt(firstNonIndent.dataset.line, 10));
         } else if (chars.length > 0) {
             chars[0].classList.add('current');
+            this.highlightLine(parseInt(chars[0].dataset.line, 10));
         }
 
+        this.charElements = chars;
         return chars;
+    }
+
+    /* Typewriter-lens effect: the line the cursor is on renders larger
+       (.line-active), everything else shrinks — see .char.line-active
+       in styles.css. Swaps the class on whole line groups instead of
+       re-scanning every character. */
+    highlightLine(lineIndex) {
+        if (!this.lineSpans) return;
+        if (this.activeLineIndex != null && this.lineSpans[this.activeLineIndex]) {
+            this.lineSpans[this.activeLineIndex].forEach(s => s.classList.remove('line-active'));
+        }
+        if (lineIndex != null && this.lineSpans[lineIndex]) {
+            this.lineSpans[lineIndex].forEach(s => s.classList.add('line-active'));
+        }
+        this.activeLineIndex = lineIndex;
     }
 
     displayFileInfo(file) {
         if (this.fileInfo && file) {
-            this.fileInfo.textContent = `📄 ${file.path || file.name} (${file.language})`;
+            this.fileInfo.innerHTML = '<svg class="icon"><use href="#icon-file"/></svg>';
+            const label = document.createElement('span');
+            label.textContent = `${file.path || file.name} (${file.language})`;
+            this.fileInfo.appendChild(label);
+        }
+    }
+
+    setTypingFocus(active) {
+        if (this.metricsBar) {
+            this.metricsBar.classList.toggle('typing-active', active);
         }
     }
 
@@ -149,6 +171,11 @@ export class UIController {
                     <td>${session.wpm} WPM</td>
                     <td>${session.accuracy.toFixed(1)}%</td>
                     <td>${Math.floor(session.duration)}s</td>
+                    <td>
+                        <button class="delete-btn" onclick="deleteSession('${session.id}')">
+                            <svg class="icon"><use href="#icon-trash"/></svg> Delete
+                        </button>
+                    </td>
                 </tr>
             `;
         }).join('');
@@ -160,42 +187,78 @@ export class UIController {
         }
     }
 
+    setFileCountMessage(message) {
+        if (this.fileCount) {
+            this.fileCount.textContent = message;
+        }
+    }
+
+    populateCategoryOptions(categories) {
+        if (!this.categorySelect) return;
+        this.categorySelect.innerHTML = categories
+            .map(c => `<option value="${c.value}">${c.label}</option>`)
+            .join('');
+    }
+
+    setFolderPickerVisible(visible) {
+        if (this.fileInputSection) {
+            this.fileInputSection.style.display = visible ? '' : 'none';
+        }
+    }
+
     updateCharacterDisplay(position, isCorrect) {
-        const chars = document.querySelectorAll('.char');
-        if (position < chars.length) {
+        const chars = this.charElements;
+        if (chars && position < chars.length) {
             chars[position].classList.remove('current');
             chars[position].classList.add(isCorrect ? 'correct' : 'incorrect');
         }
     }
 
     setCurrentPosition(position) {
-        const chars = document.querySelectorAll('.char');
-        // Remove all current markers
+        const chars = this.charElements;
+        if (!chars) return;
         chars.forEach(char => char.classList.remove('current'));
-        // Set new current
         if (position < chars.length) {
             chars[position].classList.add('current');
+            this.highlightLine(parseInt(chars[position].dataset.line, 10));
+        } else {
+            this.highlightLine(null);
         }
     }
 
     scrollToCurrentChar() {
+        // Typewriter-lens effect: keep the current line vertically centered
+        // in the typing area at all times, like a magnifying glass moving
+        // over smaller surrounding text (see .char.line-active in CSS).
         const current = document.querySelector('.char.current');
-        if (current) {
-            current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        if (!current) return;
+
+        current.scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'nearest'
+        });
     }
 
     showResults(metrics) {
-        alert(`Session Complete!\n\nWPM: ${metrics.netWPM}\nAccuracy: ${metrics.accuracy.toFixed(1)}%\nErrors: ${metrics.errors}\nDuration: ${Math.floor(metrics.duration)}s`);
+        // Update modal content
+        document.getElementById('modalWPM').textContent = metrics.netWPM;
+        document.getElementById('modalAccuracy').textContent = `${metrics.accuracy.toFixed(1)}%`;
+        document.getElementById('modalErrors').textContent = metrics.errors;
+        document.getElementById('modalDuration').textContent = `${Math.floor(metrics.duration)}s`;
+
+        // Show modal
+        const modal = document.getElementById('resultsModal');
+        if (modal) {
+            modal.style.display = 'flex';
+        }
     }
 
     switchView(viewName) {
-        // Update tabs
         document.querySelectorAll('.tab').forEach(tab => {
             tab.classList.toggle('active', tab.dataset.view === viewName);
         });
 
-        // Update views
         document.querySelectorAll('.view').forEach(view => {
             view.classList.toggle('active', view.id === viewName);
         });
@@ -236,3 +299,4 @@ export class UIController {
         }
     }
 }
+

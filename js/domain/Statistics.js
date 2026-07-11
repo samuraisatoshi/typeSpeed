@@ -1,9 +1,5 @@
-/**
- * Statistics Domain Model
- * Manages typing practice statistics and history
- * Single Responsibility: Store and analyze practice data
- */
-export class Statistics {
+// Domain Layer - Statistics
+class Statistics {
     constructor() {
         this.storageKey = 'typespeed_statistics';
         this.sessions = this.loadFromStorage();
@@ -41,7 +37,6 @@ export class Statistics {
 
         this.sessions.push(sessionData);
 
-        // Keep only last 100 sessions
         if (this.sessions.length > 100) {
             this.sessions = this.sessions.slice(-100);
         }
@@ -99,4 +94,15 @@ export class Statistics {
         this.sessions = [];
         this.saveToStorage();
     }
+
+    deleteSession(sessionId) {
+        // Handle both old numeric IDs and new string IDs
+        // For old sessions, the ID might be a number in storage
+        this.sessions = this.sessions.filter(s => {
+            // Compare both as strings to handle mixed ID types
+            return String(s.id) !== String(sessionId);
+        });
+        this.saveToStorage();
+    }
 }
+

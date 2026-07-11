@@ -1,9 +1,5 @@
-/**
- * InputHandler Infrastructure Service
- * Handles keyboard input events
- * Single Responsibility: Capture and process user input
- */
-export class InputHandler {
+// Infrastructure Layer - InputHandler
+class InputHandler {
     constructor() {
         this.onCharacter = null;
         this.onBackspace = null;
@@ -14,16 +10,27 @@ export class InputHandler {
     attachTo(inputElement) {
         this.inputElement = inputElement;
 
-        // Handle regular character input
         inputElement.addEventListener('input', (e) => {
+            if (e.isComposing) {
+                // Dead-key/IME sequence in progress (e.g. '^' or accents on ABNT2/US-International
+                // layouts) — wait for compositionend so the composed character isn't dropped.
+                return;
+            }
             const typedChar = e.target.value;
             if (typedChar && this.onCharacter) {
                 this.onCharacter(typedChar);
             }
-            e.target.value = ''; // Clear input
+            e.target.value = '';
         });
 
-        // Handle special keys
+        inputElement.addEventListener('compositionend', (e) => {
+            const typedChar = e.data || e.target.value;
+            if (typedChar && this.onCharacter) {
+                this.onCharacter(typedChar);
+            }
+            e.target.value = '';
+        });
+
         inputElement.addEventListener('keydown', (e) => {
             if (e.key === 'Backspace') {
                 e.preventDefault();
@@ -42,8 +49,8 @@ export class InputHandler {
 
     detach() {
         if (this.inputElement) {
-            // Remove event listeners if needed
             this.inputElement = null;
         }
     }
 }
+

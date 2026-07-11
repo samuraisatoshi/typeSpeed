@@ -1,27 +1,13 @@
-/**
- * TypingApp Application Service
- * Orchestrates the typing practice application
- * Single Responsibility: Coordinate domain models and UI
- */
-import { TypingSession } from '../domain/TypingSession.js';
-import { CodeFileRepository } from '../domain/CodeFileRepository.js';
-import { Statistics } from '../domain/Statistics.js';
-import { CodeSnippetSelector } from '../domain/CodeSnippetSelector.js';
-import { UIController } from './UIController.js';
-import { InputHandler } from '../infrastructure/InputHandler.js';
-
-export class TypingApp {
+// Application Layer - Main App
+class TypingApp {
     constructor() {
-        // Domain models
         this.codeRepository = new CodeFileRepository();
         this.statistics = new Statistics();
         this.snippetSelector = new CodeSnippetSelector();
-
-        // Application services
         this.ui = new UIController();
         this.inputHandler = new InputHandler();
-
-        // Session state
+        this.categoryProvider = new PracticeCategoryProvider(DEFAULT_CODE_FILES, PRACTICE_TEXTS);
+        this.bibleService = new BiblePassageService(new RandomBiblePassageSelector(BIBLE_BOOKS_META));
         this.currentSession = null;
         this.timerInterval = null;
 
@@ -29,20 +15,16 @@ export class TypingApp {
     }
 
     initialize() {
-        // Wire up event listeners
         this.ui.fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
         this.ui.startBtn.addEventListener('click', () => this.startSession());
         this.ui.resetBtn.addEventListener('click', () => this.resetSession());
 
-        // Setup input handlers
         this.inputHandler.onCharacter = (char) => this.handleCharacterInput(char);
         this.inputHandler.onBackspace = () => this.handleBackspace();
         this.inputHandler.onEnter = () => this.handleCharacterInput('\n');
 
-        // Connect input handler to UI
         this.inputHandler.attachTo(this.ui.hiddenInput);
 
-        // Tab switching
         document.querySelectorAll('.tab').forEach(tab => {
             tab.addEventListener('click', (e) => {
                 this.ui.switchView(e.target.dataset.view);
@@ -52,15 +34,40 @@ export class TypingApp {
             });
         });
 
-        // Keep focus during typing
         document.addEventListener('click', () => {
             if (this.currentSession && this.currentSession.isActive) {
                 this.ui.focusInput();
             }
         });
 
-        // Load initial statistics
+        this.ui.populateCategoryOptions(this.categoryProvider.getCategories());
+        this.ui.categorySelect.addEventListener('change', (e) => this.handleCategoryChange(e.target.value));
+        this.handleCategoryChange('code-default');
+
         this.ui.updateStatistics(this.statistics);
+    }
+
+    handleCategoryChange(categoryValue) {
+        this.activeCategory = categoryValue;
+        const showPicker = this.categoryProvider.requiresFolderPicker(categoryValue);
+        this.ui.setFolderPickerVisible(showPicker);
+
+        if (showPicker) {
+            this.ui.updateFileCount(this.codeRepository.getFileCount());
+            this.ui.setStartButtonEnabled(this.codeRepository.hasFiles());
+            return;
+        }
+
+        if (this.categoryProvider.isLiveFetch(categoryValue)) {
+            this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+            this.ui.setStartButtonEnabled(true);
+            return;
+        }
+
+        const dataset = this.categoryProvider.getDataset(categoryValue);
+        const count = this.codeRepository.loadFromDataset(dataset);
+        this.ui.updateFileCount(count);
+        this.ui.setStartButtonEnabled(count > 0);
     }
 
     async handleFileSelect(event) {
@@ -73,28 +80,40 @@ export class TypingApp {
         }
     }
 
-    startSession() {
+    async startSession() {
+        if (this.categoryProvider.isLiveFetch(this.activeCategory)) {
+            this.ui.setStartButtonEnabled(false);
+            this.ui.setFileCountMessage('Buscando passagem…');
+            try {
+                const passage = await this.bibleService.fetchRandomPassage(this.activeCategory);
+                this.codeRepository.loadFromDataset([passage]);
+            } catch (error) {
+                this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+                this.ui.setStartButtonEnabled(true);
+                alert(`Não foi possível buscar uma passagem bíblica agora.\n\n${error.message}`);
+                return;
+            }
+            this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+            this.ui.setStartButtonEnabled(true);
+        }
+
         if (!this.codeRepository.hasFiles()) {
             alert('Please select a folder containing code files first');
             return;
         }
 
-        // Get random file and snippet
         const file = this.codeRepository.getRandomFile();
         const maxLines = parseInt(document.getElementById('maxLines')?.value) || 50;
         const snippet = this.snippetSelector.selectSnippet(file.content, maxLines);
 
-        // Create new session
         this.currentSession = new TypingSession(snippet, file);
 
-        // Update UI
-        this.ui.displayCode(snippet);
+        this.ui.displayCode(snippet, file.language === 'Text');
         this.ui.displayFileInfo(file);
         this.ui.setStartButtonText('New Snippet');
         this.ui.setResetButtonVisible(true);
         this.ui.focusInput();
 
-        // Reset metrics display
         this.ui.updateMetrics({
             netWPM: 0,
             accuracy: 100,
@@ -102,7 +121,6 @@ export class TypingApp {
         });
         this.ui.updateTimer(0);
 
-        // Skip initial indentation
         this.skipIndentation();
     }
 
@@ -112,13 +130,11 @@ export class TypingApp {
         }
         this.currentSession = null;
 
-        // Stop timer
         if (this.timerInterval) {
             clearInterval(this.timerInterval);
             this.timerInterval = null;
         }
 
-        // Reset UI
         this.ui.clearCodeDisplay();
         this.ui.setStartButtonText('Start Typing');
         this.ui.setResetButtonVisible(false);
@@ -135,15 +151,15 @@ export class TypingApp {
             if (this.currentSession) {
                 this.currentSession.start();
                 this.startTimer();
+                this.ui.setTypingFocus(true);
             } else {
                 return;
             }
         }
 
-        // Skip indentation automatically
         this.skipIndentation();
 
-        const chars = document.querySelectorAll('.char');
+        const chars = this.ui.charElements;
         if (this.currentSession.currentPosition >= chars.length) {
             return;
         }
@@ -151,28 +167,26 @@ export class TypingApp {
         const currentChar = chars[this.currentSession.currentPosition];
         const expectedChar = currentChar.dataset.char;
 
-        // Process input in domain model
         const isCorrect = this.currentSession.processInput(typedChar, expectedChar);
 
-        // Update UI
         this.ui.updateCharacterDisplay(this.currentSession.currentPosition, isCorrect);
 
-        // Move to next position
         this.currentSession.moveToNextPosition();
         this.skipIndentation();
 
-        // Update current position indicator
         if (this.currentSession.currentPosition < chars.length) {
             this.ui.setCurrentPosition(this.currentSession.currentPosition);
+            // Checked on every keystroke, but scrollToCurrentChar() only actually
+            // scrolls when the cursor is outside the viewport (cheap bounding-rect
+            // check) and does so instantly (behavior: 'auto'), so this no longer
+            // needs to be throttled the way a smooth-scroll animation would.
             this.ui.scrollToCurrentChar();
         }
 
-        // Update metrics
         const metrics = this.currentSession.getMetrics();
         metrics.progress = Math.floor((this.currentSession.currentPosition / chars.length) * 100);
         this.ui.updateMetrics(metrics);
 
-        // Check if complete
         if (this.currentSession.isComplete()) {
             this.completeSession();
         }
@@ -183,24 +197,21 @@ export class TypingApp {
             return;
         }
 
-        // Move back
         this.currentSession.moveToPreviousPosition();
 
-        // Skip back over indentation
-        const chars = document.querySelectorAll('.char');
+        const chars = this.ui.charElements;
         while (this.currentSession.currentPosition > 0 &&
                chars[this.currentSession.currentPosition].classList.contains('indent-skip')) {
             this.currentSession.moveToPreviousPosition();
         }
 
-        // Reset character state
         const currentChar = chars[this.currentSession.currentPosition];
         if (currentChar && !currentChar.classList.contains('indent-skip')) {
-            currentChar.classList.remove('correct', 'incorrect', 'current');
-            currentChar.classList.add('current');
+            currentChar.classList.remove('correct', 'incorrect');
         }
+        this.ui.setCurrentPosition(this.currentSession.currentPosition);
+        this.ui.scrollToCurrentChar();
 
-        // Update metrics
         const metrics = this.currentSession.getMetrics();
         metrics.progress = Math.floor((this.currentSession.currentPosition / chars.length) * 100);
         this.ui.updateMetrics(metrics);
@@ -209,7 +220,7 @@ export class TypingApp {
     skipIndentation() {
         if (!this.currentSession) return;
 
-        const chars = document.querySelectorAll('.char');
+        const chars = this.ui.charElements;
         while (this.currentSession.currentPosition < chars.length &&
                chars[this.currentSession.currentPosition].classList.contains('indent-skip')) {
             chars[this.currentSession.currentPosition].classList.remove('current');
@@ -225,38 +236,28 @@ export class TypingApp {
             if (this.currentSession && this.currentSession.isActive) {
                 this.ui.updateTimer(this.currentSession.getDuration());
             }
-        }, 100);
+        }, 1000);
     }
 
     completeSession() {
         if (!this.currentSession) return;
+        this.ui.setTypingFocus(false);
 
-        // End session
         this.currentSession.end();
         const metrics = this.currentSession.getMetrics();
 
-        // Stop timer
         if (this.timerInterval) {
             clearInterval(this.timerInterval);
             this.timerInterval = null;
         }
 
-        // Save to statistics
         this.statistics.addSession(this.currentSession, metrics);
 
-        // Show results
         this.ui.showResults(metrics);
 
-        // Reset for next session
         this.currentSession = null;
         this.ui.setStartButtonText('Start Typing');
         this.ui.setResetButtonVisible(false);
     }
 }
 
-// Initialize app when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => new TypingApp());
-} else {
-    new TypingApp();
-}
