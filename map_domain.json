@@ -1,0 +1,149 @@
+{
+  "domain": {
+    "classes": {
+      "CodeFileRepository": {
+        "dependencies": [],
+        "description": "Repositório do pool de arquivos disponíveis para prática (código ou texto).",
+        "goal": "Abstrair a origem dos arquivos de prática: pasta local (File API) ou dataset embutido (código padrão/textos).",
+        "methods": [
+          "loadFromFileList",
+          "loadFromDataset",
+          "isValidCodeFile",
+          "readFile",
+          "detectLanguage",
+          "getRandomFile",
+          "getFileCount",
+          "hasFiles"
+        ]
+      },
+      "CodeSnippetSelector": {
+        "dependencies": [],
+        "description": "Serviço de domínio: seleciona uma janela de linhas de um arquivo para prática.",
+        "goal": "Escolher um trecho representativo (não só comentários/imports) de até N linhas.",
+        "methods": [
+          "selectSnippet",
+          "scoreSnippet",
+          "isCommentOrImport"
+        ]
+      },
+      "InputHandler": {
+        "dependencies": [],
+        "description": "Infraestrutura: captura eventos de teclado de um input oculto e os traduz em caracteres/backspace/enter.",
+        "goal": "Capturar digitação real do usuário, incluindo sequências de composição (dead keys/IME) como '^' e acentos, sem quebrar o fluxo de digitação rápida.",
+        "methods": [
+          "attachTo",
+          "detach"
+        ]
+      },
+      "PracticeCategoryProvider": {
+        "dependencies": [
+          "DEFAULT_CODE_FILES",
+          "PRACTICE_TEXTS"
+        ],
+        "description": "Serviço de domínio: mapeia uma categoria de prática (código padrão, pasta própria, texto EN-US/PT-BR, Bíblia EN-US/PT-BR) para seu dataset (ou indicação de busca ao vivo) e comportamento de UI.",
+        "goal": "Desacoplar a lógica de seleção de categoria da UI e do repositório, seguindo Open/Closed (nova categoria = nova entrada, sem alterar outras classes).",
+        "methods": [
+          "getCategories",
+          "requiresFolderPicker",
+          "isLiveFetch",
+          "getDataset"
+        ]
+      },
+      "RandomBiblePassageSelector": {
+        "dependencies": [
+          "BIBLE_BOOKS_META"
+        ],
+        "description": "Serviço de domínio: sorteia uma referência bíblica válida (livro + capítulo + intervalo de versículos) usando os números reais de capítulos/versículos por livro. Repassa também o nome do livro em português (namePtBr) do BIBLE_BOOKS_META, sem decidir qual idioma exibir.",
+        "goal": "Garantir que toda referência sorteada seja válida (nunca pedir um versículo que não existe), permitindo variedade real a cada sessão.",
+        "methods": [
+          "pickReference"
+        ]
+      },
+      "BiblePassageService": {
+        "dependencies": [
+          "RandomBiblePassageSelector"
+        ],
+        "description": "Serviço de domínio: busca o texto exato de uma passagem bíblica sorteada via bible-api.com em tempo real (WEB para en-us, Almeida para pt-br). fetchReference é o único ponto que decide o nome do livro exibido no título (namePtBr para bible-pt-br, name em inglês para bible-en-us), mantendo o nome em inglês (reference.book) exclusivamente para montar o slug da URL da API.",
+        "goal": "Fornecer uma passagem nova a cada sessão sem fallback silencioso — tenta novas referências em caso de lacuna de tradução (ex: alguns livros ausentes no Almeida desta API) e lança erro explícito se todas as tentativas falharem.",
+        "methods": [
+          "fetchRandomPassage",
+          "fetchReference",
+          "wrapText"
+        ]
+      },
+      "Statistics": {
+        "dependencies": [],
+        "description": "Agregado de estatísticas históricas de sessões, persistidas em localStorage.",
+        "goal": "Calcular médias de WPM/accuracy e listar sessões recentes.",
+        "methods": [
+          "addSession",
+          "getAverages",
+          "getRecentSessions",
+          "getTotalPracticeTime"
+        ]
+      },
+      "TypingApp": {
+        "dependencies": [
+          "CodeFileRepository",
+          "Statistics",
+          "CodeSnippetSelector",
+          "UIController",
+          "InputHandler",
+          "PracticeCategoryProvider",
+          "BiblePassageService"
+        ],
+        "description": "Orquestrador principal da aplicação (application layer).",
+        "goal": "Coordenar repositório de arquivos, seletor de categoria, sessão de digitação e UI.",
+        "methods": [
+          "initialize",
+          "handleCategoryChange",
+          "handleFileSelect",
+          "startSession",
+          "resetSession",
+          "handleCharacterInput",
+          "handleBackspace",
+          "skipIndentation",
+          "startTimer",
+          "completeSession"
+        ]
+      },
+      "TypingSession": {
+        "dependencies": [],
+        "description": "Entidade de domínio: uma sessão ativa de digitação de um snippet.",
+        "goal": "Rastrear posição atual, erros, duração e métricas (WPM/accuracy) de uma sessão.",
+        "methods": [
+          "start",
+          "end",
+          "getDuration",
+          "processInput",
+          "moveToNextPosition",
+          "moveToPreviousPosition",
+          "isComplete",
+          "getMetrics"
+        ]
+      },
+      "UIController": {
+        "dependencies": [],
+        "description": "Camada de aplicação: gerencia todos os elementos do DOM e sua atualização (display de código, métricas, categoria, histórico).",
+        "goal": "Isolar manipulação de DOM do restante da lógica de aplicação/domínio.",
+        "methods": [
+          "displayCode",
+          "updateCharacterDisplay",
+          "setCurrentPosition",
+          "scrollToCurrentChar",
+          "setTypingFocus",
+          "populateCategoryOptions",
+          "setFolderPickerVisible",
+          "setFileCountMessage",
+          "updateMetrics",
+          "updateTimer",
+          "showResults",
+          "updateStatistics"
+        ]
+      }
+    },
+    "dependencies": [],
+    "description": "Aplicação web de prática de digitação (TypeSpeed): sessões de digitação com código real ou textos, métricas de desempenho e estatísticas locais.",
+    "goal": "Ajudar desenvolvedores a treinar velocidade e precisão de digitação com conteúdo real (código do próprio usuário, código padrão deste projeto, ou textos em EN-US/PT-BR)."
+  }
+}
