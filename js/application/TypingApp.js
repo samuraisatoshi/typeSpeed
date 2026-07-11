@@ -112,7 +112,8 @@ class TypingApp {
 
         const file = this.codeRepository.getRandomFile();
         const maxLines = parseInt(document.getElementById('maxLines')?.value) || 50;
-        const snippet = this.snippetSelector.selectSnippet(file.content, maxLines);
+        const content = file.shuffleWords ? WordShuffler.shuffle(file.content) : file.content;
+        const snippet = this.snippetSelector.selectSnippet(content, maxLines);
 
         this.currentSession = new TypingSession(snippet, file);
 

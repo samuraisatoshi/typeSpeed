@@ -48,6 +48,7 @@ class CodeFileRepository {
                 name: f.name,
                 path: f.path,
                 content,
+                shuffleWords: f.shuffleWords,
                 language: f.language,
                 lines: content.split('\n').length,
                 size: content.length

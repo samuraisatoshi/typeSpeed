@@ -5,7 +5,7 @@
         "dependencies": [
           "ParagraphReflow"
         ],
-        "description": "Repositório do pool de arquivos disponíveis para prática (código ou texto). Em loadFromDataset, quando language === 'Text', aplica ParagraphReflow após a normalização — colapsa quebras de linha de wrap (largura) em espaço, preservando só quebras de parágrafo reais.",
+        "description": "Repositório do pool de arquivos disponíveis para prática (código ou texto). Em loadFromDataset, quando language === 'Text', aplica ParagraphReflow após a normalização — colapsa quebras de linha de wrap (largura) em espaço, preservando só quebras de parágrafo reais. Repassa também o campo opcional shuffleWords do dataset de origem (usado pelos drills de datilografia) para o objeto de arquivo carregado.",
         "goal": "Abstrair a origem dos arquivos de prática: pasta local (File API) ou dataset embutido (código padrão/textos).",
         "methods": [
           "loadFromFileList",
@@ -86,6 +86,14 @@
           "looksLikeCitation"
         ]
       },
+      "WordShuffler": {
+        "dependencies": [],
+        "description": "Utilitário compartilhado: embaralha (Fisher-Yates) as palavras do último parágrafo de um texto, preservando título/parágrafos anteriores intactos.",
+        "goal": "Evitar que listas de palavras de prática (lições de datilografia) sejam memorizadas por posição — nova ordem a cada sessão.",
+        "methods": [
+          "shuffle"
+        ]
+      },
       "ParagraphReflow": {
         "dependencies": [],
         "description": "Utilitário compartilhado: reflui prosa hard-wrapped (com '\\n' inserido só por largura visual) de volta em parágrafos contínuos, preservando apenas quebras de parágrafo reais (linha em branco no texto original).",
@@ -114,9 +122,10 @@
           "InputHandler",
           "PracticeCategoryProvider",
           "BiblePassageService",
-          "QuotePassageService"
+          "QuotePassageService",
+          "WordShuffler"
         ],
-        "description": "Orquestrador principal da aplicação (application layer). Vive em js/application/TypingApp.js, script global simples (sem ES modules, compatível com abrir index.html via file:// sem servidor). Fonte única de verdade — a versão ES-module duplicada e defasada que existia antes (e o bundle monolítico js/app-standalone.js) foram removidas no CD-010. startSession() roteia entre múltiplos serviços de live-fetch (Bíblia, Citação) via mapa liveFetchServices indexado por categoria.",
+        "description": "Orquestrador principal da aplicação (application layer). Vive em js/application/TypingApp.js, script global simples (sem ES modules, compatível com abrir index.html via file:// sem servidor). Fonte única de verdade — a versão ES-module duplicada e defasada que existia antes (e o bundle monolítico js/app-standalone.js) foram removidas no CD-010. startSession() roteia entre múltiplos serviços de live-fetch (Bíblia, Citação) via mapa liveFetchServices indexado por categoria, e aplica WordShuffler ao conteúdo quando o arquivo sorteado tem shuffleWords true.",
         "goal": "Coordenar repositório de arquivos, seletor de categoria, sessão de digitação e UI.",
         "methods": [
           "initialize",
