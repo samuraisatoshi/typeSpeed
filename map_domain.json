@@ -43,7 +43,7 @@
           "PRACTICE_TEXTS",
           "TYPING_DRILLS"
         ],
-        "description": "Serviço de domínio: mapeia uma categoria de prática (código padrão, pasta própria, texto EN-US/PT-BR, Bíblia EN-US/PT-BR, lições de datilografia mão esquerda/direita/alternância) para seu dataset (ou indicação de busca ao vivo) e comportamento de UI.",
+        "description": "Serviço de domínio: mapeia uma categoria de prática (código padrão, pasta própria, texto EN-US/PT-BR, Bíblia EN-US/PT-BR, Citação EN-US/PT-BR, lições de datilografia mão esquerda/direita/alternância) para seu dataset (ou indicação de busca ao vivo) e comportamento de UI.",
         "goal": "Desacoplar a lógica de seleção de categoria da UI e do repositório, seguindo Open/Closed (nova categoria = nova entrada, sem alterar outras classes).",
         "methods": [
           "getCategories",
@@ -74,6 +74,18 @@
           "flattenText"
         ]
       },
+      "QuotePassageService": {
+        "dependencies": [],
+        "description": "Serviço de domínio: busca uma citação real via API do MediaWiki do Wikiquote (en.wikiquote.org / pt.wikiquote.org) em tempo real, sorteando um artigo aleatório e extraindo uma linha utilizável do extract. Heurística best-effort (extractQuoteLine/looksLikeCitation): descarta cabeçalhos e linhas com formato de citação/fonte, mas não distingue com 100% de precisão citação de bio/see-also em todas as páginas — sempre texto real do Wikiquote, nunca fabricado.",
+        "goal": "Fornecer uma citação nova a cada sessão sem fallback silencioso — tenta novos artigos em caso de página sem conteúdo útil (desambiguação/stub) e lança erro explícito se todas as tentativas falharem.",
+        "methods": [
+          "fetchRandomPassage",
+          "pickRandomTitle",
+          "fetchQuote",
+          "extractQuoteLine",
+          "looksLikeCitation"
+        ]
+      },
       "ParagraphReflow": {
         "dependencies": [],
         "description": "Utilitário compartilhado: reflui prosa hard-wrapped (com '\\n' inserido só por largura visual) de volta em parágrafos contínuos, preservando apenas quebras de parágrafo reais (linha em branco no texto original).",
@@ -101,9 +113,10 @@
           "UIController",
           "InputHandler",
           "PracticeCategoryProvider",
-          "BiblePassageService"
+          "BiblePassageService",
+          "QuotePassageService"
         ],
-        "description": "Orquestrador principal da aplicação (application layer). Vive em js/application/TypingApp.js, script global simples (sem ES modules, compatível com abrir index.html via file:// sem servidor). Fonte única de verdade — a versão ES-module duplicada e defasada que existia antes (e o bundle monolítico js/app-standalone.js) foram removidas no CD-010.",
+        "description": "Orquestrador principal da aplicação (application layer). Vive em js/application/TypingApp.js, script global simples (sem ES modules, compatível com abrir index.html via file:// sem servidor). Fonte única de verdade — a versão ES-module duplicada e defasada que existia antes (e o bundle monolítico js/app-standalone.js) foram removidas no CD-010. startSession() roteia entre múltiplos serviços de live-fetch (Bíblia, Citação) via mapa liveFetchServices indexado por categoria.",
         "goal": "Coordenar repositório de arquivos, seletor de categoria, sessão de digitação e UI.",
         "methods": [
           "initialize",

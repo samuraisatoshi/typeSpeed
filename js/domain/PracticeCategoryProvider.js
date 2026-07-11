@@ -17,6 +17,8 @@ class PracticeCategoryProvider {
             { value: 'text-pt-br', label: 'Texto — Português (PT-BR)' },
             { value: 'bible-en-us', label: 'Bíblia — English (aleatório, requer internet)' },
             { value: 'bible-pt-br', label: 'Bíblia — Português (aleatório, requer internet)' },
+            { value: 'quote-en-us', label: 'Citação — English (aleatório, requer internet)' },
+            { value: 'quote-pt-br', label: 'Citação — Português (aleatório, requer internet)' },
             { value: 'drill-left-hand', label: 'Lição: Mão Esquerda (EN)' },
             { value: 'drill-right-hand', label: 'Lição: Mão Direita (EN)' },
             { value: 'drill-alternating', label: 'Lição: Alternância de Mãos (EN)' }
@@ -27,11 +29,12 @@ class PracticeCategoryProvider {
         return categoryValue === 'code-custom';
     }
 
-    // Bible categories fetch a fresh random passage over the network every
+    // Bible and Quote categories fetch fresh content over the network every
     // session instead of reading from a pre-loaded dataset — see
-    // BiblePassageService / RandomBiblePassageSelector.
+    // BiblePassageService/RandomBiblePassageSelector and QuotePassageService.
     isLiveFetch(categoryValue) {
-        return categoryValue === 'bible-en-us' || categoryValue === 'bible-pt-br';
+        return categoryValue === 'bible-en-us' || categoryValue === 'bible-pt-br' ||
+               categoryValue === 'quote-en-us' || categoryValue === 'quote-pt-br';
     }
 
     getDataset(categoryValue) {

@@ -8,6 +8,13 @@ class TypingApp {
         this.inputHandler = new InputHandler();
         this.categoryProvider = new PracticeCategoryProvider(DEFAULT_CODE_FILES, PRACTICE_TEXTS, TYPING_DRILLS);
         this.bibleService = new BiblePassageService(new RandomBiblePassageSelector(BIBLE_BOOKS_META));
+        this.quoteService = new QuotePassageService();
+        this.liveFetchServices = {
+            'bible-en-us': this.bibleService,
+            'bible-pt-br': this.bibleService,
+            'quote-en-us': this.quoteService,
+            'quote-pt-br': this.quoteService
+        };
         this.currentSession = null;
         this.timerInterval = null;
 
@@ -59,7 +66,7 @@ class TypingApp {
         }
 
         if (this.categoryProvider.isLiveFetch(categoryValue)) {
-            this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+            this.ui.setFileCountMessage('Conteúdo aleatório a cada sessão (requer internet)');
             this.ui.setStartButtonEnabled(true);
             return;
         }
@@ -83,17 +90,18 @@ class TypingApp {
     async startSession() {
         if (this.categoryProvider.isLiveFetch(this.activeCategory)) {
             this.ui.setStartButtonEnabled(false);
-            this.ui.setFileCountMessage('Buscando passagem…');
+            this.ui.setFileCountMessage('Buscando conteúdo…');
             try {
-                const passage = await this.bibleService.fetchRandomPassage(this.activeCategory);
+                const service = this.liveFetchServices[this.activeCategory];
+                const passage = await service.fetchRandomPassage(this.activeCategory);
                 this.codeRepository.loadFromDataset([passage]);
             } catch (error) {
-                this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+                this.ui.setFileCountMessage('Conteúdo aleatório a cada sessão (requer internet)');
                 this.ui.setStartButtonEnabled(true);
-                alert(`Não foi possível buscar uma passagem bíblica agora.\n\n${error.message}`);
+                alert(`Não foi possível buscar o conteúdo agora.\n\n${error.message}`);
                 return;
             }
-            this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+            this.ui.setFileCountMessage('Conteúdo aleatório a cada sessão (requer internet)');
             this.ui.setStartButtonEnabled(true);
         }
 
