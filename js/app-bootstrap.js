@@ -49,9 +49,9 @@ function closeResultsModal() {
 
 function newSnippetFromModal() {
     closeResultsModal();
-    const newSnippetBtn = document.getElementById('newSnippetBtn');
-    if (newSnippetBtn) {
-        newSnippetBtn.click();
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn) {
+        startBtn.click();
     }
 }
 
