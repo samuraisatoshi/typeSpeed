@@ -50,7 +50,7 @@ class BiblePassageService {
             throw new Error(`Resposta inválida da API para "${displayLabel}".`);
         }
 
-        const content = `${displayLabel}\n\n${this.wrapText(data.text)}`;
+        const content = `${displayLabel}\n\n${this.flattenText(data.text)}`;
 
         return {
             name: `${displayLabel}.txt`,
@@ -60,21 +60,7 @@ class BiblePassageService {
         };
     }
 
-    wrapText(rawText, maxLineLength = 68) {
-        const words = rawText.replace(/\s+/g, ' ').trim().split(' ');
-        const lines = [];
-        let line = '';
-        for (const word of words) {
-            const candidate = line ? `${line} ${word}` : word;
-            if (candidate.length > maxLineLength && line) {
-                lines.push(line);
-                line = word;
-            } else {
-                line = candidate;
-            }
-        }
-        if (line) lines.push(line);
-        return lines.join('\n');
+    flattenText(rawText) {
+        return rawText.replace(/\s+/g, ' ').trim();
     }
 }
-

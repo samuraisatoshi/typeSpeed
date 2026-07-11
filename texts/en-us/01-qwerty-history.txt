@@ -1,0 +1,25 @@
+The Origins of the QWERTY Keyboard
+
+The QWERTY keyboard layout takes its name from the first six
+letter keys on the top row, read from left to right. It was
+designed in the early 1870s for mechanical typewriters built by
+the Sholes and Glidden company, later manufactured by Remington.
+
+One popular explanation claims the layout was arranged to slow
+typists down and reduce the frequent jamming of adjacent
+mechanical type bars. Historians debate this theory, since some
+research suggests the design instead made common letter pairs
+easier to strike using alternating hands.
+
+Despite the arrival of electronic keyboards and touchscreens,
+QWERTY has remained the dominant layout for English and many
+other languages for well over a century. Alternative layouts
+such as Dvorak and Colemak were later proposed to improve typing
+speed and reduce finger movement, but QWERTY's installed base
+and muscle memory advantage have kept it firmly in place.
+
+Learning to type without looking at the keys, commonly called
+touch typing, allows a typist to reach higher speeds and lower
+error rates than hunting and pecking. Consistent practice on
+real text and code is one of the most effective ways to build
+that muscle memory.

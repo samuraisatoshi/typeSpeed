@@ -99,7 +99,7 @@ class CodeFileRepository {
         for (const file of files) {
             if (this.isValidCodeFile(file)) {
                 try {
-                    const content = await this.readFile(file);
+                    const content = TypableTextNormalizer.normalize(await this.readFile(file));
                     const lines = content.split('\n');
 
                     if (lines.length >= 10) {
@@ -118,6 +118,24 @@ class CodeFileRepository {
             }
         }
 
+        return this.files.length;
+    }
+
+    loadFromDataset(datasetFiles) {
+        this.files = (datasetFiles || []).map(f => {
+            let content = TypableTextNormalizer.normalize(f.content);
+            if (f.language === 'Text') {
+                content = ParagraphReflow.reflow(content);
+            }
+            return {
+                name: f.name,
+                path: f.path,
+                content,
+                language: f.language,
+                lines: content.split('\n').length,
+                size: content.length
+            };
+        });
         return this.files.length;
     }
 
@@ -352,7 +370,20 @@ class InputHandler {
         this.inputElement = inputElement;
 
         inputElement.addEventListener('input', (e) => {
+            if (e.isComposing) {
+                // Dead-key/IME sequence in progress (e.g. '^' or accents on ABNT2/US-International
+                // layouts) — wait for compositionend so the composed character isn't dropped.
+                return;
+            }
             const typedChar = e.target.value;
+            if (typedChar && this.onCharacter) {
+                this.onCharacter(typedChar);
+            }
+            e.target.value = '';
+        });
+
+        inputElement.addEventListener('compositionend', (e) => {
+            const typedChar = e.data || e.target.value;
             if (typedChar && this.onCharacter) {
                 this.onCharacter(typedChar);
             }
@@ -390,6 +421,8 @@ class UIController {
     }
 
     initializeElements() {
+        this.categorySelect = document.getElementById('categorySelect');
+        this.fileInputSection = document.querySelector('.file-input-section');
         this.fileInput = document.getElementById('fileInput');
         this.fileCount = document.getElementById('fileCount');
         this.codeDisplay = document.getElementById('codeDisplay');
@@ -397,6 +430,7 @@ class UIController {
         this.hiddenInput = document.getElementById('hiddenInput');
         this.startBtn = document.getElementById('startBtn');
         this.resetBtn = document.getElementById('resetBtn');
+        this.metricsBar = document.querySelector('.metrics-bar');
         this.wpmDisplay = document.getElementById('wpm');
         this.accuracyDisplay = document.getElementById('accuracy');
         this.timeDisplay = document.getElementById('time');
@@ -408,8 +442,11 @@ class UIController {
         this.historyTable = document.getElementById('historyTable');
     }
 
-    displayCode(code) {
+    displayCode(code, isTextMode = false) {
+        this.codeDisplay.classList.toggle('wrap-text', isTextMode);
         let isStartOfLine = true;
+        let lineIndex = 0;
+        const lineSpans = [[]];
         const chars = code.split('').map((char, index) => {
             const span = document.createElement('span');
             span.className = 'char';
@@ -426,7 +463,7 @@ class UIController {
             }
 
             if (char === ' ') {
-                span.innerHTML = '<span class="space-indicator" style="opacity: 0.3;">·</span>';
+                span.innerHTML = '<span class="space-indicator" style="opacity: 0.3;">·</span>​';
                 span.classList.add('space');
             } else if (char === '\n') {
                 span.innerHTML = '<span class="newline-indicator" style="opacity: 0.3;">↵</span>\n';
@@ -440,11 +477,19 @@ class UIController {
 
             span.dataset.char = char;
             span.dataset.index = index;
+            span.dataset.line = lineIndex;
+            lineSpans[lineIndex].push(span);
+            if (char === '\n') {
+                lineIndex++;
+                lineSpans.push([]);
+            }
             return span;
         });
 
         this.codeDisplay.innerHTML = '';
         chars.forEach(span => this.codeDisplay.appendChild(span));
+        this.lineSpans = lineSpans;
+        this.activeLineIndex = null;
 
         const firstNonIndent = chars.find(span => !span.classList.contains('indent-skip'));
         if (firstNonIndent) {
@@ -456,16 +501,43 @@ class UIController {
                     break;
                 }
             }
+            this.highlightLine(parseInt(firstNonIndent.dataset.line, 10));
         } else if (chars.length > 0) {
             chars[0].classList.add('current');
+            this.highlightLine(parseInt(chars[0].dataset.line, 10));
         }
 
+        this.charElements = chars;
         return chars;
+    }
+
+    /* Typewriter-lens effect: the line the cursor is on renders larger
+       (.line-active), everything else shrinks — see .char.line-active
+       in styles.css. Swaps the class on whole line groups instead of
+       re-scanning every character. */
+    highlightLine(lineIndex) {
+        if (!this.lineSpans) return;
+        if (this.activeLineIndex != null && this.lineSpans[this.activeLineIndex]) {
+            this.lineSpans[this.activeLineIndex].forEach(s => s.classList.remove('line-active'));
+        }
+        if (lineIndex != null && this.lineSpans[lineIndex]) {
+            this.lineSpans[lineIndex].forEach(s => s.classList.add('line-active'));
+        }
+        this.activeLineIndex = lineIndex;
     }
 
     displayFileInfo(file) {
         if (this.fileInfo && file) {
-            this.fileInfo.textContent = `📄 ${file.path || file.name} (${file.language})`;
+            this.fileInfo.innerHTML = '<svg class="icon"><use href="#icon-file"/></svg>';
+            const label = document.createElement('span');
+            label.textContent = `${file.path || file.name} (${file.language})`;
+            this.fileInfo.appendChild(label);
+        }
+    }
+
+    setTypingFocus(active) {
+        if (this.metricsBar) {
+            this.metricsBar.classList.toggle('typing-active', active);
         }
     }
 
@@ -516,7 +588,7 @@ class UIController {
                     <td>${Math.floor(session.duration)}s</td>
                     <td>
                         <button class="delete-btn" onclick="deleteSession('${session.id}')">
-                            🗑️ Delete
+                            <svg class="icon"><use href="#icon-trash"/></svg> Delete
                         </button>
                     </td>
                 </tr>
@@ -530,39 +602,57 @@ class UIController {
         }
     }
 
+    setFileCountMessage(message) {
+        if (this.fileCount) {
+            this.fileCount.textContent = message;
+        }
+    }
+
+    populateCategoryOptions(categories) {
+        if (!this.categorySelect) return;
+        this.categorySelect.innerHTML = categories
+            .map(c => `<option value="${c.value}">${c.label}</option>`)
+            .join('');
+    }
+
+    setFolderPickerVisible(visible) {
+        if (this.fileInputSection) {
+            this.fileInputSection.style.display = visible ? '' : 'none';
+        }
+    }
+
     updateCharacterDisplay(position, isCorrect) {
-        const chars = document.querySelectorAll('.char');
-        if (position < chars.length) {
+        const chars = this.charElements;
+        if (chars && position < chars.length) {
             chars[position].classList.remove('current');
             chars[position].classList.add(isCorrect ? 'correct' : 'incorrect');
         }
     }
 
     setCurrentPosition(position) {
-        const chars = document.querySelectorAll('.char');
+        const chars = this.charElements;
+        if (!chars) return;
         chars.forEach(char => char.classList.remove('current'));
         if (position < chars.length) {
             chars[position].classList.add('current');
+            this.highlightLine(parseInt(chars[position].dataset.line, 10));
+        } else {
+            this.highlightLine(null);
         }
     }
 
     scrollToCurrentChar() {
-        // Only scroll if the current character is not visible
+        // Typewriter-lens effect: keep the current line vertically centered
+        // in the typing area at all times, like a magnifying glass moving
+        // over smaller surrounding text (see .char.line-active in CSS).
         const current = document.querySelector('.char.current');
-        if (current) {
-            const rect = current.getBoundingClientRect();
-            const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+        if (!current) return;
 
-            // Only scroll if the character is outside the viewport
-            if (!isVisible) {
-                // Use a gentler scroll that doesn't force center alignment
-                current.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest',  // Changed from 'center' to 'nearest' to minimize jumping
-                    inline: 'nearest'
-                });
-            }
-        }
+        current.scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'nearest'
+        });
     }
 
     showResults(metrics) {
@@ -633,6 +723,8 @@ class TypingApp {
         this.snippetSelector = new CodeSnippetSelector();
         this.ui = new UIController();
         this.inputHandler = new InputHandler();
+        this.categoryProvider = new PracticeCategoryProvider(DEFAULT_CODE_FILES, PRACTICE_TEXTS);
+        this.bibleService = new BiblePassageService(new RandomBiblePassageSelector(BIBLE_BOOKS_META));
         this.currentSession = null;
         this.timerInterval = null;
 
@@ -665,7 +757,34 @@ class TypingApp {
             }
         });
 
+        this.ui.populateCategoryOptions(this.categoryProvider.getCategories());
+        this.ui.categorySelect.addEventListener('change', (e) => this.handleCategoryChange(e.target.value));
+        this.handleCategoryChange('code-default');
+
         this.ui.updateStatistics(this.statistics);
+    }
+
+    handleCategoryChange(categoryValue) {
+        this.activeCategory = categoryValue;
+        const showPicker = this.categoryProvider.requiresFolderPicker(categoryValue);
+        this.ui.setFolderPickerVisible(showPicker);
+
+        if (showPicker) {
+            this.ui.updateFileCount(this.codeRepository.getFileCount());
+            this.ui.setStartButtonEnabled(this.codeRepository.hasFiles());
+            return;
+        }
+
+        if (this.categoryProvider.isLiveFetch(categoryValue)) {
+            this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+            this.ui.setStartButtonEnabled(true);
+            return;
+        }
+
+        const dataset = this.categoryProvider.getDataset(categoryValue);
+        const count = this.codeRepository.loadFromDataset(dataset);
+        this.ui.updateFileCount(count);
+        this.ui.setStartButtonEnabled(count > 0);
     }
 
     async handleFileSelect(event) {
@@ -678,7 +797,23 @@ class TypingApp {
         }
     }
 
-    startSession() {
+    async startSession() {
+        if (this.categoryProvider.isLiveFetch(this.activeCategory)) {
+            this.ui.setStartButtonEnabled(false);
+            this.ui.setFileCountMessage('Buscando passagem…');
+            try {
+                const passage = await this.bibleService.fetchRandomPassage(this.activeCategory);
+                this.codeRepository.loadFromDataset([passage]);
+            } catch (error) {
+                this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+                this.ui.setStartButtonEnabled(true);
+                alert(`Não foi possível buscar uma passagem bíblica agora.\n\n${error.message}`);
+                return;
+            }
+            this.ui.setFileCountMessage('Passagem aleatória a cada sessão (requer internet)');
+            this.ui.setStartButtonEnabled(true);
+        }
+
         if (!this.codeRepository.hasFiles()) {
             alert('Please select a folder containing code files first');
             return;
@@ -690,7 +825,7 @@ class TypingApp {
 
         this.currentSession = new TypingSession(snippet, file);
 
-        this.ui.displayCode(snippet);
+        this.ui.displayCode(snippet, file.language === 'Text');
         this.ui.displayFileInfo(file);
         this.ui.setStartButtonText('New Snippet');
         this.ui.setResetButtonVisible(true);
@@ -733,6 +868,7 @@ class TypingApp {
             if (this.currentSession) {
                 this.currentSession.start();
                 this.startTimer();
+                this.ui.setTypingFocus(true);
             } else {
                 return;
             }
@@ -740,7 +876,7 @@ class TypingApp {
 
         this.skipIndentation();
 
-        const chars = document.querySelectorAll('.char');
+        const chars = this.ui.charElements;
         if (this.currentSession.currentPosition >= chars.length) {
             return;
         }
@@ -757,12 +893,11 @@ class TypingApp {
 
         if (this.currentSession.currentPosition < chars.length) {
             this.ui.setCurrentPosition(this.currentSession.currentPosition);
-            // Only scroll occasionally, not on every keystroke
-            // This prevents the annoying jumping while typing
-            if (this.currentSession.currentPosition % 50 === 0) {
-                // Check scrolling only every 50 characters
-                this.ui.scrollToCurrentChar();
-            }
+            // Checked on every keystroke, but scrollToCurrentChar() only actually
+            // scrolls when the cursor is outside the viewport (cheap bounding-rect
+            // check) and does so instantly (behavior: 'auto'), so this no longer
+            // needs to be throttled the way a smooth-scroll animation would.
+            this.ui.scrollToCurrentChar();
         }
 
         const metrics = this.currentSession.getMetrics();
@@ -781,7 +916,7 @@ class TypingApp {
 
         this.currentSession.moveToPreviousPosition();
 
-        const chars = document.querySelectorAll('.char');
+        const chars = this.ui.charElements;
         while (this.currentSession.currentPosition > 0 &&
                chars[this.currentSession.currentPosition].classList.contains('indent-skip')) {
             this.currentSession.moveToPreviousPosition();
@@ -789,9 +924,10 @@ class TypingApp {
 
         const currentChar = chars[this.currentSession.currentPosition];
         if (currentChar && !currentChar.classList.contains('indent-skip')) {
-            currentChar.classList.remove('correct', 'incorrect', 'current');
-            currentChar.classList.add('current');
+            currentChar.classList.remove('correct', 'incorrect');
         }
+        this.ui.setCurrentPosition(this.currentSession.currentPosition);
+        this.ui.scrollToCurrentChar();
 
         const metrics = this.currentSession.getMetrics();
         metrics.progress = Math.floor((this.currentSession.currentPosition / chars.length) * 100);
@@ -801,7 +937,7 @@ class TypingApp {
     skipIndentation() {
         if (!this.currentSession) return;
 
-        const chars = document.querySelectorAll('.char');
+        const chars = this.ui.charElements;
         while (this.currentSession.currentPosition < chars.length &&
                chars[this.currentSession.currentPosition].classList.contains('indent-skip')) {
             chars[this.currentSession.currentPosition].classList.remove('current');
@@ -817,11 +953,12 @@ class TypingApp {
             if (this.currentSession && this.currentSession.isActive) {
                 this.ui.updateTimer(this.currentSession.getDuration());
             }
-        }, 100);
+        }, 1000);
     }
 
     completeSession() {
         if (!this.currentSession) return;
+        this.ui.setTypingFocus(false);
 
         this.currentSession.end();
         const metrics = this.currentSession.getMetrics();

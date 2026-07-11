@@ -7,24 +7,61 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <svg style="display:none" aria-hidden="true">
+        <symbol id="icon-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <path d="M7 9l3 3-3 3"/>
+            <path d="M13 15h4"/>
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9c-4-1.5-7-4.5-7-9V6l7-3z"/>
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12l4 4 10-10"/>
+        </symbol>
+        <symbol id="icon-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l10 18H2L12 3z"/>
+            <path d="M12 10v4"/>
+            <path d="M12 17h.01"/>
+        </symbol>
+        <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20s-7-4.35-9.5-8.5C0.5 8 2 4 6 4c2 0 3.5 1 4 2.5C10.5 5 12 4 14 4c4 0 5.5 4 3.5 7.5C19 15.65 12 20 12 20z"/>
+        </symbol>
+        <symbol id="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+        </symbol>
+        <symbol id="icon-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h8l4 4v14H6V3z"/>
+            <path d="M14 3v4h4"/>
+        </symbol>
+        <symbol id="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 7h16"/>
+            <path d="M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/>
+            <path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/>
+        </symbol>
+        <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.8-6.3 3.8 1.7-7L2 9.2l7.1-.6z"/>
+        </symbol>
+    </svg>
+
     <!-- Welcome Splash Screen -->
     <div id="splashScreen" class="splash-overlay">
         <div class="splash-content">
-            <h1>🚀 Welcome to TypeSpeed</h1>
+            <h1><svg class="icon"><use href="#icon-terminal"/></svg> Welcome to TypeSpeed</h1>
 
             <div class="privacy-section">
-                <h2>🔒 Your Privacy is Protected</h2>
+                <h2><svg class="icon"><use href="#icon-shield"/></svg> Your Privacy is Protected</h2>
                 <ul class="privacy-list">
-                    <li>✅ <strong>100% Offline</strong> - No internet connection required or used</li>
-                    <li>✅ <strong>No Data Collection</strong> - We don't collect ANY personal data</li>
-                    <li>✅ <strong>No Tracking</strong> - No analytics, no cookies, no tracking</li>
-                    <li>✅ <strong>Local Storage Only</strong> - Statistics saved only in your browser</li>
-                    <li>✅ <strong>Files Stay Private</strong> - Your code files are read locally and never leave your computer</li>
+                    <li><svg class="icon"><use href="#icon-check"/></svg><span><strong>Offline by default</strong> - No internet connection required, except the optional "Bible" category, which fetches a random passage from bible-api.com each session</span></li>
+                    <li><svg class="icon"><use href="#icon-check"/></svg><span><strong>No Data Collection</strong> - We don't collect ANY personal data</span></li>
+                    <li><svg class="icon"><use href="#icon-check"/></svg><span><strong>No Tracking</strong> - No analytics, no cookies, no tracking</span></li>
+                    <li><svg class="icon"><use href="#icon-check"/></svg><span><strong>Local Storage Only</strong> - Statistics saved only in your browser</span></li>
+                    <li><svg class="icon"><use href="#icon-check"/></svg><span><strong>Files Stay Private</strong> - Your code files are read locally and never leave your computer</span></li>
                 </ul>
             </div>
 
             <div class="browser-info">
-                <h3>⚠️ About Browser File Selection</h3>
+                <h3><svg class="icon"><use href="#icon-warning"/></svg> About Browser File Selection</h3>
                 <p>When you click "Select Code Folder", your browser may show a dialog asking about file uploads. This is a standard browser security notice.</p>
 
                 <div class="important-note">
@@ -46,12 +83,12 @@
                     </li>
                 </ol>
                 <p class="instructions-link">
-                    <a href="instructions.html" target="_blank">📖 View detailed instructions and server setup guide →</a>
+                    <a href="instructions.html" target="_blank">View detailed instructions and server setup guide →</a>
                 </p>
             </div>
 
             <div class="features-section">
-                <h3>✨ Features</h3>
+                <h3><svg class="icon"><use href="#icon-star"/></svg> Features</h3>
                 <ul>
                     <li>Practice typing with your own code</li>
                     <li>Auto-skip indentation spaces</li>
@@ -72,142 +109,147 @@
     </div>
 
     <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <h1 style="margin: 0;">🚀 TypeSpeed</h1>
-            <a href="donate.html" style="
-                background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 8px;
-                text-decoration: none;
-                font-weight: bold;
-                transition: all 0.3s;
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                box-shadow: 0 2px 8px rgba(79, 195, 247, 0.3);
-            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(79, 195, 247, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(79, 195, 247, 0.3)'">
-                💝 Support
+        <div class="app-header">
+            <div class="app-title"><svg class="icon"><use href="#icon-terminal"/></svg> TypeSpeed</div>
+            <a href="donate.html" class="support-link">
+                <svg class="icon"><use href="#icon-heart"/></svg> Support
             </a>
         </div>
 
-        <!-- Tab Navigation -->
-        <div class="tabs">
-            <button class="tab active" data-view="practice">Practice</button>
-            <button class="tab" data-view="statistics">Statistics</button>
-        </div>
+        <div class="editor-window">
+            <div class="window-titlebar">
+                <div class="window-dots">
+                    <span class="window-dot red"></span>
+                    <span class="window-dot amber"></span>
+                    <span class="window-dot green"></span>
+                </div>
+                <div id="fileInfo"></div>
+            </div>
 
-        <!-- Practice View -->
-        <div id="practice" class="view active">
-            <!-- File Input -->
-            <div class="file-input-section">
-                <div class="file-input-wrapper">
-                    <label for="fileInput" class="file-label">
-                        📁 Select Code Folder
-                    </label>
-                    <input type="file" id="fileInput" webkitdirectory multiple>
-                    <span class="file-count" id="fileCount">No files loaded</span>
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-view="practice">practice</button>
+                <button class="tab" data-view="statistics">statistics</button>
+            </div>
+
+            <!-- Practice View -->
+            <div id="practice" class="view active">
+                <div class="toolbar">
+                    <!-- Practice Category -->
+                    <div class="category-section">
+                        <label for="categorySelect" class="category-label">Categoria de prática:</label>
+                        <select id="categorySelect"></select>
+                    </div>
+
+                    <!-- File Input -->
+                    <div class="file-input-section">
+                        <div class="file-input-wrapper">
+                            <label for="fileInput" class="file-label">
+                                <svg class="icon"><use href="#icon-folder"/></svg> Select Code Folder
+                            </label>
+                            <input type="file" id="fileInput" webkitdirectory multiple>
+                            <span class="file-count" id="fileCount">No files loaded</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typing Area -->
+                <div class="typing-area" id="typingArea">
+                    <div class="code-display" id="codeDisplay">
+                        <div class="placeholder">Select a folder containing code files and click "Start Typing" to begin practicing</div>
+                    </div>
+                </div>
+
+                <!-- Hidden Input -->
+                <input type="text" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+
+                <!-- Controls -->
+                <div class="controls">
+                    <button class="btn btn-primary" id="startBtn" disabled>Start Typing</button>
+                    <button class="btn btn-secondary" id="resetBtn" style="display: none;">Reset</button>
+                </div>
+
+                <!-- Settings -->
+                <div class="settings-row">
+                    <label for="maxLines">Max Lines per Snippet:</label>
+                    <input type="number" id="maxLines" value="50" min="10" max="200">
+                </div>
+
+                <!-- Status Bar -->
+                <div class="metrics-bar">
+                    <div class="metric metric-primary">
+                        <div class="metric-value" id="wpm">0</div>
+                        <div class="metric-label">WPM</div>
+                    </div>
+                    <div class="metric metric-secondary">
+                        <div class="metric-value" id="accuracy">100%</div>
+                        <div class="metric-label">Accuracy</div>
+                    </div>
+                    <div class="metric metric-secondary">
+                        <div class="metric-value" id="time">0:00</div>
+                        <div class="metric-label">Time</div>
+                    </div>
+                    <div class="metric metric-secondary">
+                        <div class="metric-value" id="progress">0%</div>
+                        <div class="metric-label">Progress</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Metrics Bar -->
-            <div class="metrics-bar">
-                <div class="metric">
-                    <div class="metric-value" id="wpm">0</div>
-                    <div class="metric-label">WPM</div>
+            <!-- Statistics View -->
+            <div id="statistics" class="view">
+                <!-- Summary Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalSessions">0</div>
+                        <div class="stat-label">Total Sessions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="avgWpm">0</div>
+                        <div class="stat-label">Average WPM</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="avgAccuracy">0%</div>
+                        <div class="stat-label">Average Accuracy</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalTime">0m</div>
+                        <div class="stat-label">Total Practice Time</div>
+                    </div>
                 </div>
-                <div class="metric">
-                    <div class="metric-value" id="accuracy">100%</div>
-                    <div class="metric-label">Accuracy</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-value" id="time">0:00</div>
-                    <div class="metric-label">Time</div>
-                </div>
-                <div class="metric">
-                    <div class="metric-value" id="progress">0%</div>
-                    <div class="metric-label">Progress</div>
-                </div>
-            </div>
 
-            <!-- Typing Area -->
-            <div class="typing-area" id="typingArea">
-                <div id="fileInfo" style="padding: 10px; color: #64748b; font-size: 14px; border-bottom: 1px solid #e2e8f0;"></div>
-                <div class="code-display" id="codeDisplay">
-                    <div class="placeholder">Select a folder containing code files and click "Start Typing" to begin practicing</div>
+                <!-- Session History -->
+                <div class="history-section">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2>Recent Sessions</h2>
+                        <button id="clearAllBtn" class="clear-all-btn" onclick="clearAllSessions()">
+                            <svg class="icon"><use href="#icon-trash"/></svg> Clear All
+                        </button>
+                    </div>
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>Language</th>
+                                <th>WPM</th>
+                                <th>Accuracy</th>
+                                <th>Duration</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTable">
+                            <!-- Sessions will be added here -->
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-
-            <!-- Hidden Input -->
-            <input type="text" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-
-            <!-- Controls -->
-            <div class="controls">
-                <button class="btn btn-primary" id="startBtn" disabled>Start Typing</button>
-                <button class="btn btn-secondary" id="resetBtn" style="display: none;">Reset</button>
-            </div>
-
-            <!-- Settings -->
-            <div class="settings-row">
-                <label for="maxLines">Max Lines per Snippet:</label>
-                <input type="number" id="maxLines" value="50" min="10" max="200">
-            </div>
-        </div>
-
-        <!-- Statistics View -->
-        <div id="statistics" class="view">
-            <!-- Summary Stats -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value" id="totalSessions">0</div>
-                    <div class="stat-label">Total Sessions</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="avgWpm">0</div>
-                    <div class="stat-label">Average WPM</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="avgAccuracy">0%</div>
-                    <div class="stat-label">Average Accuracy</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="totalTime">0m</div>
-                    <div class="stat-label">Total Practice Time</div>
-                </div>
-            </div>
-
-            <!-- Session History -->
-            <div class="history-section">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <h2 style="margin: 0;">Recent Sessions</h2>
-                    <button id="clearAllBtn" class="clear-all-btn" onclick="clearAllSessions()">
-                        🗑️ Clear All
-                    </button>
-                </div>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Date & Time</th>
-                            <th>Language</th>
-                            <th>WPM</th>
-                            <th>Accuracy</th>
-                            <th>Duration</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="historyTable">
-                        <!-- Sessions will be added here -->
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
 
-    <!-- Load standalone JavaScript (no modules) -->
     <!-- Session Results Modal -->
     <div id="resultsModal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
-            <h2>🎉 Session Complete!</h2>
+            <h2><svg class="icon"><use href="#icon-check"/></svg> Session Complete!</h2>
             <div class="results-stats">
                 <div class="result-item">
                     <span class="result-label">WPM</span>
@@ -233,6 +275,14 @@
         </div>
     </div>
 
+    <script src="js/shared/TypableTextNormalizer.js"></script>
+    <script src="js/shared/ParagraphReflow.js"></script>
+    <script src="js/content/default-code-snippets.js"></script>
+    <script src="js/content/practice-texts.js"></script>
+    <script src="js/content/bible-books-meta.js"></script>
+    <script src="js/domain/PracticeCategoryProvider.js"></script>
+    <script src="js/domain/RandomBiblePassageSelector.js"></script>
+    <script src="js/domain/BiblePassageService.js"></script>
     <script src="js/app-standalone.js"></script>
 </body>
 </html>

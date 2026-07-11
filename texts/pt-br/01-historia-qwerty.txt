@@ -1,0 +1,29 @@
+A Origem do Teclado QWERTY
+
+O layout de teclado QWERTY recebe esse nome a partir das seis
+primeiras letras encontradas na fileira superior, lidas da
+esquerda para a direita. Ele foi projetado no início da década
+de 1870 para as máquinas de escrever mecânicas fabricadas pela
+empresa Sholes and Glidden, mais tarde produzidas pela Remington.
+
+Uma explicação popular afirma que o layout foi organizado para
+tornar a digitação mais lenta e reduzir o travamento frequente
+das hastes mecânicas de tipos adjacentes. Historiadores debatem
+essa teoria, já que algumas pesquisas sugerem que o desenho na
+verdade facilitava a alternância entre as mãos para pares comuns
+de letras.
+
+Apesar da chegada dos teclados eletrônicos e das telas sensíveis
+ao toque, o QWERTY permanece como o layout dominante para o
+português, o inglês e muitos outros idiomas há mais de um
+século. Layouts alternativos, como o Dvorak e o Colemak, foram
+propostos mais tarde para melhorar a velocidade de digitação e
+reduzir o movimento dos dedos, mas a base instalada do QWERTY e
+a memória muscular adquirida mantiveram sua posição dominante.
+
+Aprender a digitar sem olhar para as teclas, prática conhecida
+como datilografia por toque, permite alcançar velocidades mais
+altas e taxas de erro menores do que procurar cada tecla
+visualmente. A prática constante com textos e códigos reais é
+uma das formas mais eficazes de desenvolver essa memória
+muscular.

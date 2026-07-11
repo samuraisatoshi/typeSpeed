@@ -1,0 +1,27 @@
+Fundamentos da Datilografia
+
+A datilografia por toque depende de posicionar os dedos em uma
+posição inicial fixa, conhecida como linha de base (home row).
+Em um teclado QWERTY em português, a mão esquerda repousa sobre
+A, S, D e F, enquanto a mão direita repousa sobre J, K, L e Ç.
+Pequenas marcas em relevo nas teclas F e J ajudam a encontrar
+essa posição sem precisar olhar para baixo.
+
+Cada dedo é responsável por um grupo específico de teclas
+próximas à sua posição de origem. Os dedos indicadores cobrem o
+maior número de teclas, alcançando para cima, para baixo e para
+os lados, enquanto os dedos mínimos costumam cuidar da pontuação,
+da tecla shift e das bordas externas do teclado.
+
+A postura correta é tão importante quanto o posicionamento dos
+dedos. Mantenha os punhos retos, os cotovelos próximos ao corpo
+e os olhos na tela em vez do teclado. Digitar com a postura
+adequada reduz a fadiga e diminui o risco de lesões por esforço
+repetitivo durante sessões longas de prática.
+
+A velocidade surge naturalmente quando a precisão é consistente.
+Iniciantes costumam tentar digitar rápido antes que os dedos
+conheçam bem o layout, o que gera mais correções e torna o ritmo
+mais lento no geral. Praticar devagar e com atenção, aumentando a
+velocidade aos poucos, traz resultados melhores no longo prazo
+do que arrancar em alta velocidade desde o início.

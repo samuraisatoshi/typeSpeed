@@ -2,8 +2,10 @@
   "domain": {
     "classes": {
       "CodeFileRepository": {
-        "dependencies": [],
-        "description": "Repositório do pool de arquivos disponíveis para prática (código ou texto).",
+        "dependencies": [
+          "ParagraphReflow"
+        ],
+        "description": "Repositório do pool de arquivos disponíveis para prática (código ou texto). Em loadFromDataset, quando language === 'Text', aplica ParagraphReflow após a normalização — colapsa quebras de linha de wrap (largura) em espaço, preservando só quebras de parágrafo reais.",
         "goal": "Abstrair a origem dos arquivos de prática: pasta local (File API) ou dataset embutido (código padrão/textos).",
         "methods": [
           "loadFromFileList",
@@ -68,7 +70,15 @@
         "methods": [
           "fetchRandomPassage",
           "fetchReference",
-          "wrapText"
+          "flattenText"
+        ]
+      },
+      "ParagraphReflow": {
+        "dependencies": [],
+        "description": "Utilitário compartilhado: reflui prosa hard-wrapped (com '\\n' inserido só por largura visual) de volta em parágrafos contínuos, preservando apenas quebras de parágrafo reais (linha em branco no texto original).",
+        "goal": "Permitir que o wrap visual (CSS) aconteça automaticamente e que Enter só seja exigido em fim de parágrafo real, nunca em quebra de largura artificial.",
+        "methods": [
+          "reflow"
         ]
       },
       "Statistics": {
@@ -124,7 +134,7 @@
       },
       "UIController": {
         "dependencies": [],
-        "description": "Camada de aplicação: gerencia todos os elementos do DOM e sua atualização (display de código, métricas, categoria, histórico).",
+        "description": "Camada de aplicação: gerencia todos os elementos do DOM e sua atualização (display de código, métricas, categoria, histórico). displayCode(code, isTextMode) alterna a classe CSS wrap-text no container quando o conteúdo é 'Text' (Bíblia/Textos), habilitando wrap automático via white-space: pre-wrap; código mantém white-space: pre sem wrap.",
         "goal": "Isolar manipulação de DOM do restante da lógica de aplicação/domínio.",
         "methods": [
           "displayCode",
