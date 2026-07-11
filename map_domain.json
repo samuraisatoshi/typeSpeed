@@ -5,7 +5,7 @@
         "dependencies": [
           "ParagraphReflow"
         ],
-        "description": "Repositório do pool de arquivos disponíveis para prática (código ou texto). Em loadFromDataset, quando language === 'Text', aplica ParagraphReflow após a normalização — colapsa quebras de linha de wrap (largura) em espaço, preservando só quebras de parágrafo reais. Repassa também o campo opcional shuffleWords do dataset de origem (usado pelos drills de datilografia) para o objeto de arquivo carregado.",
+        "description": "Repositório do pool de arquivos disponíveis para prática (código ou texto). Em loadFromDataset, quando language === 'Text' e o arquivo não tiver preserveLineBreaks, aplica ParagraphReflow após a normalização — colapsa quebras de linha de wrap (largura) em espaço, preservando só quebras de parágrafo reais. preserveLineBreaks (usado pelos arquivos de aquecimento dos drills, onde cada linha já é uma unidade intencional) pula o ParagraphReflow para não fundir linhas distintas. Repassa também o campo opcional shuffleWords do dataset de origem (usado pelos drills de datilografia) para o objeto de arquivo carregado.",
         "goal": "Abstrair a origem dos arquivos de prática: pasta local (File API) ou dataset embutido (código padrão/textos).",
         "methods": [
           "loadFromFileList",

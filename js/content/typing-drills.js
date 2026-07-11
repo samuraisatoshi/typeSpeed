@@ -16,21 +16,22 @@
 // that mode. Word-list files (not the warm-up sequences) are marked
 // shuffleWords: true — TypingApp.startSession() reshuffles their word
 // order via WordShuffler on every session so it isn't memorized by
-// position.
+// position. Warm-up files are marked preserveLineBreaks: true — each
+// sequence group is already a complete, intentional unit (like code),
+// so ParagraphReflow is skipped and groups are separated by a single
+// '\n' (one Enter), not a blank line (which would require two).
 const TYPING_DRILLS = {
     'left-hand': [
         {
             name: '01-home-row-warmup.txt',
             path: 'drills/left-hand/01-home-row-warmup.txt',
             language: 'Text',
+            preserveLineBreaks: true,
             content: `Left Hand Warm-up
 
 asdf asdf fdsa fdsa asdf fdsa dsaf dsaf
-
 qwer qwer erwq erwq qwer twer
-
 zxcv zxcv vcxz vcxz zxcv bxcv
-
 asdf qwer zxcv asdf qwer zxcv`
         },
         {
@@ -48,14 +49,12 @@ water sweater greatest average beverage create created treated tested rested was
             name: '01-home-row-warmup.txt',
             path: 'drills/right-hand/01-home-row-warmup.txt',
             language: 'Text',
+            preserveLineBreaks: true,
             content: `Right Hand Warm-up
 
 jkl jkl lkj lkj jkl hjkl
-
 yuio yuio oiuy oiuy yuio puio
-
 nm nm mn mn hjkl nm
-
 jkl yuio nm jkl yuio nm`
         },
         {
@@ -73,12 +72,11 @@ milk hill hook pinky mommy puppy lily holy hymn phony minion million onion opini
             name: '01-cross-hand-warmup.txt',
             path: 'drills/alternating/01-cross-hand-warmup.txt',
             language: 'Text',
+            preserveLineBreaks: true,
             content: `Alternating Hands Warm-up
 
 fj fj dk dk sl sl aj aj
-
 fj dk sl aj fj dk sl aj
-
 jf kd ls ja jf kd ls ja`
         },
         {
@@ -92,4 +90,3 @@ the with when profit amend field right eight shape chair problem formal authenti
         }
     ]
 };
-

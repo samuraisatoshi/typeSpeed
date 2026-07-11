@@ -41,7 +41,7 @@ class CodeFileRepository {
     loadFromDataset(datasetFiles) {
         this.files = (datasetFiles || []).map(f => {
             let content = TypableTextNormalizer.normalize(f.content);
-            if (f.language === 'Text') {
+            if (f.language === 'Text' && !f.preserveLineBreaks) {
                 content = ParagraphReflow.reflow(content);
             }
             return {
