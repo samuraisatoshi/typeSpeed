@@ -1,0 +1,436 @@
+- generic [ref=e1]:
+  - text: › › › › ›
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]: TypeSpeed
+      - link "Support" [ref=e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=e77]:
+      - generic [ref=e78]: texts/en-us/01-qwerty-history.txt (Text)
+      - generic [ref=e83]:
+        - button "practice" [ref=e84] [cursor=pointer]
+        - button "statistics" [ref=e85] [cursor=pointer]
+      - generic [ref=e86]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)" [selected]
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+        - generic [ref=e92]:
+          - text: The
+          - generic [ref=e117]: ·
+          - text: Origins
+          - generic [ref=e118]: ·
+          - text: of
+          - generic [ref=e119]: ·
+          - text: the
+          - generic [ref=e120]: ·
+          - text: QWERTY
+          - generic [ref=e121]: ·
+          - text: Keyboard
+          - generic [ref=e122]: ↵
+          - generic [ref=e123]: ↵
+          - text: The
+          - generic [ref=e124]: ·
+          - text: QWERTY
+          - generic [ref=e125]: ·
+          - text: keyboard
+          - generic [ref=e126]: ·
+          - text: layout
+          - generic [ref=e127]: ·
+          - text: takes
+          - generic [ref=e128]: ·
+          - text: its
+          - generic [ref=e129]: ·
+          - text: name
+          - generic [ref=e130]: ·
+          - text: from
+          - generic [ref=e131]: ·
+          - text: the
+          - generic [ref=e132]: ·
+          - text: first
+          - generic [ref=e133]: ·
+          - text: six
+          - generic [ref=e134]: ·
+          - text: letter
+          - generic [ref=e135]: ·
+          - text: keys
+          - generic [ref=e136]: ·
+          - text: "on"
+          - generic [ref=e137]: ·
+          - text: the
+          - generic [ref=e138]: ·
+          - text: top
+          - generic [ref=e139]: ·
+          - text: row,
+          - generic [ref=e140]: ·
+          - text: read
+          - generic [ref=e141]: ·
+          - text: from
+          - generic [ref=e142]: ·
+          - text: left
+          - generic [ref=e143]: ·
+          - text: to
+          - generic [ref=e144]: ·
+          - text: right.
+          - generic [ref=e145]: ·
+          - text: It
+          - generic [ref=e146]: ·
+          - text: was
+          - generic [ref=e147]: ·
+          - text: designed
+          - generic [ref=e148]: ·
+          - text: in
+          - generic [ref=e149]: ·
+          - text: the
+          - generic [ref=e150]: ·
+          - text: early
+          - generic [ref=e151]: ·
+          - text: 1870s
+          - generic [ref=e152]: ·
+          - text: for
+          - generic [ref=e153]: ·
+          - text: mechanical
+          - generic [ref=e154]: ·
+          - text: typewriters
+          - generic [ref=e155]: ·
+          - text: built
+          - generic [ref=e156]: ·
+          - text: by
+          - generic [ref=e157]: ·
+          - text: the
+          - generic [ref=e158]: ·
+          - text: Sholes
+          - generic [ref=e159]: ·
+          - text: and
+          - generic [ref=e160]: ·
+          - text: Glidden
+          - generic [ref=e161]: ·
+          - text: company,
+          - generic [ref=e162]: ·
+          - text: later
+          - generic [ref=e163]: ·
+          - text: manufactured
+          - generic [ref=e164]: ·
+          - text: by
+          - generic [ref=e165]: ·
+          - text: Remington.
+          - generic [ref=e166]: ↵
+          - generic [ref=e167]: ↵
+          - text: One
+          - generic [ref=e168]: ·
+          - text: popular
+          - generic [ref=e169]: ·
+          - text: explanation
+          - generic [ref=e170]: ·
+          - text: claims
+          - generic [ref=e171]: ·
+          - text: the
+          - generic [ref=e172]: ·
+          - text: layout
+          - generic [ref=e173]: ·
+          - text: was
+          - generic [ref=e174]: ·
+          - text: arranged
+          - generic [ref=e175]: ·
+          - text: to
+          - generic [ref=e176]: ·
+          - text: slow
+          - generic [ref=e177]: ·
+          - text: typists
+          - generic [ref=e178]: ·
+          - text: down
+          - generic [ref=e179]: ·
+          - text: and
+          - generic [ref=e180]: ·
+          - text: reduce
+          - generic [ref=e181]: ·
+          - text: the
+          - generic [ref=e182]: ·
+          - text: frequent
+          - generic [ref=e183]: ·
+          - text: jamming
+          - generic [ref=e184]: ·
+          - text: of
+          - generic [ref=e185]: ·
+          - text: adjacent
+          - generic [ref=e186]: ·
+          - text: mechanical
+          - generic [ref=e187]: ·
+          - text: type
+          - generic [ref=e188]: ·
+          - text: bars.
+          - generic [ref=e189]: ·
+          - text: Historians
+          - generic [ref=e190]: ·
+          - text: debate
+          - generic [ref=e191]: ·
+          - text: this
+          - generic [ref=e192]: ·
+          - text: theory,
+          - generic [ref=e193]: ·
+          - text: since
+          - generic [ref=e194]: ·
+          - text: some
+          - generic [ref=e195]: ·
+          - text: research
+          - generic [ref=e196]: ·
+          - text: suggests
+          - generic [ref=e197]: ·
+          - text: the
+          - generic [ref=e198]: ·
+          - text: design
+          - generic [ref=e199]: ·
+          - text: instead
+          - generic [ref=e200]: ·
+          - text: made
+          - generic [ref=e201]: ·
+          - text: common
+          - generic [ref=e202]: ·
+          - text: letter
+          - generic [ref=e203]: ·
+          - text: pairs
+          - generic [ref=e204]: ·
+          - text: easier
+          - generic [ref=e205]: ·
+          - text: to
+          - generic [ref=e206]: ·
+          - text: strike
+          - generic [ref=e207]: ·
+          - text: using
+          - generic [ref=e208]: ·
+          - text: alternating
+          - generic [ref=e209]: ·
+          - text: hands.
+          - generic [ref=e210]: ↵
+          - generic [ref=e211]: ↵
+          - text: Despite
+          - generic [ref=e212]: ·
+          - text: the
+          - generic [ref=e213]: ·
+          - text: arrival
+          - generic [ref=e214]: ·
+          - text: of
+          - generic [ref=e215]: ·
+          - text: electronic
+          - generic [ref=e216]: ·
+          - text: keyboards
+          - generic [ref=e217]: ·
+          - text: and
+          - generic [ref=e218]: ·
+          - text: touchscreens,
+          - generic [ref=e219]: ·
+          - text: QWERTY
+          - generic [ref=e220]: ·
+          - text: has
+          - generic [ref=e221]: ·
+          - text: remained
+          - generic [ref=e222]: ·
+          - text: the
+          - generic [ref=e223]: ·
+          - text: dominant
+          - generic [ref=e224]: ·
+          - text: layout
+          - generic [ref=e225]: ·
+          - text: for
+          - generic [ref=e226]: ·
+          - text: English
+          - generic [ref=e227]: ·
+          - text: and
+          - generic [ref=e228]: ·
+          - text: many
+          - generic [ref=e229]: ·
+          - text: other
+          - generic [ref=e230]: ·
+          - text: languages
+          - generic [ref=e231]: ·
+          - text: for
+          - generic [ref=e232]: ·
+          - text: well
+          - generic [ref=e233]: ·
+          - text: over
+          - generic [ref=e234]: ·
+          - text: a
+          - generic [ref=e235]: ·
+          - text: century.
+          - generic [ref=e236]: ·
+          - text: Alternative
+          - generic [ref=e237]: ·
+          - text: layouts
+          - generic [ref=e238]: ·
+          - text: such
+          - generic [ref=e239]: ·
+          - text: as
+          - generic [ref=e240]: ·
+          - text: Dvorak
+          - generic [ref=e241]: ·
+          - text: and
+          - generic [ref=e242]: ·
+          - text: Colemak
+          - generic [ref=e243]: ·
+          - text: were
+          - generic [ref=e244]: ·
+          - text: later
+          - generic [ref=e245]: ·
+          - text: proposed
+          - generic [ref=e246]: ·
+          - text: to
+          - generic [ref=e247]: ·
+          - text: improve
+          - generic [ref=e248]: ·
+          - text: typing
+          - generic [ref=e249]: ·
+          - text: speed
+          - generic [ref=e250]: ·
+          - text: and
+          - generic [ref=e251]: ·
+          - text: reduce
+          - generic [ref=e252]: ·
+          - text: finger
+          - generic [ref=e253]: ·
+          - text: movement,
+          - generic [ref=e254]: ·
+          - text: but
+          - generic [ref=e255]: ·
+          - text: QWERTY's
+          - generic [ref=e256]: ·
+          - text: installed
+          - generic [ref=e257]: ·
+          - text: base
+          - generic [ref=e258]: ·
+          - text: and
+          - generic [ref=e259]: ·
+          - text: muscle
+          - generic [ref=e260]: ·
+          - text: memory
+          - generic [ref=e261]: ·
+          - text: advantage
+          - generic [ref=e262]: ·
+          - text: have
+          - generic [ref=e263]: ·
+          - text: kept
+          - generic [ref=e264]: ·
+          - text: it
+          - generic [ref=e265]: ·
+          - text: firmly
+          - generic [ref=e266]: ·
+          - text: in
+          - generic [ref=e267]: ·
+          - text: place.
+          - generic [ref=e268]: ↵
+          - generic [ref=e269]: ↵
+          - text: Learning
+          - generic [ref=e270]: ·
+          - text: to
+          - generic [ref=e271]: ·
+          - text: type
+          - generic [ref=e272]: ·
+          - text: without
+          - generic [ref=e273]: ·
+          - text: looking
+          - generic [ref=e274]: ·
+          - text: at
+          - generic [ref=e275]: ·
+          - text: the
+          - generic [ref=e276]: ·
+          - text: keys,
+          - generic [ref=e277]: ·
+          - text: commonly
+          - generic [ref=e278]: ·
+          - text: called
+          - generic [ref=e279]: ·
+          - text: touch
+          - generic [ref=e280]: ·
+          - text: typing,
+          - generic [ref=e281]: ·
+          - text: allows
+          - generic [ref=e282]: ·
+          - text: a
+          - generic [ref=e283]: ·
+          - text: typist
+          - generic [ref=e284]: ·
+          - text: to
+          - generic [ref=e285]: ·
+          - text: reach
+          - generic [ref=e286]: ·
+          - text: higher
+          - generic [ref=e287]: ·
+          - text: speeds
+          - generic [ref=e288]: ·
+          - text: and
+          - generic [ref=e289]: ·
+          - text: lower
+          - generic [ref=e290]: ·
+          - text: error
+          - generic [ref=e291]: ·
+          - text: rates
+          - generic [ref=e292]: ·
+          - text: than
+          - generic [ref=e293]: ·
+          - text: hunting
+          - generic [ref=e294]: ·
+          - text: and
+          - generic [ref=e295]: ·
+          - text: pecking.
+          - generic [ref=e296]: ·
+          - text: Consistent
+          - generic [ref=e297]: ·
+          - text: practice
+          - generic [ref=e298]: ·
+          - text: "on"
+          - generic [ref=e299]: ·
+          - text: real
+          - generic [ref=e300]: ·
+          - text: text
+          - generic [ref=e301]: ·
+          - text: and
+          - generic [ref=e302]: ·
+          - text: code
+          - generic [ref=e303]: ·
+          - text: is
+          - generic [ref=e304]: ·
+          - text: one
+          - generic [ref=e305]: ·
+          - text: of
+          - generic [ref=e306]: ·
+          - text: the
+          - generic [ref=e307]: ·
+          - text: most
+          - generic [ref=e308]: ·
+          - text: effective
+          - generic [ref=e309]: ·
+          - text: ways
+          - generic [ref=e310]: ·
+          - text: to
+          - generic [ref=e311]: ·
+          - text: build
+          - generic [ref=e312]: ·
+          - text: that
+          - generic [ref=e313]: ·
+          - text: muscle
+          - generic [ref=e314]: ·
+          - text: memory.
+        - textbox [active] [ref=e94]
+        - generic [ref=e95]:
+          - button "New Snippet" [ref=e315] [cursor=pointer]
+          - button "Reset" [ref=e316] [cursor=pointer]
+        - generic [ref=e97]:
+          - generic [ref=e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=e99]: "50"
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: "0"
+            - generic [ref=e103]: WPM
+          - generic [ref=e104]:
+            - generic [ref=e105]: 100.0%
+            - generic [ref=e106]: Accuracy
+          - generic [ref=e107]:
+            - generic [ref=e108]: 0:00
+            - generic [ref=e109]: Time
+          - generic [ref=e110]:
+            - generic [ref=e111]: 0%
+            - generic [ref=e112]: Progress

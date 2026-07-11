@@ -1,0 +1,648 @@
+- generic [ref=f2e1]:
+  - text: › › › › ›
+  - generic [ref=f2e69]:
+    - generic [ref=f2e70]:
+      - generic [ref=f2e71]: TypeSpeed
+      - link "Support" [ref=f2e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=f2e77]:
+      - generic [ref=f2e78]: bible/bible-en-us/1 Peter 1:11-22 (Text)
+      - generic [ref=f2e83]:
+        - button "practice" [ref=f2e84] [cursor=pointer]
+        - button "statistics" [ref=f2e85] [cursor=pointer]
+      - generic [ref=f2e86]:
+        - generic [ref=f2e88]:
+          - generic [ref=f2e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=f2e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)" [selected]
+            - option "Bíblia — Português (aleatório, requer internet)"
+            - option "Citação — English (aleatório, requer internet)"
+            - option "Citação — Português (aleatório, requer internet)"
+            - 'option "Lição: Mão Esquerda (EN)"'
+            - 'option "Lição: Mão Direita (EN)"'
+            - 'option "Lição: Alternância de Mãos (EN)"'
+        - generic [ref=f2e92]:
+          - text: "1"
+          - generic [ref=f2e117]: ·
+          - text: Peter
+          - generic [ref=f2e118]: ·
+          - text: 1:11-22
+          - generic [ref=f2e119]: ↵
+          - generic [ref=f2e120]: ↵
+          - text: searching
+          - generic [ref=f2e121]: ·
+          - text: for
+          - generic [ref=f2e122]: ·
+          - text: who
+          - generic [ref=f2e123]: ·
+          - text: or
+          - generic [ref=f2e124]: ·
+          - text: what
+          - generic [ref=f2e125]: ·
+          - text: kind
+          - generic [ref=f2e126]: ·
+          - text: of
+          - generic [ref=f2e127]: ·
+          - text: time
+          - generic [ref=f2e128]: ·
+          - text: the
+          - generic [ref=f2e129]: ·
+          - text: Spirit
+          - generic [ref=f2e130]: ·
+          - text: of
+          - generic [ref=f2e131]: ·
+          - text: Christ,
+          - generic [ref=f2e132]: ·
+          - text: which
+          - generic [ref=f2e133]: ·
+          - text: was
+          - generic [ref=f2e134]: ·
+          - text: in
+          - generic [ref=f2e135]: ·
+          - text: them,
+          - generic [ref=f2e136]: ·
+          - text: pointed
+          - generic [ref=f2e137]: ·
+          - text: to,
+          - generic [ref=f2e138]: ·
+          - text: when
+          - generic [ref=f2e139]: ·
+          - text: he
+          - generic [ref=f2e140]: ·
+          - text: predicted
+          - generic [ref=f2e141]: ·
+          - text: the
+          - generic [ref=f2e142]: ·
+          - text: sufferings
+          - generic [ref=f2e143]: ·
+          - text: of
+          - generic [ref=f2e144]: ·
+          - text: Christ,
+          - generic [ref=f2e145]: ·
+          - text: and
+          - generic [ref=f2e146]: ·
+          - text: the
+          - generic [ref=f2e147]: ·
+          - text: glories
+          - generic [ref=f2e148]: ·
+          - text: that
+          - generic [ref=f2e149]: ·
+          - text: would
+          - generic [ref=f2e150]: ·
+          - text: follow
+          - generic [ref=f2e151]: ·
+          - text: them.
+          - generic [ref=f2e152]: ·
+          - text: To
+          - generic [ref=f2e153]: ·
+          - text: them
+          - generic [ref=f2e154]: ·
+          - text: it
+          - generic [ref=f2e155]: ·
+          - text: was
+          - generic [ref=f2e156]: ·
+          - text: revealed,
+          - generic [ref=f2e157]: ·
+          - text: that
+          - generic [ref=f2e158]: ·
+          - text: not
+          - generic [ref=f2e159]: ·
+          - text: to
+          - generic [ref=f2e160]: ·
+          - text: themselves,
+          - generic [ref=f2e161]: ·
+          - text: but
+          - generic [ref=f2e162]: ·
+          - text: to
+          - generic [ref=f2e163]: ·
+          - text: you,
+          - generic [ref=f2e164]: ·
+          - text: they
+          - generic [ref=f2e165]: ·
+          - text: ministered
+          - generic [ref=f2e166]: ·
+          - text: these
+          - generic [ref=f2e167]: ·
+          - text: things,
+          - generic [ref=f2e168]: ·
+          - text: which
+          - generic [ref=f2e169]: ·
+          - text: now
+          - generic [ref=f2e170]: ·
+          - text: have
+          - generic [ref=f2e171]: ·
+          - text: been
+          - generic [ref=f2e172]: ·
+          - text: announced
+          - generic [ref=f2e173]: ·
+          - text: to
+          - generic [ref=f2e174]: ·
+          - text: you
+          - generic [ref=f2e175]: ·
+          - text: through
+          - generic [ref=f2e176]: ·
+          - text: those
+          - generic [ref=f2e177]: ·
+          - text: who
+          - generic [ref=f2e178]: ·
+          - text: preached
+          - generic [ref=f2e179]: ·
+          - text: the
+          - generic [ref=f2e180]: ·
+          - text: Good
+          - generic [ref=f2e181]: ·
+          - text: News
+          - generic [ref=f2e182]: ·
+          - text: to
+          - generic [ref=f2e183]: ·
+          - text: you
+          - generic [ref=f2e184]: ·
+          - text: by
+          - generic [ref=f2e185]: ·
+          - text: the
+          - generic [ref=f2e186]: ·
+          - text: Holy
+          - generic [ref=f2e187]: ·
+          - text: Spirit
+          - generic [ref=f2e188]: ·
+          - text: sent
+          - generic [ref=f2e189]: ·
+          - text: out
+          - generic [ref=f2e190]: ·
+          - text: from
+          - generic [ref=f2e191]: ·
+          - text: heaven;
+          - generic [ref=f2e192]: ·
+          - text: which
+          - generic [ref=f2e193]: ·
+          - text: things
+          - generic [ref=f2e194]: ·
+          - text: angels
+          - generic [ref=f2e195]: ·
+          - text: desire
+          - generic [ref=f2e196]: ·
+          - text: to
+          - generic [ref=f2e197]: ·
+          - text: look
+          - generic [ref=f2e198]: ·
+          - text: into.
+          - generic [ref=f2e199]: ·
+          - text: Therefore
+          - generic [ref=f2e200]: ·
+          - text: prepare
+          - generic [ref=f2e201]: ·
+          - text: your
+          - generic [ref=f2e202]: ·
+          - text: minds
+          - generic [ref=f2e203]: ·
+          - text: for
+          - generic [ref=f2e204]: ·
+          - text: action,
+          - generic [ref=f2e205]: ·
+          - text: be
+          - generic [ref=f2e206]: ·
+          - text: sober,
+          - generic [ref=f2e207]: ·
+          - text: and
+          - generic [ref=f2e208]: ·
+          - text: set
+          - generic [ref=f2e209]: ·
+          - text: your
+          - generic [ref=f2e210]: ·
+          - text: hope
+          - generic [ref=f2e211]: ·
+          - text: fully
+          - generic [ref=f2e212]: ·
+          - text: "on"
+          - generic [ref=f2e213]: ·
+          - text: the
+          - generic [ref=f2e214]: ·
+          - text: grace
+          - generic [ref=f2e215]: ·
+          - text: that
+          - generic [ref=f2e216]: ·
+          - text: will
+          - generic [ref=f2e217]: ·
+          - text: be
+          - generic [ref=f2e218]: ·
+          - text: brought
+          - generic [ref=f2e219]: ·
+          - text: to
+          - generic [ref=f2e220]: ·
+          - text: you
+          - generic [ref=f2e221]: ·
+          - text: at
+          - generic [ref=f2e222]: ·
+          - text: the
+          - generic [ref=f2e223]: ·
+          - text: revelation
+          - generic [ref=f2e224]: ·
+          - text: of
+          - generic [ref=f2e225]: ·
+          - text: Jesus
+          - generic [ref=f2e226]: ·
+          - text: Christ-
+          - generic [ref=f2e227]: ·
+          - text: as
+          - generic [ref=f2e228]: ·
+          - text: children
+          - generic [ref=f2e229]: ·
+          - text: of
+          - generic [ref=f2e230]: ·
+          - text: obedience,
+          - generic [ref=f2e231]: ·
+          - text: not
+          - generic [ref=f2e232]: ·
+          - text: conforming
+          - generic [ref=f2e233]: ·
+          - text: yourselves
+          - generic [ref=f2e234]: ·
+          - text: according
+          - generic [ref=f2e235]: ·
+          - text: to
+          - generic [ref=f2e236]: ·
+          - text: your
+          - generic [ref=f2e237]: ·
+          - text: former
+          - generic [ref=f2e238]: ·
+          - text: lusts
+          - generic [ref=f2e239]: ·
+          - text: as
+          - generic [ref=f2e240]: ·
+          - text: in
+          - generic [ref=f2e241]: ·
+          - text: your
+          - generic [ref=f2e242]: ·
+          - text: ignorance,
+          - generic [ref=f2e243]: ·
+          - text: but
+          - generic [ref=f2e244]: ·
+          - text: just
+          - generic [ref=f2e245]: ·
+          - text: as
+          - generic [ref=f2e246]: ·
+          - text: he
+          - generic [ref=f2e247]: ·
+          - text: who
+          - generic [ref=f2e248]: ·
+          - text: called
+          - generic [ref=f2e249]: ·
+          - text: you
+          - generic [ref=f2e250]: ·
+          - text: is
+          - generic [ref=f2e251]: ·
+          - text: holy,
+          - generic [ref=f2e252]: ·
+          - text: you
+          - generic [ref=f2e253]: ·
+          - text: yourselves
+          - generic [ref=f2e254]: ·
+          - text: also
+          - generic [ref=f2e255]: ·
+          - text: be
+          - generic [ref=f2e256]: ·
+          - text: holy
+          - generic [ref=f2e257]: ·
+          - text: in
+          - generic [ref=f2e258]: ·
+          - text: all
+          - generic [ref=f2e259]: ·
+          - text: of
+          - generic [ref=f2e260]: ·
+          - text: your
+          - generic [ref=f2e261]: ·
+          - text: behavior;
+          - generic [ref=f2e262]: ·
+          - text: because
+          - generic [ref=f2e263]: ·
+          - text: it
+          - generic [ref=f2e264]: ·
+          - text: is
+          - generic [ref=f2e265]: ·
+          - text: written,
+          - generic [ref=f2e266]: ·
+          - text: "\"You"
+          - generic [ref=f2e267]: ·
+          - text: shall
+          - generic [ref=f2e268]: ·
+          - text: be
+          - generic [ref=f2e269]: ·
+          - text: holy;
+          - generic [ref=f2e270]: ·
+          - text: for
+          - generic [ref=f2e271]: ·
+          - text: I
+          - generic [ref=f2e272]: ·
+          - text: am
+          - generic [ref=f2e273]: ·
+          - text: holy."
+          - generic [ref=f2e274]: ·
+          - text: If
+          - generic [ref=f2e275]: ·
+          - text: you
+          - generic [ref=f2e276]: ·
+          - text: call
+          - generic [ref=f2e277]: ·
+          - text: "on"
+          - generic [ref=f2e278]: ·
+          - text: him
+          - generic [ref=f2e279]: ·
+          - text: as
+          - generic [ref=f2e280]: ·
+          - text: Father,
+          - generic [ref=f2e281]: ·
+          - text: who
+          - generic [ref=f2e282]: ·
+          - text: without
+          - generic [ref=f2e283]: ·
+          - text: respect
+          - generic [ref=f2e284]: ·
+          - text: of
+          - generic [ref=f2e285]: ·
+          - text: persons
+          - generic [ref=f2e286]: ·
+          - text: judges
+          - generic [ref=f2e287]: ·
+          - text: according
+          - generic [ref=f2e288]: ·
+          - text: to
+          - generic [ref=f2e289]: ·
+          - text: each
+          - generic [ref=f2e290]: ·
+          - text: man's
+          - generic [ref=f2e291]: ·
+          - text: work,
+          - generic [ref=f2e292]: ·
+          - text: pass
+          - generic [ref=f2e293]: ·
+          - text: the
+          - generic [ref=f2e294]: ·
+          - text: time
+          - generic [ref=f2e295]: ·
+          - text: of
+          - generic [ref=f2e296]: ·
+          - text: your
+          - generic [ref=f2e297]: ·
+          - text: living
+          - generic [ref=f2e298]: ·
+          - text: as
+          - generic [ref=f2e299]: ·
+          - text: foreigners
+          - generic [ref=f2e300]: ·
+          - text: here
+          - generic [ref=f2e301]: ·
+          - text: in
+          - generic [ref=f2e302]: ·
+          - text: reverent
+          - generic [ref=f2e303]: ·
+          - text: "fear:"
+          - generic [ref=f2e304]: ·
+          - text: knowing
+          - generic [ref=f2e305]: ·
+          - text: that
+          - generic [ref=f2e306]: ·
+          - text: you
+          - generic [ref=f2e307]: ·
+          - text: were
+          - generic [ref=f2e308]: ·
+          - text: redeemed,
+          - generic [ref=f2e309]: ·
+          - text: not
+          - generic [ref=f2e310]: ·
+          - text: with
+          - generic [ref=f2e311]: ·
+          - text: corruptible
+          - generic [ref=f2e312]: ·
+          - text: things,
+          - generic [ref=f2e313]: ·
+          - text: with
+          - generic [ref=f2e314]: ·
+          - text: silver
+          - generic [ref=f2e315]: ·
+          - text: or
+          - generic [ref=f2e316]: ·
+          - text: gold,
+          - generic [ref=f2e317]: ·
+          - text: from
+          - generic [ref=f2e318]: ·
+          - text: the
+          - generic [ref=f2e319]: ·
+          - text: useless
+          - generic [ref=f2e320]: ·
+          - text: way
+          - generic [ref=f2e321]: ·
+          - text: of
+          - generic [ref=f2e322]: ·
+          - text: life
+          - generic [ref=f2e323]: ·
+          - text: handed
+          - generic [ref=f2e324]: ·
+          - text: down
+          - generic [ref=f2e325]: ·
+          - text: from
+          - generic [ref=f2e326]: ·
+          - text: your
+          - generic [ref=f2e327]: ·
+          - text: fathers,
+          - generic [ref=f2e328]: ·
+          - text: but
+          - generic [ref=f2e329]: ·
+          - text: with
+          - generic [ref=f2e330]: ·
+          - text: precious
+          - generic [ref=f2e331]: ·
+          - text: blood,
+          - generic [ref=f2e332]: ·
+          - text: as
+          - generic [ref=f2e333]: ·
+          - text: of
+          - generic [ref=f2e334]: ·
+          - text: a
+          - generic [ref=f2e335]: ·
+          - text: lamb
+          - generic [ref=f2e336]: ·
+          - text: without
+          - generic [ref=f2e337]: ·
+          - text: blemish
+          - generic [ref=f2e338]: ·
+          - text: or
+          - generic [ref=f2e339]: ·
+          - text: spot,
+          - generic [ref=f2e340]: ·
+          - text: the
+          - generic [ref=f2e341]: ·
+          - text: blood
+          - generic [ref=f2e342]: ·
+          - text: of
+          - generic [ref=f2e343]: ·
+          - text: Christ;
+          - generic [ref=f2e344]: ·
+          - text: who
+          - generic [ref=f2e345]: ·
+          - text: was
+          - generic [ref=f2e346]: ·
+          - text: foreknown
+          - generic [ref=f2e347]: ·
+          - text: indeed
+          - generic [ref=f2e348]: ·
+          - text: before
+          - generic [ref=f2e349]: ·
+          - text: the
+          - generic [ref=f2e350]: ·
+          - text: foundation
+          - generic [ref=f2e351]: ·
+          - text: of
+          - generic [ref=f2e352]: ·
+          - text: the
+          - generic [ref=f2e353]: ·
+          - text: world,
+          - generic [ref=f2e354]: ·
+          - text: but
+          - generic [ref=f2e355]: ·
+          - text: was
+          - generic [ref=f2e356]: ·
+          - text: revealed
+          - generic [ref=f2e357]: ·
+          - text: in
+          - generic [ref=f2e358]: ·
+          - text: this
+          - generic [ref=f2e359]: ·
+          - text: last
+          - generic [ref=f2e360]: ·
+          - text: age
+          - generic [ref=f2e361]: ·
+          - text: for
+          - generic [ref=f2e362]: ·
+          - text: your
+          - generic [ref=f2e363]: ·
+          - text: sake,
+          - generic [ref=f2e364]: ·
+          - text: who
+          - generic [ref=f2e365]: ·
+          - text: through
+          - generic [ref=f2e366]: ·
+          - text: him
+          - generic [ref=f2e367]: ·
+          - text: are
+          - generic [ref=f2e368]: ·
+          - text: believers
+          - generic [ref=f2e369]: ·
+          - text: in
+          - generic [ref=f2e370]: ·
+          - text: God,
+          - generic [ref=f2e371]: ·
+          - text: who
+          - generic [ref=f2e372]: ·
+          - text: raised
+          - generic [ref=f2e373]: ·
+          - text: him
+          - generic [ref=f2e374]: ·
+          - text: from
+          - generic [ref=f2e375]: ·
+          - text: the
+          - generic [ref=f2e376]: ·
+          - text: dead,
+          - generic [ref=f2e377]: ·
+          - text: and
+          - generic [ref=f2e378]: ·
+          - text: gave
+          - generic [ref=f2e379]: ·
+          - text: him
+          - generic [ref=f2e380]: ·
+          - text: glory;
+          - generic [ref=f2e381]: ·
+          - text: so
+          - generic [ref=f2e382]: ·
+          - text: that
+          - generic [ref=f2e383]: ·
+          - text: your
+          - generic [ref=f2e384]: ·
+          - text: faith
+          - generic [ref=f2e385]: ·
+          - text: and
+          - generic [ref=f2e386]: ·
+          - text: hope
+          - generic [ref=f2e387]: ·
+          - text: might
+          - generic [ref=f2e388]: ·
+          - text: be
+          - generic [ref=f2e389]: ·
+          - text: in
+          - generic [ref=f2e390]: ·
+          - text: God.
+          - generic [ref=f2e391]: ·
+          - text: Seeing
+          - generic [ref=f2e392]: ·
+          - text: you
+          - generic [ref=f2e393]: ·
+          - text: have
+          - generic [ref=f2e394]: ·
+          - text: purified
+          - generic [ref=f2e395]: ·
+          - text: your
+          - generic [ref=f2e396]: ·
+          - text: souls
+          - generic [ref=f2e397]: ·
+          - text: in
+          - generic [ref=f2e398]: ·
+          - text: your
+          - generic [ref=f2e399]: ·
+          - text: obedience
+          - generic [ref=f2e400]: ·
+          - text: to
+          - generic [ref=f2e401]: ·
+          - text: the
+          - generic [ref=f2e402]: ·
+          - text: truth
+          - generic [ref=f2e403]: ·
+          - text: through
+          - generic [ref=f2e404]: ·
+          - text: the
+          - generic [ref=f2e405]: ·
+          - text: Spirit
+          - generic [ref=f2e406]: ·
+          - text: in
+          - generic [ref=f2e407]: ·
+          - text: sincere
+          - generic [ref=f2e408]: ·
+          - text: brotherly
+          - generic [ref=f2e409]: ·
+          - text: affection,
+          - generic [ref=f2e410]: ·
+          - text: love
+          - generic [ref=f2e411]: ·
+          - text: one
+          - generic [ref=f2e412]: ·
+          - text: another
+          - generic [ref=f2e413]: ·
+          - text: from
+          - generic [ref=f2e414]: ·
+          - text: the
+          - generic [ref=f2e415]: ·
+          - text: heart
+          - generic [ref=f2e416]: ·
+          - text: "fervently:"
+        - textbox [active] [ref=f2e94]
+        - generic [ref=f2e95]:
+          - button "New Snippet" [ref=f2e417] [cursor=pointer]
+          - button "Reset" [ref=f2e418] [cursor=pointer]
+        - generic [ref=f2e97]:
+          - generic [ref=f2e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=f2e99]: "50"
+        - generic [ref=f2e100]:
+          - generic [ref=f2e101]:
+            - generic [ref=f2e102]: "0"
+            - generic [ref=f2e103]: WPM
+          - generic [ref=f2e104]:
+            - generic [ref=f2e105]: 100.0%
+            - generic [ref=f2e106]: Accuracy
+          - generic [ref=f2e107]:
+            - generic [ref=f2e108]: 0:00
+            - generic [ref=f2e109]: Time
+          - generic [ref=f2e110]:
+            - generic [ref=f2e111]: 0%
+            - generic [ref=f2e112]: Progress

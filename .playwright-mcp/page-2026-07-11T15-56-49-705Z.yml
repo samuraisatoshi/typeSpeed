@@ -1,0 +1,103 @@
+- generic [ref=f3e1]:
+  - text: › › › › ›
+  - generic [ref=f3e69]:
+    - generic [ref=f3e70]:
+      - generic [ref=f3e71]: TypeSpeed
+      - link "Support" [ref=f3e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=f3e77]:
+      - generic [ref=f3e78]: drills/right-hand/01-home-row-warmup.txt (Text)
+      - generic [ref=f3e83]:
+        - button "practice" [ref=f3e84] [cursor=pointer]
+        - button "statistics" [ref=f3e85] [cursor=pointer]
+      - generic [ref=f3e86]:
+        - generic [ref=f3e88]:
+          - generic [ref=f3e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=f3e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+            - 'option "Lição: Mão Esquerda (EN)"'
+            - 'option "Lição: Mão Direita (EN)" [selected]'
+            - 'option "Lição: Alternância de Mãos (EN)"'
+        - generic [ref=f3e92]:
+          - text: Right
+          - generic [ref=f3e117]: ·
+          - text: Hand
+          - generic [ref=f3e118]: ·
+          - text: Warm-up
+          - generic [ref=f3e119]: ↵
+          - generic [ref=f3e120]: ↵
+          - text: jkl
+          - generic [ref=f3e121]: ·
+          - text: jkl
+          - generic [ref=f3e122]: ·
+          - text: lkj
+          - generic [ref=f3e123]: ·
+          - text: lkj
+          - generic [ref=f3e124]: ·
+          - text: jkl
+          - generic [ref=f3e125]: ·
+          - text: hjkl
+          - generic [ref=f3e126]: ↵
+          - generic [ref=f3e127]: ↵
+          - text: yuio
+          - generic [ref=f3e128]: ·
+          - text: yuio
+          - generic [ref=f3e129]: ·
+          - text: oiuy
+          - generic [ref=f3e130]: ·
+          - text: oiuy
+          - generic [ref=f3e131]: ·
+          - text: yuio
+          - generic [ref=f3e132]: ·
+          - text: puio
+          - generic [ref=f3e133]: ↵
+          - generic [ref=f3e134]: ↵
+          - text: nm
+          - generic [ref=f3e135]: ·
+          - text: nm
+          - generic [ref=f3e136]: ·
+          - text: mn
+          - generic [ref=f3e137]: ·
+          - text: mn
+          - generic [ref=f3e138]: ·
+          - text: hjkl
+          - generic [ref=f3e139]: ·
+          - text: nm
+          - generic [ref=f3e140]: ↵
+          - generic [ref=f3e141]: ↵
+          - text: jkl
+          - generic [ref=f3e142]: ·
+          - text: yuio
+          - generic [ref=f3e143]: ·
+          - text: nm
+          - generic [ref=f3e144]: ·
+          - text: jkl
+          - generic [ref=f3e145]: ·
+          - text: yuio
+          - generic [ref=f3e146]: ·
+          - text: nm
+        - textbox [active] [ref=f3e94]
+        - generic [ref=f3e95]:
+          - button "New Snippet" [ref=f3e147] [cursor=pointer]
+          - button "Reset" [ref=f3e148] [cursor=pointer]
+        - generic [ref=f3e97]:
+          - generic [ref=f3e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=f3e99]: "50"
+        - generic [ref=f3e100]:
+          - generic [ref=f3e101]:
+            - generic [ref=f3e102]: "0"
+            - generic [ref=f3e103]: WPM
+          - generic [ref=f3e104]:
+            - generic [ref=f3e105]: 100.0%
+            - generic [ref=f3e106]: Accuracy
+          - generic [ref=f3e107]:
+            - generic [ref=f3e108]: 0:00
+            - generic [ref=f3e109]: Time
+          - generic [ref=f3e110]:
+            - generic [ref=f3e111]: 0%
+            - generic [ref=f3e112]: Progress

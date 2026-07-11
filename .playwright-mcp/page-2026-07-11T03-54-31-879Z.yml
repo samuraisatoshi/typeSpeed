@@ -1,0 +1,375 @@
+- generic [ref=e1]:
+  - text: › › › › ›
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]: TypeSpeed
+      - link "Support" [ref=e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=e77]:
+      - generic [ref=e78]: bible/bible-pt-br/Provérbios 23:10-21 (Text)
+      - generic [ref=e83]:
+        - button "practice" [ref=e84] [cursor=pointer]
+        - button "statistics" [ref=e85] [cursor=pointer]
+      - generic [ref=e86]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)" [selected]
+        - generic [ref=e92]:
+          - text: Provérbios
+          - generic [ref=e117]: ·
+          - text: 23:10-21
+          - generic [ref=e118]: ↵
+          - generic [ref=e119]: ↵
+          - text: Não
+          - generic [ref=e120]: ·
+          - text: removas
+          - generic [ref=e121]: ·
+          - text: os
+          - generic [ref=e122]: ·
+          - text: limites
+          - generic [ref=e123]: ·
+          - text: antigos;
+          - generic [ref=e124]: ·
+          - text: nem
+          - generic [ref=e125]: ·
+          - text: entres
+          - generic [ref=e126]: ·
+          - text: nos
+          - generic [ref=e127]: ·
+          - text: campos
+          - generic [ref=e128]: ·
+          - text: dos
+          - generic [ref=e129]: ·
+          - text: órfãos,
+          - generic [ref=e130]: ↵
+          - text: porque
+          - generic [ref=e131]: ·
+          - text: o
+          - generic [ref=e132]: ·
+          - text: seu
+          - generic [ref=e133]: ·
+          - text: redentor
+          - generic [ref=e134]: ·
+          - text: é
+          - generic [ref=e135]: ·
+          - text: forte;
+          - generic [ref=e136]: ·
+          - text: ele
+          - generic [ref=e137]: ·
+          - text: lhes
+          - generic [ref=e138]: ·
+          - text: pleiteará
+          - generic [ref=e139]: ·
+          - text: a
+          - generic [ref=e140]: ·
+          - text: causa
+          - generic [ref=e141]: ·
+          - text: contra
+          - generic [ref=e142]: ·
+          - text: ti.
+          - generic [ref=e143]: ↵
+          - text: Aplica
+          - generic [ref=e144]: ·
+          - text: o
+          - generic [ref=e145]: ·
+          - text: teu
+          - generic [ref=e146]: ·
+          - text: coração
+          - generic [ref=e147]: ·
+          - text: à
+          - generic [ref=e148]: ·
+          - text: instrução,
+          - generic [ref=e149]: ·
+          - text: e
+          - generic [ref=e150]: ·
+          - text: os
+          - generic [ref=e151]: ·
+          - text: teus
+          - generic [ref=e152]: ·
+          - text: ouvidos
+          - generic [ref=e153]: ·
+          - text: às
+          - generic [ref=e154]: ·
+          - text: palavras
+          - generic [ref=e155]: ·
+          - text: do
+          - generic [ref=e156]: ↵
+          - text: conhecimento.
+          - generic [ref=e157]: ·
+          - text: Não
+          - generic [ref=e158]: ·
+          - text: retires
+          - generic [ref=e159]: ·
+          - text: da
+          - generic [ref=e160]: ·
+          - text: criança
+          - generic [ref=e161]: ·
+          - text: a
+          - generic [ref=e162]: ·
+          - text: disciplina;
+          - generic [ref=e163]: ·
+          - text: porque,
+          - generic [ref=e164]: ↵
+          - text: fustigando-a
+          - generic [ref=e165]: ·
+          - text: tu
+          - generic [ref=e166]: ·
+          - text: com
+          - generic [ref=e167]: ·
+          - text: a
+          - generic [ref=e168]: ·
+          - text: vara,
+          - generic [ref=e169]: ·
+          - text: nem
+          - generic [ref=e170]: ·
+          - text: por
+          - generic [ref=e171]: ·
+          - text: isso
+          - generic [ref=e172]: ·
+          - text: morrerá.
+          - generic [ref=e173]: ·
+          - text: Tu
+          - generic [ref=e174]: ·
+          - text: a
+          - generic [ref=e175]: ·
+          - text: fustigarás
+          - generic [ref=e176]: ↵
+          - text: com
+          - generic [ref=e177]: ·
+          - text: a
+          - generic [ref=e178]: ·
+          - text: vara
+          - generic [ref=e179]: ·
+          - text: e
+          - generic [ref=e180]: ·
+          - text: livrarás
+          - generic [ref=e181]: ·
+          - text: a
+          - generic [ref=e182]: ·
+          - text: sua
+          - generic [ref=e183]: ·
+          - text: alma
+          - generic [ref=e184]: ·
+          - text: do
+          - generic [ref=e185]: ·
+          - text: Seol.
+          - generic [ref=e186]: ·
+          - text: Filho
+          - generic [ref=e187]: ·
+          - text: meu,
+          - generic [ref=e188]: ·
+          - text: se
+          - generic [ref=e189]: ·
+          - text: o
+          - generic [ref=e190]: ·
+          - text: teu
+          - generic [ref=e191]: ↵
+          - text: coração
+          - generic [ref=e192]: ·
+          - text: for
+          - generic [ref=e193]: ·
+          - text: sábio,
+          - generic [ref=e194]: ·
+          - text: alegrar-se-á
+          - generic [ref=e195]: ·
+          - text: o
+          - generic [ref=e196]: ·
+          - text: meu
+          - generic [ref=e197]: ·
+          - text: coração,
+          - generic [ref=e198]: ·
+          - text: sim,
+          - generic [ref=e199]: ·
+          - text: ó,
+          - generic [ref=e200]: ·
+          - text: meu
+          - generic [ref=e201]: ·
+          - text: próprio;
+          - generic [ref=e202]: ↵
+          - text: e
+          - generic [ref=e203]: ·
+          - text: exultará
+          - generic [ref=e204]: ·
+          - text: o
+          - generic [ref=e205]: ·
+          - text: meu
+          - generic [ref=e206]: ·
+          - text: coração,
+          - generic [ref=e207]: ·
+          - text: quando
+          - generic [ref=e208]: ·
+          - text: os
+          - generic [ref=e209]: ·
+          - text: teus
+          - generic [ref=e210]: ·
+          - text: lábios
+          - generic [ref=e211]: ·
+          - text: falarem
+          - generic [ref=e212]: ·
+          - text: coisas
+          - generic [ref=e213]: ↵
+          - text: retas.
+          - generic [ref=e214]: ·
+          - text: Não
+          - generic [ref=e215]: ·
+          - text: tenhas
+          - generic [ref=e216]: ·
+          - text: inveja
+          - generic [ref=e217]: ·
+          - text: dos
+          - generic [ref=e218]: ·
+          - text: pecadores;
+          - generic [ref=e219]: ·
+          - text: antes
+          - generic [ref=e220]: ·
+          - text: conserva-te
+          - generic [ref=e221]: ·
+          - text: "no"
+          - generic [ref=e222]: ·
+          - text: temor
+          - generic [ref=e223]: ↵
+          - text: do
+          - generic [ref=e224]: ·
+          - text: Senhor
+          - generic [ref=e225]: ·
+          - text: todo
+          - generic [ref=e226]: ·
+          - text: o
+          - generic [ref=e227]: ·
+          - text: dia.
+          - generic [ref=e228]: ·
+          - text: Porque
+          - generic [ref=e229]: ·
+          - text: deveras
+          - generic [ref=e230]: ·
+          - text: terás
+          - generic [ref=e231]: ·
+          - text: uma
+          - generic [ref=e232]: ·
+          - text: recompensa;
+          - generic [ref=e233]: ·
+          - text: não
+          - generic [ref=e234]: ·
+          - text: será
+          - generic [ref=e235]: ↵
+          - text: malograda
+          - generic [ref=e236]: ·
+          - text: a
+          - generic [ref=e237]: ·
+          - text: tua
+          - generic [ref=e238]: ·
+          - text: esperança.
+          - generic [ref=e239]: ·
+          - text: Ouve
+          - generic [ref=e240]: ·
+          - text: tu,
+          - generic [ref=e241]: ·
+          - text: filho
+          - generic [ref=e242]: ·
+          - text: meu,
+          - generic [ref=e243]: ·
+          - text: e
+          - generic [ref=e244]: ·
+          - text: sê
+          - generic [ref=e245]: ·
+          - text: sábio;
+          - generic [ref=e246]: ·
+          - text: e
+          - generic [ref=e247]: ·
+          - text: dirige
+          - generic [ref=e248]: ↵
+          - text: "no"
+          - generic [ref=e249]: ·
+          - text: caminho
+          - generic [ref=e250]: ·
+          - text: o
+          - generic [ref=e251]: ·
+          - text: teu
+          - generic [ref=e252]: ·
+          - text: coração.
+          - generic [ref=e253]: ·
+          - text: Não
+          - generic [ref=e254]: ·
+          - text: estejas
+          - generic [ref=e255]: ·
+          - text: entre
+          - generic [ref=e256]: ·
+          - text: os
+          - generic [ref=e257]: ·
+          - text: beberrões
+          - generic [ref=e258]: ·
+          - text: de
+          - generic [ref=e259]: ·
+          - text: vinho,
+          - generic [ref=e260]: ↵
+          - text: nem
+          - generic [ref=e261]: ·
+          - text: entre
+          - generic [ref=e262]: ·
+          - text: os
+          - generic [ref=e263]: ·
+          - text: comilões
+          - generic [ref=e264]: ·
+          - text: de
+          - generic [ref=e265]: ·
+          - text: carne.
+          - generic [ref=e266]: ·
+          - text: Porque
+          - generic [ref=e267]: ·
+          - text: o
+          - generic [ref=e268]: ·
+          - text: beberrão
+          - generic [ref=e269]: ·
+          - text: e
+          - generic [ref=e270]: ·
+          - text: o
+          - generic [ref=e271]: ·
+          - text: comilão
+          - generic [ref=e272]: ·
+          - text: caem
+          - generic [ref=e273]: ↵
+          - text: em
+          - generic [ref=e274]: ·
+          - text: pobreza;
+          - generic [ref=e275]: ·
+          - text: e
+          - generic [ref=e276]: ·
+          - text: a
+          - generic [ref=e277]: ·
+          - text: sonolência
+          - generic [ref=e278]: ·
+          - text: cobrirá
+          - generic [ref=e279]: ·
+          - text: de
+          - generic [ref=e280]: ·
+          - text: trapos
+          - generic [ref=e281]: ·
+          - text: o
+          - generic [ref=e282]: ·
+          - text: homem.
+        - textbox [active] [ref=e94]
+        - generic [ref=e95]:
+          - button "New Snippet" [ref=e283] [cursor=pointer]
+          - button "Reset" [ref=e284] [cursor=pointer]
+        - generic [ref=e97]:
+          - generic [ref=e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=e99]: "50"
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: "0"
+            - generic [ref=e103]: WPM
+          - generic [ref=e104]:
+            - generic [ref=e105]: 100.0%
+            - generic [ref=e106]: Accuracy
+          - generic [ref=e107]:
+            - generic [ref=e108]: 0:00
+            - generic [ref=e109]: Time
+          - generic [ref=e110]:
+            - generic [ref=e111]: 0%
+            - generic [ref=e112]: Progress

@@ -1,0 +1,45 @@
+- generic [active] [ref=e1]:
+  - text: › › › › ›
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]: TypeSpeed
+      - link "Support" [ref=e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=e77]:
+      - generic [ref=e83]:
+        - button "practice" [ref=e84] [cursor=pointer]
+        - button "statistics" [ref=e85] [cursor=pointer]
+      - generic [ref=e86]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+            - option "Citação — English (aleatório, requer internet)"
+            - option "Citação — Português (aleatório, requer internet)"
+            - 'option "Lição: Mão Esquerda (EN)" [selected]'
+            - 'option "Lição: Mão Direita (EN)"'
+            - 'option "Lição: Alternância de Mãos (EN)"'
+        - generic [ref=e91]: Select a folder containing code files and click "Start Typing" to begin practicing
+        - textbox [ref=e94]
+        - button "Start Typing" [ref=e96] [cursor=pointer]
+        - generic [ref=e97]:
+          - generic [ref=e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=e99]: "50"
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: "0"
+            - generic [ref=e103]: WPM
+          - generic [ref=e104]:
+            - generic [ref=e105]: 100%
+            - generic [ref=e106]: Accuracy
+          - generic [ref=e107]:
+            - generic [ref=e108]: 0:00
+            - generic [ref=e109]: Time
+          - generic [ref=e110]:
+            - generic [ref=e111]: 0%
+            - generic [ref=e112]: Progress

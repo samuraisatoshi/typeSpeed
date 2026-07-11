@@ -1,0 +1,91 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - heading "🚀 Welcome to TypeSpeed" [level=1] [ref=e4]
+    - generic [ref=e5]:
+      - heading "🔒 Your Privacy is Protected" [level=2] [ref=e6]
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - text: ✅
+          - strong [ref=e9]: 100% Offline
+          - text: "- No internet connection required or used"
+        - listitem [ref=e10]:
+          - text: ✅
+          - strong [ref=e11]: No Data Collection
+          - text: "- We don't collect ANY personal data"
+        - listitem [ref=e12]:
+          - text: ✅
+          - strong [ref=e13]: No Tracking
+          - text: "- No analytics, no cookies, no tracking"
+        - listitem [ref=e14]:
+          - text: ✅
+          - strong [ref=e15]: Local Storage Only
+          - text: "- Statistics saved only in your browser"
+        - listitem [ref=e16]:
+          - text: ✅
+          - strong [ref=e17]: Files Stay Private
+          - text: "- Your code files are read locally and never leave your computer"
+    - generic [ref=e18]:
+      - heading "⚠️ About Browser File Selection" [level=3] [ref=e19]
+      - paragraph [ref=e20]: When you click "Select Code Folder", your browser may show a dialog asking about file uploads. This is a standard browser security notice.
+      - generic [ref=e21]:
+        - strong [ref=e22]: "Important:"
+        - text: Despite what the dialog says, TypeSpeed does NOT upload your files anywhere. The files are only read locally in your browser for typing practice.
+      - heading "To avoid confusion:" [level=4] [ref=e23]
+      - list [ref=e24]:
+        - listitem [ref=e25]: You can safely select your code folder - files remain on your computer
+        - listitem [ref=e26]: For extra peace of mind, use a test folder with sample code
+        - listitem [ref=e27]:
+          - text: "Or run from a local server to avoid the dialog entirely:"
+          - generic [ref=e28]:
+            - code [ref=e29]: python3 -m http.server 8000
+            - text: (Python)
+            - code [ref=e30]: npx http-server -p 8000
+            - text: (Node.js)
+            - code [ref=e31]: php -S localhost:8000
+            - text: (PHP)
+      - paragraph [ref=e32]:
+        - link "📖 View detailed instructions and server setup guide →" [ref=e33] [cursor=pointer]:
+          - /url: instructions.html
+    - generic [ref=e34]:
+      - heading "✨ Features" [level=3] [ref=e35]
+      - list [ref=e36]:
+        - listitem [ref=e37]: • Practice typing with your own code
+        - listitem [ref=e38]: • Auto-skip indentation spaces
+        - listitem [ref=e39]: • Track WPM and accuracy
+        - listitem [ref=e40]: • View progress statistics
+        - listitem [ref=e41]: • Support for 25+ programming languages
+    - button "Start Practicing" [ref=e42] [cursor=pointer]
+    - generic [ref=e44] [cursor=pointer]:
+      - checkbox "Don't show this again" [ref=e45]
+      - text: Don't show this again
+  - generic [ref=e46]:
+    - generic [ref=e47]:
+      - heading "🚀 TypeSpeed" [level=1] [ref=e48]
+      - link "💝 Support" [ref=e49] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=e50]:
+      - button "Practice" [ref=e51] [cursor=pointer]
+      - button "Statistics" [ref=e52] [cursor=pointer]
+    - generic [ref=e53]:
+      - generic [ref=e55]:
+        - generic [ref=e56] [cursor=pointer]: 📁 Select Code Folder
+        - generic [ref=e57]: No files loaded
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]: "0"
+          - generic [ref=e61]: WPM
+        - generic [ref=e62]:
+          - generic [ref=e63]: 100%
+          - generic [ref=e64]: Accuracy
+        - generic [ref=e65]:
+          - generic [ref=e66]: 0:00
+          - generic [ref=e67]: Time
+        - generic [ref=e68]:
+          - generic [ref=e69]: 0%
+          - generic [ref=e70]: Progress
+      - generic [ref=e71]: Select a folder containing code files and click "Start Typing" to begin practicing
+      - textbox [ref=e75]
+      - button "Start Typing" [disabled] [ref=e77] [cursor=pointer]
+      - generic [ref=e78]:
+        - text: "Max Lines per Snippet:"
+        - spinbutton "Max Lines per Snippet:" [ref=e79]: "50"

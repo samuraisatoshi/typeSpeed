@@ -1,0 +1,222 @@
+- generic [ref=e1]:
+  - text: › › › › ›
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]: TypeSpeed
+      - link "Support" [ref=e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=e77]:
+      - generic [ref=e78]: quote/quote-en-us/Jeremy Jackson (scientist) (Text)
+      - generic [ref=e83]:
+        - button "practice" [ref=e84] [cursor=pointer]
+        - button "statistics" [ref=e85] [cursor=pointer]
+      - generic [ref=e86]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+            - option "Citação — English (aleatório, requer internet)" [selected]
+            - option "Citação — Português (aleatório, requer internet)"
+            - 'option "Lição: Mão Esquerda (EN)"'
+            - 'option "Lição: Mão Direita (EN)"'
+            - 'option "Lição: Alternância de Mãos (EN)"'
+        - generic [ref=e92]:
+          - text: Jeremy
+          - generic [ref=e117]: ·
+          - text: Jackson
+          - generic [ref=e118]: ·
+          - text: (scientist)
+          - generic [ref=e119]: ↵
+          - generic [ref=e120]: ↵
+          - text: The
+          - generic [ref=e121]: ·
+          - text: thing
+          - generic [ref=e122]: ·
+          - text: we
+          - generic [ref=e123]: ·
+          - text: really
+          - generic [ref=e124]: ·
+          - text: need
+          - generic [ref=e125]: ·
+          - text: to
+          - generic [ref=e126]: ·
+          - text: fix
+          - generic [ref=e127]: ·
+          - text: is
+          - generic [ref=e128]: ·
+          - text: ourselves.
+          - generic [ref=e129]: ·
+          - text: It's
+          - generic [ref=e130]: ·
+          - text: not
+          - generic [ref=e131]: ·
+          - text: about
+          - generic [ref=e132]: ·
+          - text: the
+          - generic [ref=e133]: ·
+          - text: fish;
+          - generic [ref=e134]: ·
+          - text: it's
+          - generic [ref=e135]: ·
+          - text: not
+          - generic [ref=e136]: ·
+          - text: about
+          - generic [ref=e137]: ·
+          - text: the
+          - generic [ref=e138]: ·
+          - text: pollution;
+          - generic [ref=e139]: ·
+          - text: it's
+          - generic [ref=e140]: ·
+          - text: not
+          - generic [ref=e141]: ·
+          - text: about
+          - generic [ref=e142]: ·
+          - text: the
+          - generic [ref=e143]: ·
+          - text: climate
+          - generic [ref=e144]: ·
+          - text: change.
+          - generic [ref=e145]: ·
+          - text: It's
+          - generic [ref=e146]: ·
+          - text: about
+          - generic [ref=e147]: ·
+          - text: us
+          - generic [ref=e148]: ·
+          - text: and
+          - generic [ref=e149]: ·
+          - text: our
+          - generic [ref=e150]: ·
+          - text: greed
+          - generic [ref=e151]: ·
+          - text: and
+          - generic [ref=e152]: ·
+          - text: our
+          - generic [ref=e153]: ·
+          - text: need
+          - generic [ref=e154]: ·
+          - text: for
+          - generic [ref=e155]: ·
+          - text: growth
+          - generic [ref=e156]: ·
+          - text: and
+          - generic [ref=e157]: ·
+          - text: our
+          - generic [ref=e158]: ·
+          - text: inability
+          - generic [ref=e159]: ·
+          - text: to
+          - generic [ref=e160]: ·
+          - text: imagine
+          - generic [ref=e161]: ·
+          - text: a
+          - generic [ref=e162]: ·
+          - text: world
+          - generic [ref=e163]: ·
+          - text: that
+          - generic [ref=e164]: ·
+          - text: is
+          - generic [ref=e165]: ·
+          - text: different
+          - generic [ref=e166]: ·
+          - text: from
+          - generic [ref=e167]: ·
+          - text: the
+          - generic [ref=e168]: ·
+          - text: selfish
+          - generic [ref=e169]: ·
+          - text: world
+          - generic [ref=e170]: ·
+          - text: we
+          - generic [ref=e171]: ·
+          - text: live
+          - generic [ref=e172]: ·
+          - text: in
+          - generic [ref=e173]: ·
+          - text: today.
+          - generic [ref=e174]: ·
+          - text: So
+          - generic [ref=e175]: ·
+          - text: the
+          - generic [ref=e176]: ·
+          - text: question
+          - generic [ref=e177]: ·
+          - text: "is:"
+          - generic [ref=e178]: ·
+          - text: Will
+          - generic [ref=e179]: ·
+          - text: we
+          - generic [ref=e180]: ·
+          - text: respond
+          - generic [ref=e181]: ·
+          - text: to
+          - generic [ref=e182]: ·
+          - text: this
+          - generic [ref=e183]: ·
+          - text: or
+          - generic [ref=e184]: ·
+          - text: not?
+          - generic [ref=e185]: ·
+          - text: I
+          - generic [ref=e186]: ·
+          - text: would
+          - generic [ref=e187]: ·
+          - text: say
+          - generic [ref=e188]: ·
+          - text: that
+          - generic [ref=e189]: ·
+          - text: the
+          - generic [ref=e190]: ·
+          - text: future
+          - generic [ref=e191]: ·
+          - text: of
+          - generic [ref=e192]: ·
+          - text: life
+          - generic [ref=e193]: ·
+          - text: and
+          - generic [ref=e194]: ·
+          - text: the
+          - generic [ref=e195]: ·
+          - text: dignity
+          - generic [ref=e196]: ·
+          - text: of
+          - generic [ref=e197]: ·
+          - text: human
+          - generic [ref=e198]: ·
+          - text: beings
+          - generic [ref=e199]: ·
+          - text: depends
+          - generic [ref=e200]: ·
+          - text: "on"
+          - generic [ref=e201]: ·
+          - text: our
+          - generic [ref=e202]: ·
+          - text: doing
+          - generic [ref=e203]: ·
+          - text: that.
+        - textbox [active] [ref=e94]
+        - generic [ref=e95]:
+          - button "New Snippet" [ref=e204] [cursor=pointer]
+          - button "Reset" [ref=e205] [cursor=pointer]
+        - generic [ref=e97]:
+          - generic [ref=e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=e99]: "50"
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: "0"
+            - generic [ref=e103]: WPM
+          - generic [ref=e104]:
+            - generic [ref=e105]: 100.0%
+            - generic [ref=e106]: Accuracy
+          - generic [ref=e107]:
+            - generic [ref=e108]: 0:00
+            - generic [ref=e109]: Time
+          - generic [ref=e110]:
+            - generic [ref=e111]: 0%
+            - generic [ref=e112]: Progress

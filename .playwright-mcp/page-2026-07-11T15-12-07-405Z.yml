@@ -1,0 +1,40 @@
+- generic [ref=f1e1]:
+  - text: › › › › ›
+  - generic [ref=f1e69]:
+    - generic [ref=f1e70]:
+      - generic [ref=f1e71]: TypeSpeed
+      - link "Support" [ref=f1e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=f1e77]:
+      - generic [ref=f1e78]: bible/bible-en-us/Hosea 6:2-10 (Text)
+      - generic [ref=f1e83]:
+        - button "practice" [ref=f1e84] [cursor=pointer]
+        - button "statistics" [active] [ref=f1e85] [cursor=pointer]
+      - generic [ref=f1e321]:
+        - generic [ref=f1e322]:
+          - generic [ref=f1e323]:
+            - generic [ref=f1e324]: "0"
+            - generic [ref=f1e325]: Total Sessions
+          - generic [ref=f1e326]:
+            - generic [ref=f1e327]: "0"
+            - generic [ref=f1e328]: Average WPM
+          - generic [ref=f1e329]:
+            - generic [ref=f1e330]: 0%
+            - generic [ref=f1e331]: Average Accuracy
+          - generic [ref=f1e332]:
+            - generic [ref=f1e333]: 0m
+            - generic [ref=f1e334]: Total Practice Time
+        - generic [ref=f1e335]:
+          - generic [ref=f1e336]:
+            - heading "Recent Sessions" [level=2] [ref=f1e337]
+            - button "Clear All" [ref=f1e338] [cursor=pointer]
+          - table [ref=f1e341]:
+            - rowgroup [ref=f1e342]:
+              - row [ref=f1e343]:
+                - columnheader "Date & Time" [ref=f1e344]
+                - columnheader "Language" [ref=f1e345]
+                - columnheader "WPM" [ref=f1e346]
+                - columnheader "Accuracy" [ref=f1e347]
+                - columnheader "Duration" [ref=f1e348]
+                - columnheader "Actions" [ref=f1e349]
+            - rowgroup

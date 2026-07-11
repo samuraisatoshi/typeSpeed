@@ -1,0 +1,234 @@
+- generic [ref=e1]:
+  - text: › › › › ›
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]: TypeSpeed
+      - link "Support" [ref=e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=e77]:
+      - generic [ref=e78]: drills/left-hand/02-left-hand-words.txt (Text)
+      - generic [ref=e83]:
+        - button "practice" [ref=e84] [cursor=pointer]
+        - button "statistics" [ref=e85] [cursor=pointer]
+      - generic [ref=e86]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+            - option "Citação — English (aleatório, requer internet)"
+            - option "Citação — Português (aleatório, requer internet)"
+            - 'option "Lição: Mão Esquerda (EN)" [selected]'
+            - 'option "Lição: Mão Direita (EN)"'
+            - 'option "Lição: Alternância de Mãos (EN)"'
+        - generic [ref=e92]:
+          - text: Left
+          - generic [ref=e117]: ·
+          - text: Hand
+          - generic [ref=e118]: ·
+          - text: Only
+          - generic [ref=e119]: ·
+          - text: "-"
+          - generic [ref=e120]: ·
+          - text: Real
+          - generic [ref=e121]: ·
+          - text: Words
+          - generic [ref=e122]: ↵
+          - generic [ref=e123]: ↵
+          - text: water
+          - generic [ref=e124]: ·
+          - text: sweater
+          - generic [ref=e125]: ·
+          - text: greatest
+          - generic [ref=e126]: ·
+          - text: average
+          - generic [ref=e127]: ·
+          - text: beverage
+          - generic [ref=e128]: ·
+          - text: create
+          - generic [ref=e129]: ·
+          - text: created
+          - generic [ref=e130]: ·
+          - text: treated
+          - generic [ref=e131]: ·
+          - text: tested
+          - generic [ref=e132]: ·
+          - text: rested
+          - generic [ref=e133]: ·
+          - text: wasted
+          - generic [ref=e134]: ·
+          - text: dressed
+          - generic [ref=e135]: ·
+          - text: address
+          - generic [ref=e136]: ·
+          - text: addressed
+          - generic [ref=e137]: ·
+          - text: decrease
+          - generic [ref=e138]: ·
+          - text: decreased
+          - generic [ref=e139]: ·
+          - text: degrade
+          - generic [ref=e140]: ·
+          - text: degraded
+          - generic [ref=e141]: ·
+          - text: grease
+          - generic [ref=e142]: ·
+          - text: terrace
+          - generic [ref=e143]: ·
+          - text: cassette
+          - generic [ref=e144]: ·
+          - text: aggregate
+          - generic [ref=e145]: ·
+          - text: target
+          - generic [ref=e146]: ·
+          - text: targeted
+          - generic [ref=e147]: ·
+          - text: dragged
+          - generic [ref=e148]: ·
+          - text: tagged
+          - generic [ref=e149]: ·
+          - text: tracer
+          - generic [ref=e150]: ·
+          - text: tracers
+          - generic [ref=e151]: ·
+          - text: reserve
+          - generic [ref=e152]: ·
+          - text: reserved
+          - generic [ref=e153]: ·
+          - text: deserve
+          - generic [ref=e154]: ·
+          - text: deserved
+          - generic [ref=e155]: ·
+          - text: savage
+          - generic [ref=e156]: ·
+          - text: sewage
+          - generic [ref=e157]: ·
+          - text: garage
+          - generic [ref=e158]: ·
+          - text: garbage
+          - generic [ref=e159]: ·
+          - text: cabbage
+          - generic [ref=e160]: ·
+          - text: cascade
+          - generic [ref=e161]: ·
+          - text: cadaver
+          - generic [ref=e162]: ·
+          - text: exact
+          - generic [ref=e163]: ·
+          - text: exacted
+          - generic [ref=e164]: ·
+          - text: extract
+          - generic [ref=e165]: ·
+          - text: extracted
+          - generic [ref=e166]: ·
+          - text: exceed
+          - generic [ref=e167]: ·
+          - text: exceeded
+          - generic [ref=e168]: ·
+          - text: exert
+          - generic [ref=e169]: ·
+          - text: exerted
+          - generic [ref=e170]: ·
+          - text: gazette
+          - generic [ref=e171]: ·
+          - text: farce
+          - generic [ref=e172]: ·
+          - text: scarce
+          - generic [ref=e173]: ·
+          - text: scattered
+          - generic [ref=e174]: ·
+          - text: staggered
+          - generic [ref=e175]: ·
+          - text: sacred
+          - generic [ref=e176]: ·
+          - text: scared
+          - generic [ref=e177]: ·
+          - text: secreted
+          - generic [ref=e178]: ·
+          - text: tercet
+          - generic [ref=e179]: ·
+          - text: terraced
+          - generic [ref=e180]: ·
+          - text: decade
+          - generic [ref=e181]: ·
+          - text: assessed
+          - generic [ref=e182]: ·
+          - text: aggravated
+          - generic [ref=e183]: ·
+          - text: asserted
+          - generic [ref=e184]: ·
+          - text: adverse
+          - generic [ref=e185]: ·
+          - text: affected
+          - generic [ref=e186]: ·
+          - text: effaced
+          - generic [ref=e187]: ·
+          - text: deserted
+          - generic [ref=e188]: ·
+          - text: reward
+          - generic [ref=e189]: ·
+          - text: rewards
+          - generic [ref=e190]: ·
+          - text: sweetest
+          - generic [ref=e191]: ·
+          - text: sweated
+          - generic [ref=e192]: ·
+          - text: started
+          - generic [ref=e193]: ·
+          - text: stared
+          - generic [ref=e194]: ·
+          - text: teaser
+          - generic [ref=e195]: ·
+          - text: teasers
+          - generic [ref=e196]: ·
+          - text: ceased
+          - generic [ref=e197]: ·
+          - text: cease
+          - generic [ref=e198]: ·
+          - text: decease
+          - generic [ref=e199]: ·
+          - text: deceased
+          - generic [ref=e200]: ·
+          - text: retreated
+          - generic [ref=e201]: ·
+          - text: retreat
+          - generic [ref=e202]: ·
+          - text: freeware
+          - generic [ref=e203]: ·
+          - text: garages
+          - generic [ref=e204]: ·
+          - text: cabbages
+          - generic [ref=e205]: ·
+          - text: cascades
+          - generic [ref=e206]: ·
+          - text: decreases
+          - generic [ref=e207]: ·
+          - text: degrades
+          - generic [ref=e208]: ·
+          - text: aggregates
+          - generic [ref=e209]: ·
+          - text: targets
+        - textbox [active] [ref=e94]
+        - generic [ref=e95]:
+          - button "New Snippet" [ref=e210] [cursor=pointer]
+          - button "Reset" [ref=e211] [cursor=pointer]
+        - generic [ref=e97]:
+          - generic [ref=e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=e99]: "50"
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: "0"
+            - generic [ref=e103]: WPM
+          - generic [ref=e104]:
+            - generic [ref=e105]: 100.0%
+            - generic [ref=e106]: Accuracy
+          - generic [ref=e107]:
+            - generic [ref=e108]: 0:00
+            - generic [ref=e109]: Time
+          - generic [ref=e110]:
+            - generic [ref=e111]: 0%
+            - generic [ref=e112]: Progress

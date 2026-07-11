@@ -1,0 +1,447 @@
+- generic [ref=f1e1]:
+  - text: › › › › ›
+  - generic [ref=f1e69]:
+    - generic [ref=f1e70]:
+      - generic [ref=f1e71]: TypeSpeed
+      - link "Support" [ref=f1e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=f1e77]:
+      - generic [ref=f1e78]: bible/bible-en-us/Hosea 6:2-10 (Text)
+      - generic [ref=f1e83]:
+        - button "practice" [ref=f1e84] [cursor=pointer]
+        - button "statistics" [ref=f1e85] [cursor=pointer]
+      - generic [ref=f1e86]:
+        - generic [ref=f1e88]:
+          - generic [ref=f1e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=f1e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)" [selected]
+            - option "Bíblia — Português (aleatório, requer internet)"
+        - generic [ref=f1e92]:
+          - text: Hosea
+          - generic [ref=f1e117]: ·
+          - text: 6:2-10
+          - generic [ref=f1e118]: ↵
+          - generic [ref=f1e119]: ↵
+          - text: After
+          - generic [ref=f1e120]: ·
+          - text: two
+          - generic [ref=f1e121]: ·
+          - text: days
+          - generic [ref=f1e122]: ·
+          - text: he
+          - generic [ref=f1e123]: ·
+          - text: will
+          - generic [ref=f1e124]: ·
+          - text: revive
+          - generic [ref=f1e125]: ·
+          - text: us.
+          - generic [ref=f1e126]: ·
+          - text: "On"
+          - generic [ref=f1e127]: ·
+          - text: the
+          - generic [ref=f1e128]: ·
+          - text: third
+          - generic [ref=f1e129]: ·
+          - text: day
+          - generic [ref=f1e130]: ·
+          - text: he
+          - generic [ref=f1e131]: ·
+          - text: will
+          - generic [ref=f1e132]: ·
+          - text: raise
+          - generic [ref=f1e133]: ·
+          - text: us
+          - generic [ref=f1e134]: ·
+          - text: up,
+          - generic [ref=f1e135]: ·
+          - text: and
+          - generic [ref=f1e136]: ·
+          - text: we
+          - generic [ref=f1e137]: ·
+          - text: will
+          - generic [ref=f1e138]: ·
+          - text: live
+          - generic [ref=f1e139]: ·
+          - text: before
+          - generic [ref=f1e140]: ·
+          - text: him.
+          - generic [ref=f1e141]: ·
+          - text: Let
+          - generic [ref=f1e142]: ·
+          - text: us
+          - generic [ref=f1e143]: ·
+          - text: acknowledge
+          - generic [ref=f1e144]: ·
+          - text: Yahweh.
+          - generic [ref=f1e145]: ·
+          - text: Let
+          - generic [ref=f1e146]: ·
+          - text: us
+          - generic [ref=f1e147]: ·
+          - text: press
+          - generic [ref=f1e148]: ·
+          - text: "on"
+          - generic [ref=f1e149]: ·
+          - text: to
+          - generic [ref=f1e150]: ·
+          - text: know
+          - generic [ref=f1e151]: ·
+          - text: Yahweh.
+          - generic [ref=f1e152]: ·
+          - text: As
+          - generic [ref=f1e153]: ·
+          - text: surely
+          - generic [ref=f1e154]: ·
+          - text: as
+          - generic [ref=f1e155]: ·
+          - text: the
+          - generic [ref=f1e156]: ·
+          - text: sun
+          - generic [ref=f1e157]: ·
+          - text: rises,
+          - generic [ref=f1e158]: ·
+          - text: Yahweh
+          - generic [ref=f1e159]: ·
+          - text: will
+          - generic [ref=f1e160]: ·
+          - text: appear.
+          - generic [ref=f1e161]: ·
+          - text: He
+          - generic [ref=f1e162]: ·
+          - text: will
+          - generic [ref=f1e163]: ·
+          - text: come
+          - generic [ref=f1e164]: ·
+          - text: to
+          - generic [ref=f1e165]: ·
+          - text: us
+          - generic [ref=f1e166]: ·
+          - text: like
+          - generic [ref=f1e167]: ·
+          - text: the
+          - generic [ref=f1e168]: ·
+          - text: rain,
+          - generic [ref=f1e169]: ·
+          - text: like
+          - generic [ref=f1e170]: ·
+          - text: the
+          - generic [ref=f1e171]: ·
+          - text: spring
+          - generic [ref=f1e172]: ·
+          - text: rain
+          - generic [ref=f1e173]: ·
+          - text: that
+          - generic [ref=f1e174]: ·
+          - text: waters
+          - generic [ref=f1e175]: ·
+          - text: the
+          - generic [ref=f1e176]: ·
+          - text: earth."
+          - generic [ref=f1e177]: ·
+          - text: "\"Ephraim,"
+          - generic [ref=f1e178]: ·
+          - text: what
+          - generic [ref=f1e179]: ·
+          - text: shall
+          - generic [ref=f1e180]: ·
+          - text: I
+          - generic [ref=f1e181]: ·
+          - text: do
+          - generic [ref=f1e182]: ·
+          - text: to
+          - generic [ref=f1e183]: ·
+          - text: you?
+          - generic [ref=f1e184]: ·
+          - text: Judah,
+          - generic [ref=f1e185]: ·
+          - text: what
+          - generic [ref=f1e186]: ·
+          - text: shall
+          - generic [ref=f1e187]: ·
+          - text: I
+          - generic [ref=f1e188]: ·
+          - text: do
+          - generic [ref=f1e189]: ·
+          - text: to
+          - generic [ref=f1e190]: ·
+          - text: you?
+          - generic [ref=f1e191]: ·
+          - text: For
+          - generic [ref=f1e192]: ·
+          - text: your
+          - generic [ref=f1e193]: ·
+          - text: love
+          - generic [ref=f1e194]: ·
+          - text: is
+          - generic [ref=f1e195]: ·
+          - text: like
+          - generic [ref=f1e196]: ·
+          - text: a
+          - generic [ref=f1e197]: ·
+          - text: morning
+          - generic [ref=f1e198]: ·
+          - text: cloud,
+          - generic [ref=f1e199]: ·
+          - text: and
+          - generic [ref=f1e200]: ·
+          - text: like
+          - generic [ref=f1e201]: ·
+          - text: the
+          - generic [ref=f1e202]: ·
+          - text: dew
+          - generic [ref=f1e203]: ·
+          - text: that
+          - generic [ref=f1e204]: ·
+          - text: disappears
+          - generic [ref=f1e205]: ·
+          - text: early.
+          - generic [ref=f1e206]: ·
+          - text: Therefore
+          - generic [ref=f1e207]: ·
+          - text: I
+          - generic [ref=f1e208]: ·
+          - text: have
+          - generic [ref=f1e209]: ·
+          - text: cut
+          - generic [ref=f1e210]: ·
+          - text: them
+          - generic [ref=f1e211]: ·
+          - text: to
+          - generic [ref=f1e212]: ·
+          - text: pieces
+          - generic [ref=f1e213]: ·
+          - text: with
+          - generic [ref=f1e214]: ·
+          - text: the
+          - generic [ref=f1e215]: ·
+          - text: prophets;
+          - generic [ref=f1e216]: ·
+          - text: I
+          - generic [ref=f1e217]: ·
+          - text: killed
+          - generic [ref=f1e218]: ·
+          - text: them
+          - generic [ref=f1e219]: ·
+          - text: with
+          - generic [ref=f1e220]: ·
+          - text: the
+          - generic [ref=f1e221]: ·
+          - text: words
+          - generic [ref=f1e222]: ·
+          - text: of
+          - generic [ref=f1e223]: ·
+          - text: my
+          - generic [ref=f1e224]: ·
+          - text: mouth.
+          - generic [ref=f1e225]: ·
+          - text: Your
+          - generic [ref=f1e226]: ·
+          - text: judgments
+          - generic [ref=f1e227]: ·
+          - text: are
+          - generic [ref=f1e228]: ·
+          - text: like
+          - generic [ref=f1e229]: ·
+          - text: a
+          - generic [ref=f1e230]: ·
+          - text: flash
+          - generic [ref=f1e231]: ·
+          - text: of
+          - generic [ref=f1e232]: ·
+          - text: lightning.
+          - generic [ref=f1e233]: ·
+          - text: For
+          - generic [ref=f1e234]: ·
+          - text: I
+          - generic [ref=f1e235]: ·
+          - text: desire
+          - generic [ref=f1e236]: ·
+          - text: mercy,
+          - generic [ref=f1e237]: ·
+          - text: and
+          - generic [ref=f1e238]: ·
+          - text: not
+          - generic [ref=f1e239]: ·
+          - text: sacrifice;
+          - generic [ref=f1e240]: ·
+          - text: and
+          - generic [ref=f1e241]: ·
+          - text: the
+          - generic [ref=f1e242]: ·
+          - text: knowledge
+          - generic [ref=f1e243]: ·
+          - text: of
+          - generic [ref=f1e244]: ·
+          - text: God
+          - generic [ref=f1e245]: ·
+          - text: more
+          - generic [ref=f1e246]: ·
+          - text: than
+          - generic [ref=f1e247]: ·
+          - text: burnt
+          - generic [ref=f1e248]: ·
+          - text: offerings.
+          - generic [ref=f1e249]: ·
+          - text: But
+          - generic [ref=f1e250]: ·
+          - text: they,
+          - generic [ref=f1e251]: ·
+          - text: like
+          - generic [ref=f1e252]: ·
+          - text: Adam,
+          - generic [ref=f1e253]: ·
+          - text: have
+          - generic [ref=f1e254]: ·
+          - text: broken
+          - generic [ref=f1e255]: ·
+          - text: the
+          - generic [ref=f1e256]: ·
+          - text: covenant.
+          - generic [ref=f1e257]: ·
+          - text: They
+          - generic [ref=f1e258]: ·
+          - text: were
+          - generic [ref=f1e259]: ·
+          - text: unfaithful
+          - generic [ref=f1e260]: ·
+          - text: to
+          - generic [ref=f1e261]: ·
+          - text: me,
+          - generic [ref=f1e262]: ·
+          - text: there.
+          - generic [ref=f1e263]: ·
+          - text: Gilead
+          - generic [ref=f1e264]: ·
+          - text: is
+          - generic [ref=f1e265]: ·
+          - text: a
+          - generic [ref=f1e266]: ·
+          - text: city
+          - generic [ref=f1e267]: ·
+          - text: of
+          - generic [ref=f1e268]: ·
+          - text: those
+          - generic [ref=f1e269]: ·
+          - text: who
+          - generic [ref=f1e270]: ·
+          - text: work
+          - generic [ref=f1e271]: ·
+          - text: iniquity;
+          - generic [ref=f1e272]: ·
+          - text: it
+          - generic [ref=f1e273]: ·
+          - text: is
+          - generic [ref=f1e274]: ·
+          - text: stained
+          - generic [ref=f1e275]: ·
+          - text: with
+          - generic [ref=f1e276]: ·
+          - text: blood.
+          - generic [ref=f1e277]: ·
+          - text: As
+          - generic [ref=f1e278]: ·
+          - text: gangs
+          - generic [ref=f1e279]: ·
+          - text: of
+          - generic [ref=f1e280]: ·
+          - text: robbers
+          - generic [ref=f1e281]: ·
+          - text: wait
+          - generic [ref=f1e282]: ·
+          - text: to
+          - generic [ref=f1e283]: ·
+          - text: ambush
+          - generic [ref=f1e284]: ·
+          - text: a
+          - generic [ref=f1e285]: ·
+          - text: man,
+          - generic [ref=f1e286]: ·
+          - text: so
+          - generic [ref=f1e287]: ·
+          - text: the
+          - generic [ref=f1e288]: ·
+          - text: company
+          - generic [ref=f1e289]: ·
+          - text: of
+          - generic [ref=f1e290]: ·
+          - text: priests
+          - generic [ref=f1e291]: ·
+          - text: murder
+          - generic [ref=f1e292]: ·
+          - text: "on"
+          - generic [ref=f1e293]: ·
+          - text: the
+          - generic [ref=f1e294]: ·
+          - text: path
+          - generic [ref=f1e295]: ·
+          - text: toward
+          - generic [ref=f1e296]: ·
+          - text: Shechem,
+          - generic [ref=f1e297]: ·
+          - text: committing
+          - generic [ref=f1e298]: ·
+          - text: shameful
+          - generic [ref=f1e299]: ·
+          - text: crimes.
+          - generic [ref=f1e300]: ·
+          - text: In
+          - generic [ref=f1e301]: ·
+          - text: the
+          - generic [ref=f1e302]: ·
+          - text: house
+          - generic [ref=f1e303]: ·
+          - text: of
+          - generic [ref=f1e304]: ·
+          - text: Israel
+          - generic [ref=f1e305]: ·
+          - text: I
+          - generic [ref=f1e306]: ·
+          - text: have
+          - generic [ref=f1e307]: ·
+          - text: seen
+          - generic [ref=f1e308]: ·
+          - text: a
+          - generic [ref=f1e309]: ·
+          - text: horrible
+          - generic [ref=f1e310]: ·
+          - text: thing.
+          - generic [ref=f1e311]: ·
+          - text: There
+          - generic [ref=f1e312]: ·
+          - text: is
+          - generic [ref=f1e313]: ·
+          - text: prostitution
+          - generic [ref=f1e314]: ·
+          - text: in
+          - generic [ref=f1e315]: ·
+          - text: Ephraim.
+          - generic [ref=f1e316]: ·
+          - text: Israel
+          - generic [ref=f1e317]: ·
+          - text: is
+          - generic [ref=f1e318]: ·
+          - text: defiled.
+        - textbox [active] [ref=f1e94]
+        - generic [ref=f1e95]:
+          - button "New Snippet" [ref=f1e319] [cursor=pointer]
+          - button "Reset" [ref=f1e320] [cursor=pointer]
+        - generic [ref=f1e97]:
+          - generic [ref=f1e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=f1e99]: "50"
+        - generic [ref=f1e100]:
+          - generic [ref=f1e101]:
+            - generic [ref=f1e102]: "0"
+            - generic [ref=f1e103]: WPM
+          - generic [ref=f1e104]:
+            - generic [ref=f1e105]: 100.0%
+            - generic [ref=f1e106]: Accuracy
+          - generic [ref=f1e107]:
+            - generic [ref=f1e108]: 0:00
+            - generic [ref=f1e109]: Time
+          - generic [ref=f1e110]:
+            - generic [ref=f1e111]: 0%
+            - generic [ref=f1e112]: Progress

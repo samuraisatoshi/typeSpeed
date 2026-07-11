@@ -1,0 +1,317 @@
+- generic [ref=f3e1]:
+  - text: › › › › ›
+  - generic [ref=f3e69]:
+    - generic [ref=f3e70]:
+      - generic [ref=f3e71]: TypeSpeed
+      - link "Support" [ref=f3e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=f3e77]:
+      - generic [ref=f3e78]: bible/bible-pt-br/Josué 10:13-18 (Text)
+      - generic [ref=f3e83]:
+        - button "practice" [ref=f3e84] [cursor=pointer]
+        - button "statistics" [ref=f3e85] [cursor=pointer]
+      - generic [ref=f3e86]:
+        - generic [ref=f3e88]:
+          - generic [ref=f3e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=f3e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)"
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)" [selected]
+        - generic [ref=f3e92]:
+          - text: Josué
+          - generic [ref=f3e117]: ·
+          - text: 10:13-18
+          - generic [ref=f3e118]: ↵
+          - generic [ref=f3e119]: ↵
+          - text: E
+          - generic [ref=f3e120]: ·
+          - text: o
+          - generic [ref=f3e121]: ·
+          - text: sol
+          - generic [ref=f3e122]: ·
+          - text: se
+          - generic [ref=f3e123]: ·
+          - text: deteve,
+          - generic [ref=f3e124]: ·
+          - text: e
+          - generic [ref=f3e125]: ·
+          - text: a
+          - generic [ref=f3e126]: ·
+          - text: lua
+          - generic [ref=f3e127]: ·
+          - text: parou,
+          - generic [ref=f3e128]: ·
+          - text: até
+          - generic [ref=f3e129]: ·
+          - text: que
+          - generic [ref=f3e130]: ·
+          - text: o
+          - generic [ref=f3e131]: ·
+          - text: povo
+          - generic [ref=f3e132]: ·
+          - text: se
+          - generic [ref=f3e133]: ·
+          - text: vingou
+          - generic [ref=f3e134]: ·
+          - text: de
+          - generic [ref=f3e135]: ·
+          - text: seus
+          - generic [ref=f3e136]: ·
+          - text: inimigos.
+          - generic [ref=f3e137]: ·
+          - text: Não
+          - generic [ref=f3e138]: ·
+          - text: está
+          - generic [ref=f3e139]: ·
+          - text: isto
+          - generic [ref=f3e140]: ·
+          - text: escrito
+          - generic [ref=f3e141]: ·
+          - text: "no"
+          - generic [ref=f3e142]: ·
+          - text: livro
+          - generic [ref=f3e143]: ·
+          - text: de
+          - generic [ref=f3e144]: ·
+          - text: Jasar?
+          - generic [ref=f3e145]: ·
+          - text: O
+          - generic [ref=f3e146]: ·
+          - text: sol,
+          - generic [ref=f3e147]: ·
+          - text: pois,
+          - generic [ref=f3e148]: ·
+          - text: se
+          - generic [ref=f3e149]: ·
+          - text: deteve
+          - generic [ref=f3e150]: ·
+          - text: "no"
+          - generic [ref=f3e151]: ·
+          - text: meio
+          - generic [ref=f3e152]: ·
+          - text: do
+          - generic [ref=f3e153]: ·
+          - text: céu,
+          - generic [ref=f3e154]: ·
+          - text: e
+          - generic [ref=f3e155]: ·
+          - text: não
+          - generic [ref=f3e156]: ·
+          - text: se
+          - generic [ref=f3e157]: ·
+          - text: apressou
+          - generic [ref=f3e158]: ·
+          - text: a
+          - generic [ref=f3e159]: ·
+          - text: pôr-se,
+          - generic [ref=f3e160]: ·
+          - text: quase
+          - generic [ref=f3e161]: ·
+          - text: um
+          - generic [ref=f3e162]: ·
+          - text: dia
+          - generic [ref=f3e163]: ·
+          - text: inteiro.
+          - generic [ref=f3e164]: ·
+          - text: E
+          - generic [ref=f3e165]: ·
+          - text: não
+          - generic [ref=f3e166]: ·
+          - text: houve
+          - generic [ref=f3e167]: ·
+          - text: dia
+          - generic [ref=f3e168]: ·
+          - text: semelhante
+          - generic [ref=f3e169]: ·
+          - text: a
+          - generic [ref=f3e170]: ·
+          - text: esse,
+          - generic [ref=f3e171]: ·
+          - text: nem
+          - generic [ref=f3e172]: ·
+          - text: antes
+          - generic [ref=f3e173]: ·
+          - text: nem
+          - generic [ref=f3e174]: ·
+          - text: depois
+          - generic [ref=f3e175]: ·
+          - text: dele,
+          - generic [ref=f3e176]: ·
+          - text: atendendo
+          - generic [ref=f3e177]: ·
+          - text: o
+          - generic [ref=f3e178]: ·
+          - text: Senhor
+          - generic [ref=f3e179]: ·
+          - text: assim
+          - generic [ref=f3e180]: ·
+          - text: à
+          - generic [ref=f3e181]: ·
+          - text: voz
+          - generic [ref=f3e182]: ·
+          - text: dum
+          - generic [ref=f3e183]: ·
+          - text: homem;
+          - generic [ref=f3e184]: ·
+          - text: pois
+          - generic [ref=f3e185]: ·
+          - text: o
+          - generic [ref=f3e186]: ·
+          - text: Senhor
+          - generic [ref=f3e187]: ·
+          - text: pelejava
+          - generic [ref=f3e188]: ·
+          - text: por
+          - generic [ref=f3e189]: ·
+          - text: Israel.
+          - generic [ref=f3e190]: ·
+          - text: Depois
+          - generic [ref=f3e191]: ·
+          - text: voltou
+          - generic [ref=f3e192]: ·
+          - text: Josué,
+          - generic [ref=f3e193]: ·
+          - text: e
+          - generic [ref=f3e194]: ·
+          - text: todo
+          - generic [ref=f3e195]: ·
+          - text: o
+          - generic [ref=f3e196]: ·
+          - text: Israel
+          - generic [ref=f3e197]: ·
+          - text: com
+          - generic [ref=f3e198]: ·
+          - text: ele,
+          - generic [ref=f3e199]: ·
+          - text: ao
+          - generic [ref=f3e200]: ·
+          - text: arraial
+          - generic [ref=f3e201]: ·
+          - text: em
+          - generic [ref=f3e202]: ·
+          - text: Gilgal.
+          - generic [ref=f3e203]: ·
+          - text: Aqueles
+          - generic [ref=f3e204]: ·
+          - text: cinco
+          - generic [ref=f3e205]: ·
+          - text: reis,
+          - generic [ref=f3e206]: ·
+          - text: porém,
+          - generic [ref=f3e207]: ·
+          - text: fugiram
+          - generic [ref=f3e208]: ·
+          - text: e
+          - generic [ref=f3e209]: ·
+          - text: se
+          - generic [ref=f3e210]: ·
+          - text: esconderam
+          - generic [ref=f3e211]: ·
+          - text: na
+          - generic [ref=f3e212]: ·
+          - text: caverna
+          - generic [ref=f3e213]: ·
+          - text: que
+          - generic [ref=f3e214]: ·
+          - text: há
+          - generic [ref=f3e215]: ·
+          - text: em
+          - generic [ref=f3e216]: ·
+          - text: Maqueda.
+          - generic [ref=f3e217]: ·
+          - text: E
+          - generic [ref=f3e218]: ·
+          - text: isto
+          - generic [ref=f3e219]: ·
+          - text: foi
+          - generic [ref=f3e220]: ·
+          - text: anunciado
+          - generic [ref=f3e221]: ·
+          - text: a
+          - generic [ref=f3e222]: ·
+          - text: Josué
+          - generic [ref=f3e223]: ·
+          - text: nestas
+          - generic [ref=f3e224]: ·
+          - text: "palavras:"
+          - generic [ref=f3e225]: ·
+          - text: Acharam-se
+          - generic [ref=f3e226]: ·
+          - text: os
+          - generic [ref=f3e227]: ·
+          - text: cinco
+          - generic [ref=f3e228]: ·
+          - text: reis
+          - generic [ref=f3e229]: ·
+          - text: escondidos
+          - generic [ref=f3e230]: ·
+          - text: na
+          - generic [ref=f3e231]: ·
+          - text: caverna
+          - generic [ref=f3e232]: ·
+          - text: em
+          - generic [ref=f3e233]: ·
+          - text: Maqueda.
+          - generic [ref=f3e234]: ·
+          - text: Disse,
+          - generic [ref=f3e235]: ·
+          - text: pois,
+          - generic [ref=f3e236]: ·
+          - text: "Josué:"
+          - generic [ref=f3e237]: ·
+          - text: Arrastai
+          - generic [ref=f3e238]: ·
+          - text: grandes
+          - generic [ref=f3e239]: ·
+          - text: pedras
+          - generic [ref=f3e240]: ·
+          - text: para
+          - generic [ref=f3e241]: ·
+          - text: a
+          - generic [ref=f3e242]: ·
+          - text: boca
+          - generic [ref=f3e243]: ·
+          - text: da
+          - generic [ref=f3e244]: ·
+          - text: caverna,
+          - generic [ref=f3e245]: ·
+          - text: e
+          - generic [ref=f3e246]: ·
+          - text: junto
+          - generic [ref=f3e247]: ·
+          - text: a
+          - generic [ref=f3e248]: ·
+          - text: ela
+          - generic [ref=f3e249]: ·
+          - text: ponde
+          - generic [ref=f3e250]: ·
+          - text: homens
+          - generic [ref=f3e251]: ·
+          - text: que
+          - generic [ref=f3e252]: ·
+          - text: os
+          - generic [ref=f3e253]: ·
+          - text: guardem.
+        - textbox [active] [ref=f3e94]
+        - generic [ref=f3e95]:
+          - button "New Snippet" [ref=f3e254] [cursor=pointer]
+          - button "Reset" [ref=f3e255] [cursor=pointer]
+        - generic [ref=f3e97]:
+          - generic [ref=f3e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=f3e99]: "50"
+        - generic [ref=f3e100]:
+          - generic [ref=f3e101]:
+            - generic [ref=f3e102]: "0"
+            - generic [ref=f3e103]: WPM
+          - generic [ref=f3e104]:
+            - generic [ref=f3e105]: 100.0%
+            - generic [ref=f3e106]: Accuracy
+          - generic [ref=f3e107]:
+            - generic [ref=f3e108]: 0:00
+            - generic [ref=f3e109]: Time
+          - generic [ref=f3e110]:
+            - generic [ref=f3e111]: 0%
+            - generic [ref=f3e112]: Progress

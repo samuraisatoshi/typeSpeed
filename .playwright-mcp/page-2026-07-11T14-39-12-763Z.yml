@@ -1,0 +1,476 @@
+- generic [ref=f2e1]:
+  - text: › › › › ›
+  - generic [ref=f2e69]:
+    - generic [ref=f2e70]:
+      - generic [ref=f2e71]: TypeSpeed
+      - link "Support" [ref=f2e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=f2e77]:
+      - generic [ref=f2e78]: index.html (HTML)
+      - generic [ref=f2e83]:
+        - button "practice" [ref=f2e84] [cursor=pointer]
+        - button "statistics" [ref=f2e85] [cursor=pointer]
+      - generic [ref=f2e86]:
+        - generic [ref=f2e88]:
+          - generic [ref=f2e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=f2e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)" [selected]
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+        - generic [ref=f2e92]:
+          - text: <div
+          - generic [ref=f2e117]: ·
+          - text: id="practice"
+          - generic [ref=f2e118]: ·
+          - text: class="view
+          - generic [ref=f2e119]: ·
+          - text: active">
+          - generic [ref=f2e120]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e121]: ·
+          - text: class="file-input-section">
+          - generic [ref=f2e122]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e123]: ·
+          - text: class="file-input-wrapper">
+          - generic [ref=f2e124]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <label
+          - generic [ref=f2e125]: ·
+          - text: for="fileInput"
+          - generic [ref=f2e126]: ·
+          - text: class="file-label">
+          - generic [ref=f2e127]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: Select
+          - generic [ref=f2e128]: ·
+          - text: Code
+          - generic [ref=f2e129]: ·
+          - text: Folder
+          - generic [ref=f2e130]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </label>
+          - generic [ref=f2e131]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <input
+          - generic [ref=f2e132]: ·
+          - text: type="file"
+          - generic [ref=f2e133]: ·
+          - text: id="fileInput"
+          - generic [ref=f2e134]: ·
+          - text: webkitdirectory
+          - generic [ref=f2e135]: ·
+          - text: multiple>
+          - generic [ref=f2e136]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <span
+          - generic [ref=f2e137]: ·
+          - text: class="file-count"
+          - generic [ref=f2e138]: ·
+          - text: id="fileCount">No
+          - generic [ref=f2e139]: ·
+          - text: files
+          - generic [ref=f2e140]: ·
+          - text: loaded</span>
+          - generic [ref=f2e141]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </div>
+          - generic [ref=f2e142]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </div>
+          - generic [ref=f2e143]: ↵
+          - generic [ref=f2e144]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e145]: ·
+          - text: class="metrics-bar">
+          - generic [ref=f2e146]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e147]: ·
+          - text: class="metric
+          - generic [ref=f2e148]: ·
+          - text: metric-primary">
+          - generic [ref=f2e149]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e150]: ·
+          - text: class="metric-value"
+          - generic [ref=f2e151]: ·
+          - text: id="wpm">0</div>
+          - generic [ref=f2e152]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e153]: ·
+          - text: class="metric-label">WPM</div>
+          - generic [ref=f2e154]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </div>
+          - generic [ref=f2e155]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e156]: ·
+          - text: class="metric
+          - generic [ref=f2e157]: ·
+          - text: metric-secondary">
+          - generic [ref=f2e158]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e159]: ·
+          - text: class="metric-value"
+          - generic [ref=f2e160]: ·
+          - text: id="accuracy">100%</div>
+          - generic [ref=f2e161]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e162]: ·
+          - text: class="metric-label">Accuracy</div>
+          - generic [ref=f2e163]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </div>
+          - generic [ref=f2e164]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e165]: ·
+          - text: class="metric
+          - generic [ref=f2e166]: ·
+          - text: metric-secondary">
+          - generic [ref=f2e167]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e168]: ·
+          - text: class="metric-value"
+          - generic [ref=f2e169]: ·
+          - text: id="time">0:00</div>
+          - generic [ref=f2e170]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e171]: ·
+          - text: class="metric-label">Time</div>
+          - generic [ref=f2e172]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </div>
+          - generic [ref=f2e173]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e174]: ·
+          - text: class="metric
+          - generic [ref=f2e175]: ·
+          - text: metric-secondary">
+          - generic [ref=f2e176]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e177]: ·
+          - text: class="metric-value"
+          - generic [ref=f2e178]: ·
+          - text: id="progress">0%</div>
+          - generic [ref=f2e179]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e180]: ·
+          - text: class="metric-label">Progress</div>
+          - generic [ref=f2e181]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </div>
+          - generic [ref=f2e182]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </div>
+          - generic [ref=f2e183]: ↵
+          - generic [ref=f2e184]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e185]: ·
+          - text: class="typing-area"
+          - generic [ref=f2e186]: ·
+          - text: id="typingArea">
+          - generic [ref=f2e187]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e188]: ·
+          - text: id="fileInfo"></div>
+          - generic [ref=f2e189]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: <div
+          - generic [ref=f2e190]: ·
+          - text: class="code-display"
+          - generic [ref=f2e191]: ·
+          - text: id="codeDisplay"></div>
+          - generic [ref=f2e192]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: </div>
+          - generic [ref=f2e193]: ↵
+          - text: </div>
+        - textbox [active] [ref=f2e94]
+        - generic [ref=f2e95]:
+          - button "New Snippet" [ref=f2e194] [cursor=pointer]
+          - button "Reset" [ref=f2e195] [cursor=pointer]
+        - generic [ref=f2e97]:
+          - generic [ref=f2e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=f2e99]: "50"
+        - generic [ref=f2e100]:
+          - generic [ref=f2e101]:
+            - generic [ref=f2e102]: "0"
+            - generic [ref=f2e103]: WPM
+          - generic [ref=f2e104]:
+            - generic [ref=f2e105]: 100.0%
+            - generic [ref=f2e106]: Accuracy
+          - generic [ref=f2e107]:
+            - generic [ref=f2e108]: 0:00
+            - generic [ref=f2e109]: Time
+          - generic [ref=f2e110]:
+            - generic [ref=f2e111]: 0%
+            - generic [ref=f2e112]: Progress

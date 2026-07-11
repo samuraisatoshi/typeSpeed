@@ -1,0 +1,40 @@
+- generic [active] [ref=f2e1]:
+  - text: › › › › ›
+  - generic [ref=f2e69]:
+    - generic [ref=f2e70]:
+      - generic [ref=f2e71]: TypeSpeed
+      - link "Support" [ref=f2e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=f2e77]:
+      - generic [ref=f2e83]:
+        - button "practice" [ref=f2e84] [cursor=pointer]
+        - button "statistics" [ref=f2e85] [cursor=pointer]
+      - generic [ref=f2e86]:
+        - generic [ref=f2e88]:
+          - generic [ref=f2e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=f2e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)" [selected]
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+        - generic [ref=f2e91]: Select a folder containing code files and click "Start Typing" to begin practicing
+        - textbox [ref=f2e94]
+        - button "Start Typing" [ref=f2e96] [cursor=pointer]
+        - generic [ref=f2e97]:
+          - generic [ref=f2e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=f2e99]: "50"
+        - generic [ref=f2e100]:
+          - generic [ref=f2e101]:
+            - generic [ref=f2e102]: "0"
+            - generic [ref=f2e103]: WPM
+          - generic [ref=f2e104]:
+            - generic [ref=f2e105]: 100%
+            - generic [ref=f2e106]: Accuracy
+          - generic [ref=f2e107]:
+            - generic [ref=f2e108]: 0:00
+            - generic [ref=f2e109]: Time
+          - generic [ref=f2e110]:
+            - generic [ref=f2e111]: 0%
+            - generic [ref=f2e112]: Progress

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "jarvis": {
+      "command": "/Users/jfoc/.local/share/fnm/node-versions/v24.14.1/installation/bin/node",
+      "args": [
+        "/Users/jfoc/Documents/DevLabs/typescript/jarvis-claude-plugin/dist/mcp-server.js"
+      ],
+      "cwd": "/Users/jfoc/Documents/DevLabs/typescript/typespeed",
+      "env": {
+        "AZURE_TENANT_ID": "fee5120a-5987-45b0-a34f-f16b678c730a"
+      }
+    }
+  }
+}

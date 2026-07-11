@@ -1,13 +1,16 @@
 {
-  "project": "TypeSpeed - Code Typing Practice",
-  "version": "1.0.0",
-
   "permissions": {
-    "ask": ["Bash"],
-    "allow": ["Read", "Write", "Edit", "Grep", "Glob", "WebFetch"],
-    "deny": []
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Grep",
+      "Glob",
+      "WebFetch"
+    ],
+    "deny": [],
+    "ask": []
   },
-
   "hooks": {
     "PreToolUse": [
       {
@@ -45,7 +48,8 @@
       }
     ]
   },
-
+  "project": "TypeSpeed - Code Typing Practice",
+  "version": "1.0.0",
   "agents": {
     "autoDelegate": true,
     "preferred": {
@@ -55,7 +59,6 @@
       "metrics": "metrics-analyst"
     }
   },
-
   "skills": {
     "autoLoad": [
       "language-formatting",
@@ -63,7 +66,6 @@
       "typing-mechanics"
     ]
   },
-
   "codeStyle": {
     "indentation": "spaces",
     "indentSize": 2,
@@ -72,79 +74,109 @@
     "quotes": "single",
     "trailingComma": "es5"
   },
-
   "architecture": {
     "pattern": "Domain-Driven Design",
-    "principles": ["SOLID", "DRY", "KISS", "YAGNI"],
+    "principles": [
+      "SOLID",
+      "DRY",
+      "KISS",
+      "YAGNI"
+    ],
     "maxFileLines": 550,
     "enforceStrict": true
   },
-
   "languages": {
     "supported": [
       {
         "name": "TypeScript",
-        "extensions": [".ts", ".tsx"],
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ],
         "formatter": "prettier",
         "indentSize": 2
       },
       {
         "name": "JavaScript",
-        "extensions": [".js", ".jsx", ".mjs"],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".mjs"
+        ],
         "formatter": "prettier",
         "indentSize": 2
       },
       {
         "name": "Python",
-        "extensions": [".py", ".pyw"],
+        "extensions": [
+          ".py",
+          ".pyw"
+        ],
         "formatter": "black",
         "indentSize": 4
       },
       {
         "name": "Swift",
-        "extensions": [".swift"],
+        "extensions": [
+          ".swift"
+        ],
         "formatter": "swiftformat",
         "indentSize": 2
       },
       {
         "name": "C",
-        "extensions": [".c", ".h"],
+        "extensions": [
+          ".c",
+          ".h"
+        ],
         "formatter": "clang-format",
         "indentSize": 4
       },
       {
         "name": "C++",
-        "extensions": [".cpp", ".hpp", ".cc", ".cxx"],
+        "extensions": [
+          ".cpp",
+          ".hpp",
+          ".cc",
+          ".cxx"
+        ],
         "formatter": "clang-format",
         "indentSize": 4
       },
       {
         "name": "Java",
-        "extensions": [".java"],
+        "extensions": [
+          ".java"
+        ],
         "formatter": "google-java-format",
         "indentSize": 2
       },
       {
         "name": "Rust",
-        "extensions": [".rs"],
+        "extensions": [
+          ".rs"
+        ],
         "formatter": "rustfmt",
         "indentSize": 4
       },
       {
         "name": "Go",
-        "extensions": [".go"],
+        "extensions": [
+          ".go"
+        ],
         "formatter": "gofmt",
         "indentSize": 0
       },
       {
         "name": "Ruby",
-        "extensions": [".rb"],
+        "extensions": [
+          ".rb"
+        ],
         "formatter": "rubocop",
         "indentSize": 2
       }
     ]
   },
-
   "development": {
     "framework": "Node.js",
     "runtime": "node",

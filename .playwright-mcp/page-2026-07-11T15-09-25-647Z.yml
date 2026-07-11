@@ -1,0 +1,327 @@
+- generic [ref=e1]:
+  - text: › › › › ›
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - generic [ref=e71]: TypeSpeed
+      - link "Support" [ref=e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=e77]:
+      - generic [ref=e78]: css/styles.css (CSS)
+      - generic [ref=e83]:
+        - button "practice" [ref=e84] [cursor=pointer]
+        - button "statistics" [ref=e85] [cursor=pointer]
+      - generic [ref=e86]:
+        - generic [ref=e88]:
+          - generic [ref=e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)" [selected]
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+        - generic [ref=e92]:
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "line-height:"
+          - generic [ref=e117]: ·
+          - text: 1.6;
+          - generic [ref=e118]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "white-space:"
+          - generic [ref=e119]: ·
+          - text: pre;
+          - generic [ref=e120]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "overflow-x:"
+          - generic [ref=e121]: ·
+          - text: auto;
+          - generic [ref=e122]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "overflow-y:"
+          - generic [ref=e123]: ·
+          - text: auto;
+          - generic [ref=e124]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "max-height:"
+          - generic [ref=e125]: ·
+          - text: 60vh;
+          - generic [ref=e126]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "position:"
+          - generic [ref=e127]: ·
+          - text: relative;
+          - generic [ref=e128]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "scroll-behavior:"
+          - generic [ref=e129]: ·
+          - text: auto;
+          - generic [ref=e130]: ↵
+          - text: "}"
+          - generic [ref=e131]: ↵
+          - generic [ref=e132]: ↵
+          - text: .char
+          - generic [ref=e133]: ·
+          - text: "{"
+          - generic [ref=e134]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "position:"
+          - generic [ref=e135]: ·
+          - text: relative;
+          - generic [ref=e136]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "color:"
+          - generic [ref=e137]: ·
+          - text: "#94a3b8;"
+          - generic [ref=e138]: ↵
+          - text: "}"
+          - generic [ref=e139]: ↵
+          - generic [ref=e140]: ↵
+          - text: .char.current
+          - generic [ref=e141]: ·
+          - text: "{"
+          - generic [ref=e142]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "background:"
+          - generic [ref=e143]: ·
+          - text: "#fbbf24;"
+          - generic [ref=e144]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "color:"
+          - generic [ref=e145]: ·
+          - text: "#000"
+          - generic [ref=e146]: ·
+          - text: "!important;"
+          - generic [ref=e147]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "border-radius:"
+          - generic [ref=e148]: ·
+          - text: 2px;
+          - generic [ref=e149]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "position:"
+          - generic [ref=e150]: ·
+          - text: relative;
+          - generic [ref=e151]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "font-weight:"
+          - generic [ref=e152]: ·
+          - text: bold;
+          - generic [ref=e153]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "min-width:"
+          - generic [ref=e154]: ·
+          - text: 8px;
+          - generic [ref=e155]: ↵
+          - text: "}"
+          - generic [ref=e156]: ↵
+          - generic [ref=e157]: ↵
+          - text: .char.current:not(.newline)
+          - generic [ref=e158]: ·
+          - text: "{"
+          - generic [ref=e159]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "display:"
+          - generic [ref=e160]: ·
+          - text: inline-block;
+          - generic [ref=e161]: ↵
+          - text: "}"
+          - generic [ref=e162]: ↵
+          - generic [ref=e163]: ↵
+          - text: .char.current
+          - generic [ref=e164]: ·
+          - text: .space-indicator,
+          - generic [ref=e165]: ↵
+          - text: .char.current
+          - generic [ref=e166]: ·
+          - text: .newline-indicator,
+          - generic [ref=e167]: ↵
+          - text: .char.current
+          - generic [ref=e168]: ·
+          - text: .tab-indicator
+          - generic [ref=e169]: ·
+          - text: "{"
+          - generic [ref=e170]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "opacity:"
+          - generic [ref=e171]: ·
+          - text: "1"
+          - generic [ref=e172]: ·
+          - text: "!important;"
+          - generic [ref=e173]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "color:"
+          - generic [ref=e174]: ·
+          - text: "#000"
+          - generic [ref=e175]: ·
+          - text: "!important;"
+          - generic [ref=e176]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "font-weight:"
+          - generic [ref=e177]: ·
+          - text: bold;
+          - generic [ref=e178]: ↵
+          - text: "}"
+          - generic [ref=e179]: ↵
+          - generic [ref=e180]: ↵
+          - text: .char.current::before
+          - generic [ref=e181]: ·
+          - text: "{"
+          - generic [ref=e182]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "content:"
+          - generic [ref=e183]: ·
+          - text: "'';"
+          - generic [ref=e184]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "position:"
+          - generic [ref=e185]: ·
+          - text: absolute;
+          - generic [ref=e186]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "left:"
+          - generic [ref=e187]: ·
+          - text: "-3px;"
+          - generic [ref=e188]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "top:"
+          - generic [ref=e189]: ·
+          - text: "-2px;"
+          - generic [ref=e190]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "bottom:"
+          - generic [ref=e191]: ·
+          - text: "-2px;"
+          - generic [ref=e192]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "width:"
+          - generic [ref=e193]: ·
+          - text: 4px;
+          - generic [ref=e194]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "background:"
+          - generic [ref=e195]: ·
+          - text: "#ff6b6b;"
+          - generic [ref=e196]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "border-radius:"
+          - generic [ref=e197]: ·
+          - text: 2px;
+          - generic [ref=e198]: ↵
+          - text: "}"
+          - generic [ref=e199]: ↵
+          - generic [ref=e200]: ↵
+          - text: .char.correct
+          - generic [ref=e201]: ·
+          - text: "{"
+          - generic [ref=e202]: ↵
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - generic: ·
+          - text: "color:"
+          - generic [ref=e203]: ·
+          - text: "#34d399;"
+          - generic [ref=e204]: ↵
+          - text: "}"
+          - generic [ref=e205]: ↵
+        - textbox [active] [ref=e94]
+        - generic [ref=e95]:
+          - button "New Snippet" [ref=e206] [cursor=pointer]
+          - button "Reset" [ref=e207] [cursor=pointer]
+        - generic [ref=e97]:
+          - generic [ref=e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=e99]: "50"
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: "0"
+            - generic [ref=e103]: WPM
+          - generic [ref=e104]:
+            - generic [ref=e105]: 100.0%
+            - generic [ref=e106]: Accuracy
+          - generic [ref=e107]:
+            - generic [ref=e108]: 0:00
+            - generic [ref=e109]: Time
+          - generic [ref=e110]:
+            - generic [ref=e111]: 0%
+            - generic [ref=e112]: Progress

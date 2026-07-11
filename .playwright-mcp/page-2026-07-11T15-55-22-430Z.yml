@@ -1,0 +1,101 @@
+- generic [active] [ref=f2e1]:
+  - generic [ref=f2e3]:
+    - heading "Welcome to TypeSpeed" [level=1] [ref=f2e4]
+    - generic [ref=f2e7]:
+      - heading "Your Privacy is Protected" [level=2] [ref=f2e8]
+      - list [ref=f2e11]:
+        - listitem [ref=f2e12]:
+          - generic [ref=f2e15]:
+            - strong [ref=f2e16]: Offline by default
+            - text: "- No internet connection required, except the optional \"Bible\" category, which fetches a random passage from bible-api.com each session"
+        - listitem [ref=f2e17]:
+          - generic [ref=f2e20]:
+            - strong [ref=f2e21]: No Data Collection
+            - text: "- We don't collect ANY personal data"
+        - listitem [ref=f2e22]:
+          - generic [ref=f2e25]:
+            - strong [ref=f2e26]: No Tracking
+            - text: "- No analytics, no cookies, no tracking"
+        - listitem [ref=f2e27]:
+          - generic [ref=f2e30]:
+            - strong [ref=f2e31]: Local Storage Only
+            - text: "- Statistics saved only in your browser"
+        - listitem [ref=f2e32]:
+          - generic [ref=f2e35]:
+            - strong [ref=f2e36]: Files Stay Private
+            - text: "- Your code files are read locally and never leave your computer"
+    - generic [ref=f2e37]:
+      - heading "About Browser File Selection" [level=3] [ref=f2e38]
+      - paragraph [ref=f2e41]: When you click "Select Code Folder", your browser may show a dialog asking about file uploads. This is a standard browser security notice.
+      - generic [ref=f2e42]:
+        - strong [ref=f2e43]: "Important:"
+        - text: Despite what the dialog says, TypeSpeed does NOT upload your files anywhere. The files are only read locally in your browser for typing practice.
+      - heading "To avoid confusion:" [level=4] [ref=f2e44]
+      - list [ref=f2e45]:
+        - listitem [ref=f2e46]: You can safely select your code folder - files remain on your computer
+        - listitem [ref=f2e47]: For extra peace of mind, use a test folder with sample code
+        - listitem [ref=f2e48]:
+          - text: "Or run from a local server to avoid the dialog entirely:"
+          - generic [ref=f2e49]:
+            - code [ref=f2e50]: python3 -m http.server 8000
+            - text: (Python)
+            - code [ref=f2e51]: npx http-server -p 8000
+            - text: (Node.js)
+            - code [ref=f2e52]: php -S localhost:8000
+            - text: (PHP)
+      - paragraph [ref=f2e53]:
+        - link "View detailed instructions and server setup guide →" [ref=f2e54] [cursor=pointer]:
+          - /url: instructions.html
+    - generic [ref=f2e55]:
+      - heading "Features" [level=3] [ref=f2e56]
+      - list [ref=f2e59]:
+        - listitem [ref=f2e60]: › Practice typing with your own code
+        - listitem [ref=f2e61]: › Auto-skip indentation spaces
+        - listitem [ref=f2e62]: › Track WPM and accuracy
+        - listitem [ref=f2e63]: › View progress statistics
+        - listitem [ref=f2e64]: › Support for 25+ programming languages
+    - button "Start Practicing" [ref=f2e65] [cursor=pointer]
+    - generic [ref=f2e67] [cursor=pointer]:
+      - checkbox "Don't show this again" [ref=f2e68]
+      - text: Don't show this again
+  - generic [ref=f2e69]:
+    - generic [ref=f2e70]:
+      - generic [ref=f2e71]: TypeSpeed
+      - link "Support" [ref=f2e74] [cursor=pointer]:
+        - /url: donate.html
+    - generic [ref=f2e77]:
+      - generic [ref=f2e83]:
+        - button "practice" [ref=f2e84] [cursor=pointer]
+        - button "statistics" [ref=f2e85] [cursor=pointer]
+      - generic [ref=f2e86]:
+        - generic [ref=f2e88]:
+          - generic [ref=f2e89]: "Categoria de prática:"
+          - combobox "Categoria de prática:" [ref=f2e90] [cursor=pointer]:
+            - option "Código deste projeto (padrão)" [selected]
+            - option "Minha pasta de código"
+            - option "Texto — English (EN-US)"
+            - option "Texto — Português (PT-BR)"
+            - option "Bíblia — English (aleatório, requer internet)"
+            - option "Bíblia — Português (aleatório, requer internet)"
+            - 'option "Lição: Mão Esquerda (EN)"'
+            - 'option "Lição: Mão Direita (EN)"'
+            - 'option "Lição: Alternância de Mãos (EN)"'
+        - generic [ref=f2e91]: Select a folder containing code files and click "Start Typing" to begin practicing
+        - textbox [ref=f2e94]
+        - button "Start Typing" [ref=f2e96] [cursor=pointer]
+        - generic [ref=f2e97]:
+          - generic [ref=f2e98]: "Max Lines per Snippet:"
+          - spinbutton "Max Lines per Snippet:" [ref=f2e99]: "50"
+        - generic [ref=f2e100]:
+          - generic [ref=f2e101]:
+            - generic [ref=f2e102]: "0"
+            - generic [ref=f2e103]: WPM
+          - generic [ref=f2e104]:
+            - generic [ref=f2e105]: 100%
+            - generic [ref=f2e106]: Accuracy
+          - generic [ref=f2e107]:
+            - generic [ref=f2e108]: 0:00
+            - generic [ref=f2e109]: Time
+          - generic [ref=f2e110]:
+            - generic [ref=f2e111]: 0%
+            - generic [ref=f2e112]: Progress
