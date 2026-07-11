@@ -18,6 +18,11 @@
 - 🔒 **100% Private** - Runs entirely offline in your browser, no data collection
 - 🎨 **Beautiful UI** - Modern dark theme with syntax highlighting
 - ⚡ **No Installation** - Just open the HTML file and start practicing
+- ✋ **Typing Drills** - Dedicated lessons for left-hand, right-hand, and alternating hand practice
+- 📖 **Live Quotes** - Motivational quotes via Wikiquote in English and Portuguese
+- 📜 **Bible Passages** - Random Bible verses for typing practice
+- 🔀 **Word Shuffling** - Randomized word order in drills for more realistic practice
+- 📝 **Smart Wrap** - Automatic text wrapping for long lines
 
 ## 🚀 Quick Start
 
@@ -28,7 +33,7 @@
 4. Start typing!
 
 ```bash
-git clone https://github.com/yourusername/typespeed.git
+git clone https://github.com/samuraisatoshi/typespeed.git
 cd typespeed
 open index.html  # macOS
 # or
@@ -149,7 +154,7 @@ Please ensure:
 
 - [Instructions & Setup Guide](instructions.html)
 - [Architecture Documentation](CLAUDE.md)
-- [Issue Tracker](https://github.com/yourusername/typespeed/issues)
+- [Issue Tracker](https://github.com/samuraisatoshi/typespeed/issues)
 
 ## 🙏 Acknowledgments
 
