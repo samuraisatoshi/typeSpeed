@@ -6,7 +6,7 @@ class TypingApp {
         this.snippetSelector = new CodeSnippetSelector();
         this.ui = new UIController();
         this.inputHandler = new InputHandler();
-        this.categoryProvider = new PracticeCategoryProvider(DEFAULT_CODE_FILES, PRACTICE_TEXTS);
+        this.categoryProvider = new PracticeCategoryProvider(DEFAULT_CODE_FILES, PRACTICE_TEXTS, TYPING_DRILLS);
         this.bibleService = new BiblePassageService(new RandomBiblePassageSelector(BIBLE_BOOKS_META));
         this.currentSession = null;
         this.timerInterval = null;

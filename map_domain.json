@@ -40,9 +40,10 @@
       "PracticeCategoryProvider": {
         "dependencies": [
           "DEFAULT_CODE_FILES",
-          "PRACTICE_TEXTS"
+          "PRACTICE_TEXTS",
+          "TYPING_DRILLS"
         ],
-        "description": "Serviço de domínio: mapeia uma categoria de prática (código padrão, pasta própria, texto EN-US/PT-BR, Bíblia EN-US/PT-BR) para seu dataset (ou indicação de busca ao vivo) e comportamento de UI.",
+        "description": "Serviço de domínio: mapeia uma categoria de prática (código padrão, pasta própria, texto EN-US/PT-BR, Bíblia EN-US/PT-BR, lições de datilografia mão esquerda/direita/alternância) para seu dataset (ou indicação de busca ao vivo) e comportamento de UI.",
         "goal": "Desacoplar a lógica de seleção de categoria da UI e do repositório, seguindo Open/Closed (nova categoria = nova entrada, sem alterar outras classes).",
         "methods": [
           "getCategories",
